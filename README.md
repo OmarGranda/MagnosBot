@@ -1,12 +1,7 @@
 <p align="center"> 
-  <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=🤖MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
-<img src="https://i.postimg.cc/KY9V4vsf/c1f681f18a013222527b66d1d9d32cee.jpg" width="500" height="500" />
+  <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
+<img src="https://i.postimg.cc/Kzzvsy0H/IMG-20250909-WA0062.jpg" width="500" height="500" />
 </p>
-
-<p align="center">
-<a ojohref="https://github.com/GataNina-Li/GataBot-MD"><img title="GataBot-MD" src="https://img.shields.io/badge/🌸 ESTÁ ES LA VERSIÓN SIMPLIFICADA De MagnosBot 🌸 -red?colorA=%233CCED8&colorB=%233CCED8&style=for-the-badge"></a>
-</p>
-
 <div align="center">
   
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ommargranda673@gmail.com)
