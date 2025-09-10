@@ -17,6 +17,7 @@
   <summary>Haz clic para ver las plataformas disponibles</summary>
 
   - 📱 **Termux**
+  - 👽 **Windows**
   - ☁️ **SkyUltraPlus**
 
 </details>
