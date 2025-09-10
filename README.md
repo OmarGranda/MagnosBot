@@ -1,6 +1,6 @@
 <p align="center"> 
   <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
-<img src="https://i.postimg.cc/Kzzvsy0H/IMG-20250909-WA0062.jpg" width="500" height="500" />
+<img src=https://i.postimg.cc/gkqTwP2Q/IMG-20250909-WA0062.jpg)](https://postimg.cc/PPJ4c9ZQ)" width="500" height="500" />
 </p>
 <div align="center">
   
