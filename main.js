@@ -383,7 +383,19 @@ break
 case 'menu':
 case 'help':
 case 'allmenu': {
-const texto = `Menu - MAGNOS - BOT
+   const fetch = require("node-fetch")
+
+   let imagenes = [
+      'https://d.uguu.se/UblRCExD.jpg',
+      'https://files.catbox.moe/ai470b.jpg',
+      'https://files.catbox.moe/wii81m.jpg'
+      'https://files.catbox.moe/9e3x1h.jpg',
+   ]
+
+   let img = imagenes[Math.floor(Math.random() * imagenes.length)]
+   let thumb = await (await fetch(img)).buffer()
+
+   const texto = `Menu - MAGNOS - BOT
 
 ┌  ◦ Información
 │  ◦ ${prefix}sc
@@ -444,7 +456,26 @@ const texto = `Menu - MAGNOS - BOT
 │  ◦ ${prefix}getcase 
 │  ◦ ${prefix}addcase 
 └  ◦ Propietario`
-await client.sendMessage(m.chat, {text: texto, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MagnosBot | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot-MD`, body: '', thumbnailUrl: 'https://i.postimg.cc/NGrhjVTv/IMG-20250909-WA0062.jpg', sourceUrl: 'https://github.com/OmarGranda', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
+
+   await client.sendMessage(m.chat, {
+      text: texto,
+      contextInfo: {
+         forwardingScore: 999,
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+            newsletterName: 'MagnosBot | CHANNEL',
+            newsletterJid: "120363422169517881@newsletter",
+         },
+         externalAdReply: {
+            title: `© MagnosBot-MD`,
+            body: 'Tu asistente confiable 🤖',
+            thumbnail: thumb,
+            sourceUrl: 'https://github.com/OmarGranda',
+            mediaType: 1,
+            renderLargerThumbnail: true
+         }
+      }
+   }, { quoted: fkontak })
 }
 break
 
