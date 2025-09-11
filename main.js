@@ -236,12 +236,12 @@ break
 case 'hd':
 case 'remini':
 case 'calidad': {
-   if (!m.quoted) return m.reply(`📌 Responde a una *imagen* con el comando *${prefix + command}*`)
+   if (!m.quoted) return m.reply(`Responde a una *imagen* con el comando *${prefix + command}*`)
    let mime = m.quoted.mimetype || m.quoted.msg?.mimetype || ''
    if (!/image\/(jpe?g|png)/i.test(mime)) return m.reply(`⚠️ El archivo debe ser una imagen (jpg o png)`)
 
    try {
-      m.reply(`⏳ Mejorando la calidad de tu imagen...`)
+      m.reply(`\`Mejorando la calidad de tu imagen...\``)
       const media = await m.quoted.download()
 
       const FormData = require('form-data')
