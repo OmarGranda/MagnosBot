@@ -469,7 +469,7 @@ case 'allmenu': {
                title: `© MagnosBot`,
                body: 'Tu asistente confiable 🤖',
                thumbnail: thumb,
-               sourceUrl: 'https://github.com/Azamijs',
+               sourceUrl: 'https://github.com/AzamiJs',
                mediaType: 1,
                renderLargerThumbnail: true
             }
@@ -494,7 +494,7 @@ break
 
 case 'sc': case 'script': case 'git': {
 try {
-let res = await fetch('https://api.github.com/repos/Azamijs/CuriosityBot-MD')
+let res = await fetch('https://api.github.com/repos/AzamiJs/CuriosityBot-MD')
 let json = await res.json()
 let git = `*乂  Bot  -  Script*\n\n· *Nombre*: ${json.name}\n· *Visitantes*: ${json.watchers_count}\n· *Peso*: ${(json.size / 1024).toFixed(2)} MB\n· *Actualizado*: ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n· *Url* : ${json.html_url}\n\n	   ${json.forks_count} Forks · ${json.stargazers_count} Stars · ${json.open_issues_count} Issues`
 await client.sendMessage(m.chat, {text: git, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MAGMOSBOT | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot`, body: '', thumbnailUrl: 'https://i.postimg.cc/F1tDYDM9/IMG-20250909-WA0060.jpg', sourceUrl: 'https://github.com/Azamijs', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
@@ -717,7 +717,7 @@ case 'gitclone': {
 const fetch = require('node-fetch')
 
 if (!args[0]) {
-return m.reply('Ingrese el enlace de un *repositorio* de *GitHub*\n\n`Ejemplo`: .gitclone https://github.com/OmarGranda/MagnosBot')
+return m.reply('Ingrese el enlace de un *repositorio* de *GitHub*\n\n`Ejemplo`: .gitclone https://github.com/AzamiJs/CuriosityBot-MD')
 }
 if (!args[0].includes('github.com')) {
 return m.reply('Enlace no válido. Compruebe el enlace')
@@ -1254,7 +1254,7 @@ case 'addowner': {
    } else if (text) {
        number = text.replace(/[^0-9]/g, '')
    } else {
-       return m.reply(`📌 _*Responde al mensaje de la persona o menciónala.*_\nEjemplo:\n.addowner @usuario*`)
+       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n.addowner @usuario*`)
    }
 
    if (global.owner.find(owner => owner[0] === number)) 
