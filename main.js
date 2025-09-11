@@ -469,7 +469,7 @@ case 'allmenu': {
                title: `© MagnosBot`,
                body: 'Tu asistente confiable 🤖',
                thumbnail: thumb,
-               sourceUrl: 'https://github.com/OmarGranda',
+               sourceUrl: 'https://github.com/Azamijs',
                mediaType: 1,
                renderLargerThumbnail: true
             }
