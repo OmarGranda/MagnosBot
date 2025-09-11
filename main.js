@@ -594,7 +594,7 @@ const ytMsg = `🎶 *${video.title}*
 ⏳ Duración: ${video.timestamp}
 🌐 Enlace: ${url}`
 
-await conn.sendMessage(m.chat, {
+await client.sendMessage(m.chat, {
    image: { url: video.thumbnail },
    caption: ytMsg
 }, { quoted: m })
@@ -604,7 +604,7 @@ switch (selection.toLowerCase()) {
 case 'audio': {
    try {
       let audio = await ytmp3(url)
-      await conn.sendMessage(m.chat, {
+      await client.sendMessage(m.chat, {
          audio: { url: audio.url },
          mimetype: 'audio/mpeg',
          fileName: `${sanitizeFileName(video.title)}.mp3`
@@ -613,7 +613,7 @@ case 'audio': {
       m.reply('⚠️ Error en ytmp3, intentando con API alternativa...')
       const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${url}`)
       let { data } = await res.json()
-      await conn.sendMessage(m.chat, {
+      await client.sendMessage(m.chat, {
          audio: { url: data.dl },
          mimetype: 'audio/mpeg'
       }, { quoted: m })
@@ -624,7 +624,7 @@ case 'audio': {
 case 'video': {
    try {
       let vid = await ytmp4(url)
-      await conn.sendMessage(m.chat, {
+      await client.sendMessage(m.chat, {
          video: { url: vid.url },
          mimetype: 'video/mp4',
          caption: video.title
@@ -633,7 +633,7 @@ case 'video': {
       m.reply('⚠️ Error en ytmp4, intentando con API alternativa...')
       const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${url}`)
       let { data } = await res.json()
-      await conn.sendMessage(m.chat, {
+      await client.sendMessage(m.chat, {
          video: { url: data.dl },
          mimetype: 'video/mp4',
          caption: video.title
@@ -644,7 +644,7 @@ case 'video': {
 
 case 'mp3doc': {
    let audio = await ytmp3(url)
-   await conn.sendMessage(m.chat, {
+   await client.sendMessage(m.chat, {
       document: { url: audio.url },
       fileName: `${sanitizeFileName(video.title)}.mp3`,
       mimetype: 'audio/mpeg'
@@ -654,7 +654,7 @@ case 'mp3doc': {
 
 case 'mp4doc': {
    let vid = await ytmp4(url)
-   await conn.sendMessage(m.chat, {
+   await client.sendMessage(m.chat, {
       document: { url: vid.url },
       fileName: `${sanitizeFileName(video.title)}.mp4`,
       mimetype: 'video/mp4'
@@ -669,7 +669,7 @@ await m.react('✅')
    m.reply(`❌ Error al procesar: ${e.message}`)
 }
 }
-break;
+break
 //descargar
 
 /*
