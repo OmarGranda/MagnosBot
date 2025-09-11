@@ -564,120 +564,114 @@ break
 }
 break
 
-//descargar
 case 'play': {
-  import fetch from 'node-fetch'
-  import { sanitizeFileName } from './lib/func.js'
+const fetch = require('node-fetch')
+const { ytmp3, ytmp4 } = require("@hiudyy/ytdl")
+const yts = require('yt-search')
+const { sanitizeFileName } = require('./lib/func')
 
-  if (!text) {
-    return m.reply(
-      '*Ingrese título y tipo de media*\nEjemplo: `!play audio Those Eyes`\n\nTipos: `audio`, `video`, `mp3doc`, `mp4doc`'
-    )
-  }
+if (!text) return m.reply(
+`*Ingrese título y tipo de media*\nEjemplo: \`${usedPrefix}play audio Those Eyes\`\n\nTipos: audio | video | mp3doc | mp4doc`
+)
 
-  const [selection, ...queryParts] = text.split(' ')
-  const query = queryParts.join(' ')
-  const validSelections = ['audio', 'video', 'mp3doc', 'mp4doc']
+const [selection, ...queryParts] = text.split(' ')
+const query = queryParts.join(' ')
+const validSelections = ['audio', 'video', 'mp3doc', 'mp4doc']
 
-  try {
-    if (!query) return m.reply('Falta el título del vídeo')
-    if (!validSelections.includes(selection.toLowerCase()))
-      return m.reply(`Tipo inválido. Usa: ${validSelections.join(', ')}`)
+try {
+if (!query) return m.reply('⚠️ Falta el título del vídeo')
+if (!validSelections.includes(selection.toLowerCase())) 
+   return m.reply(`❌ Tipo inválido. Usa: ${validSelections.join(', ')}`)
 
-    m.reply(mess.wait)
+await m.react('⌛')
+const search = await yts(query)
+if (!search.videos.length) return m.reply('❌ No se encontraron resultados')
+const video = search.videos[0]
+const url = video.url
 
-    const searchRes = await fetch(
-      `https://delirius-apiofc.vercel.app/search/ytsearch?q=${encodeURIComponent(query)}`
-    )
-    const searchJson = await searchRes.json()
-    if (!searchJson.status || !searchJson.data || !searchJson.data.length) {
-      return m.reply(`No se encontraron resultados para: *${query}*`)
-    }
-
-    const video = searchJson.data[0]
-    const url = video.url
-
-    const dlRes = await fetch(
-      `https://api.starlights.uk/api/downloader/youtube?url=${encodeURIComponent(url)}`
-    )
-    const dlJson = await dlRes.json()
-    if (!dlJson.status) throw new Error("No se pudo obtener enlaces de descarga")
-
-    const { mp3, mp4 } = dlJson
-
-    const ytMsg = `*● Titulo:* ${video.title}
-👀 Vistas: ${video.views || "?"}
-⏳ Duración: ${video.duration}
+const ytMsg = `🎶 *${video.title}*
+👁️ Vistas: ${video.views}
+⏳ Duración: ${video.timestamp}
 🌐 Enlace: ${url}`
-    await client.sendMessage(
-      m.chat,
-      { image: { url: video.thumbnail }, caption: ytMsg },
-      { quoted: m }
-    )
 
-    switch (selection.toLowerCase()) {
-      case 'audio': {
-        if (!mp3?.dl_url) throw new Error("No se pudo obtener el audio")
-        await client.sendMessage(
-          m.chat,
-          {
-            audio: { url: mp3.dl_url },
-            mimetype: 'audio/mpeg',
-            fileName: `${sanitizeFileName(video.title)}.mp3`
-          },
-          { quoted: m }
-        )
-        break
-      }
+await conn.sendMessage(m.chat, {
+   image: { url: video.thumbnail },
+   caption: ytMsg
+}, { quoted: m })
 
-      case 'video': {
-        if (!mp4?.dl_url) throw new Error("No se pudo obtener el video")
-        await client.sendMessage(
-          m.chat,
-          {
-            video: { url: mp4.dl_url },
-            mimetype: 'video/mp4',
-            caption: video.title
-          },
-          { quoted: m }
-        )
-        break
-      }
 
-      case 'mp3doc': {
-        if (!mp3?.dl_url) throw new Error("No se pudo obtener el audio")
-        await client.sendMessage(
-          m.chat,
-          {
-            document: { url: mp3.dl_url },
-            fileName: `${sanitizeFileName(video.title)}.mp3`,
-            mimetype: 'audio/mpeg'
-          },
-          { quoted: m }
-        )
-        break
-      }
-
-      case 'mp4doc': {
-        if (!mp4?.dl_url) throw new Error("No se pudo obtener el video")
-        await client.sendMessage(
-          m.chat,
-          {
-            document: { url: mp4.dl_url },
-            fileName: `${sanitizeFileName(video.title)}.mp4`,
-            mimetype: 'video/mp4'
-          },
-          { quoted: m }
-        )
-        break
-      }
-    }
-  } catch (e) {
-    console.error('Error en comando play:', e)
-    m.reply(`Error: ${e.message}`)
-  }
+switch (selection.toLowerCase()) {
+case 'audio': {
+   try {
+      let audio = await ytmp3(url)
+      await conn.sendMessage(m.chat, {
+         audio: { url: audio.url },
+         mimetype: 'audio/mpeg',
+         fileName: `${sanitizeFileName(video.title)}.mp3`
+      }, { quoted: m })
+   } catch (e) {
+      m.reply('⚠️ Error en ytmp3, intentando con API alternativa...')
+      const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${url}`)
+      let { data } = await res.json()
+      await conn.sendMessage(m.chat, {
+         audio: { url: data.dl },
+         mimetype: 'audio/mpeg'
+      }, { quoted: m })
+   }
+   break
 }
-break
+
+case 'video': {
+   try {
+      let vid = await ytmp4(url)
+      await conn.sendMessage(m.chat, {
+         video: { url: vid.url },
+         mimetype: 'video/mp4',
+         caption: video.title
+      }, { quoted: m })
+   } catch (e) {
+      m.reply('⚠️ Error en ytmp4, intentando con API alternativa...')
+      const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${url}`)
+      let { data } = await res.json()
+      await conn.sendMessage(m.chat, {
+         video: { url: data.dl },
+         mimetype: 'video/mp4',
+         caption: video.title
+      }, { quoted: m })
+   }
+   break
+}
+
+case 'mp3doc': {
+   let audio = await ytmp3(url)
+   await conn.sendMessage(m.chat, {
+      document: { url: audio.url },
+      fileName: `${sanitizeFileName(video.title)}.mp3`,
+      mimetype: 'audio/mpeg'
+   }, { quoted: m })
+   break
+}
+
+case 'mp4doc': {
+   let vid = await ytmp4(url)
+   await conn.sendMessage(m.chat, {
+      document: { url: vid.url },
+      fileName: `${sanitizeFileName(video.title)}.mp4`,
+      mimetype: 'video/mp4'
+   }, { quoted: m })
+   break
+}
+}
+
+await m.react('✅')
+} catch (e) {
+   console.error('Error en play:', e)
+   m.reply(`❌ Error al procesar: ${e.message}`)
+}
+}
+break;
+//descargar
+
 /*
 case 'play': {
 const fetch = require('node-fetch')
