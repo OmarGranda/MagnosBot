@@ -241,7 +241,7 @@ case 'calidad': {
    if (!/image\/(jpe?g|png)/i.test(mime)) return m.reply(`⚠️ El archivo debe ser una imagen (jpg o png)`)
 
    try {
-      m.reply(`\`𝙈𝙚𝙟𝙤𝙧𝙖𝙣𝙙𝙤 𝙡𝙖 𝙘𝙖𝙡𝙞𝙙𝙖𝙙 𝙙𝙚 𝙨𝙪 𝙞𝙢𝙖𝙜𝙚𝙣 𝙥𝙤𝙧 𝙛𝙖𝙫𝙤𝙧 𝙚𝙨𝙥𝙚𝙧𝙚...\``)
+      m.reply(`𝙈𝙚𝙟𝙤𝙧𝙖𝙣𝙙𝙤 𝙡𝙖 𝙘𝙖𝙡𝙞𝙙𝙖𝙙 𝙙𝙚 𝙨𝙪 𝙞𝙢𝙖𝙜𝙚𝙣 𝙥𝙤𝙧 𝙛𝙖𝙫𝙤𝙧 𝙚𝙨𝙥𝙚𝙧𝙚...`)
       const media = await m.quoted.download()
 
       const FormData = require('form-data')
@@ -262,18 +262,18 @@ case 'calidad': {
       })
 
       const json = await res.json()
-      if (!json?.result_url) throw new Error('⚠️ No se pudo obtener la imagen mejorada.')
+      if (!json?.result_url) throw new Error('⚠️ 𝙉𝙤 𝙨𝙚 𝙥𝙪𝙙𝙤 𝙤𝙗𝙩𝙚𝙣𝙚𝙧 𝙡𝙖 𝙞𝙢𝙖𝙜𝙚𝙣 𝙢𝙚𝙟𝙤𝙧𝙖𝙙𝙖.')
 
       const resultBuffer = await (await fetch(json.result_url)).buffer()
 
       await client.sendMessage(m.chat, {
          image: resultBuffer,
-         caption: `☆ *Aquí tienes tu imagen en HD*`
+         caption: `✅ 𝘼𝙦𝙪𝙞 𝙩𝙞𝙚𝙣𝙚𝙨 𝙩𝙪 𝙞𝙢𝙖𝙜𝙚𝙣 𝙢𝙚𝙟𝙤𝙧𝙖𝙙𝙖 𝙚𝙣 𝙃𝘿 `
       }, { quoted: m })
 
    } catch (e) {
       console.error(e)
-      m.reply(`❌ Error al mejorar imagen:\n${e.message || e}`)
+      m.reply(`❌ 𝙀𝙧𝙧𝙤𝙧 𝙖𝙡 𝙢𝙚𝙟𝙤𝙧𝙖𝙧 𝙞𝙢𝙖𝙜𝙚𝙣:\n${e.message || e}`)
    }
 }
 break
