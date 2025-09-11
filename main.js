@@ -294,7 +294,7 @@ case "deepseek": case "ia3": {
 if (!text) return m.reply(`Ingrese lo que *desea* preguntar a *DeepSeek-AI*\n\n\`Ejemplo\`: ${prefix + command} ¿Qué es la teología?`)
 client.sendPresenceUpdate('composing', from)
 let { data } = await axios.get(`https://archive-ui.tanakadomp.biz.id/ai/deepseek?text=${text}`)
-await m.reply(data?.result || '❌ *No se obtuvo una respuesta válida de DeepSeek AI*.')
+await m.reply(data?.result || '❌ No se obtuvo una respuesta válida de DeepSeek AI.')
 }
 break
 
@@ -497,7 +497,7 @@ try {
 let res = await fetch('https://api.github.com/repos/OmarGranda/MagnosBot')
 let json = await res.json()
 let git = `*乂  Bot  -  Script*\n\n· *Nombre*: ${json.name}\n· *Visitantes*: ${json.watchers_count}\n· *Peso*: ${(json.size / 1024).toFixed(2)} MB\n· *Actualizado*: ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n· *Url* : ${json.html_url}\n\n	   ${json.forks_count} Forks · ${json.stargazers_count} Stars · ${json.open_issues_count} Issues`
-await client.sendMessage(m.chat, {text: git, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MAGMOSBOT | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot-MD`, body: '', thumbnailUrl: 'https://i.postimg.cc/F1tDYDM9/IMG-20250909-WA0060.jpg', sourceUrl: 'https://github.com/OmarGranda', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
+await client.sendMessage(m.chat, {text: git, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MAGMOSBOT | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot`, body: '', thumbnailUrl: 'https://i.postimg.cc/F1tDYDM9/IMG-20250909-WA0060.jpg', sourceUrl: 'https://github.com/OmarGranda', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 } catch (e) {
 m.reply(e)
 }
@@ -509,7 +509,7 @@ const cp = require('child_process')
 const {promisify} = require('util') 
 const exec = promisify(cp.exec).bind(cp)
 let o
-m.reply('> *Cargando...* 🚀🚀🚀')
+m.reply('> Cargando... 🚀🚀🚀')
 try {
 o = await exec('python3 speed.py --secure --share')
 const {stdout, stderr} = o;
@@ -1258,15 +1258,15 @@ case 'addowner': {
    }
 
    if (global.owner.find(owner => owner[0] === number)) 
-       return m.reply('✅ _*Ese número ya es owner.*_')
+       return m.reply('✅ Ese número ya es owner.')
 
    global.owner.push([number])
-   m.reply(`👑 _*Ahora @${number} es un *OWNER* del bot*_.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
+   m.reply(`👑 Ahora @${number} es un *OWNER* del bot.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
 }
 break
 
 case 'delowner': {
-   if (!isCreator) return m.reply('❌ _*Este comando solo puede usarlo el creador principal.*_')
+   if (!isCreator) return m.reply('❌ Este comando solo puede usarlo el creador principal.')
 
    let number
    if (m.quoted) {
@@ -1276,12 +1276,12 @@ case 'delowner': {
    } else if (text) {
        number = text.replace(/[^0-9]/g, '')
    } else {
-       return m.reply(`📌 _*Responde al mensaje de la persona o menciónala*. _\nEjemplo:\n/delowner @usuario`)
+       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n/delowner @usuario`)
    }
 
    const index = global.owner.findIndex(owner => owner[0] === number)
    if (index === -1) 
-       return m.reply('⚠️ _*Ese número no está como owner.*_')
+       return m.reply('⚠️ Ese número no está como owner.')
 
    global.owner.splice(index, 1)
    m.reply(`🗑️ Se eliminó a @${number} de *OWNER*.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
