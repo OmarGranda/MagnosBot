@@ -119,39 +119,14 @@ printQRInTerminal: opcion == '1' ? true : false,
 qrTimeout: 180000,
 browser: ['Ubuntu', 'Edge', '20.0.04'],
 auth: state
-})/*
+})
 if (opcion === '2') {
 if (usePairingCode && !client.authState.creds.registered) {
 const phoneNumber = await question(chalk.blueBright('Ingrese su número de WhatsApp todo junto\n') + chalk.greenBright('Ejemplo: 521729999\n'))
 console.log(phoneNumber)
 const code = await client.requestPairingCode(phoneNumber.replace(/\D/g, '').trim())
 console.log(chalk.bold.cyanBright(`Codigo de emparejamiento:`), chalk.bold.white(`${code}`))
-}}*/
-
-if (opcion === '2') {
-  if (usePairingCode && !client.authState.creds.registered) {
-    let phoneNumber = ''
-    while (true) {
-      phoneNumber = await question(
-        chalk.blueBright('🌍 Ingrese su número de WhatsApp con código de país (todo junto, sin +)\n') +
-        chalk.greenBright('Ejemplos: -> 5215512345678')
-      )
-
-      phoneNumber = phoneNumber.replace(/\D/g, '').trim()
-
-      if (phoneNumber.length >= 10 && phoneNumber.length <= 15) break
-      console.log(chalk.redBright('⚠️ Número inválido, intente de nuevo.\n'))
-    }
-
-    console.log(chalk.yellowBright(`📱 Número ingresado: +${phoneNumber}`))
-
-    const code = await client.requestPairingCode(phoneNumber)
-    console.log(
-      chalk.bold.cyanBright(`🔑 Código de emparejamiento:`),
-      chalk.bold.white(`${code}`)
-    )
-  }
-}
+}}
 
 client.decodeJid = (jid) => {
 if (!jid) return jid
