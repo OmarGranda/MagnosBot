@@ -1386,7 +1386,7 @@ return m.reply('El video no puede ser muy largo')
 }
 media = await quoted.download()
 
-let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: sticker2, author: sticker3, contextInfo: {forwardingScore: 9999999, isForwarded: true, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: 'https://github.com/OmarGranda', thumbnailUrl: 'https://qu.ax/lFTW.jpeg'}}})
+let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: sticker2, author: sticker3, contextInfo: {forwardingScore: 9999999, isForwarded: true, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: 'https://github.com/AzamiJs', thumbnailUrl: 'https://qu.ax/lFTW.jpeg'}}})
 await new Promise((resolve) => setTimeout(resolve, 2000))
 await fs.unlinkSync(encmedia)  
 } else {
