@@ -383,7 +383,6 @@ break
 case 'menu':
 case 'help':
 case 'allmenu': {
-   const fetch = require("node-fetch")
 
    let imagenes = [
       'https://d.uguu.se/UblRCExD.jpg',
