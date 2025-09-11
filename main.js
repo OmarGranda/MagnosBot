@@ -1410,6 +1410,51 @@ return 'Buenas madrugadas'
 }
 }
 
+
+function formatSize(bytes) {
+  if (isNaN(bytes)) return "Unknown"
+  const units = ["B", "KB", "MB", "GB", "TB"]
+  let i = 0
+  while (bytes >= 1024 && i < units.length - 1) {
+    bytes /= 1024
+    i++
+  }
+  return `${bytes.toFixed(2)} ${units[i]}`
+}
+
+async function GDriveDl(url) {
+  if (!url || !/drive\.google/i.test(url)) throw "❌ URL inválida de Google Drive"
+
+  let id = (url.match(/\/?id=([^&]+)/i) || url.match(/\/d\/([^/]+)/))[1]
+  if (!id) throw "❌ No se pudo encontrar el ID del archivo"
+
+  let downloadUrl = `https://drive.google.com/uc?export=download&id=${id}`
+
+  let res = await fetch(downloadUrl, { method: "GET" })
+  let text = await res.text()
+
+  let confirmMatch = text.match(/confirm=([0-9A-Za-z_]+)&amp;id=/)
+  if (confirmMatch) {
+    const confirmToken = confirmMatch[1]
+    downloadUrl = `https://drive.google.com/uc?export=download&confirm=${confirmToken}&id=${id}`
+    res = await fetch(downloadUrl, { method: "GET" })
+  }
+
+  const fileName = (res.headers.get("content-disposition") || "").match(/filename="(.+)"/)?.[1] || "Desconocido"
+  const sizeBytes = res.headers.get("content-length") || 0
+  const mimetype = res.headers.get("content-type") || "application/octet-stream"
+
+  if (res.status !== 200) throw `❌ Error: ${res.status} ${res.statusText}`
+
+  return {
+    downloadUrl,
+    fileName,
+    fileSize: formatSize(sizeBytes),
+    mimetype
+  }
+}
+
+/*
 async function GDriveDl(url) {
 let id
 if (!(url && url.match(/drive\.google/i))) throw 'Invalid URL'
@@ -1431,7 +1476,7 @@ if (!downloadUrl) throw 'Link Download Limit!'
 const data = await fetch(downloadUrl)
 if (data.status !== 200) throw data.statusText
 return {downloadUrl, fileName, fileSize: formatSize(sizeBytes), mimetype: data.headers.get('content-type')}
-}
+}*/
 		
 async function remini(imageData, operation) {
 return new Promise(async (resolve, reject) => {
