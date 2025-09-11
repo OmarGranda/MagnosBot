@@ -1196,20 +1196,20 @@ case 'addowner': {
 
    let number
    if (m.quoted) {
-       number = m.quoted.sender.split('@')[0]
+       number = m.quoted.sender
    } else if (m.mentionedJid && m.mentionedJid[0]) {
-       number = m.mentionedJid[0].split('@')[0]
+       number = m.mentionedJid[0]
    } else if (text) {
-       number = text.replace(/[^0-9]/g, '')
+       number = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
    } else {
-       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n.addowner @usuario`)
+       return m.reply(` Responde al mensaje de la persona o menciónala.\nEjemplo:\n.addowner @usuario`)
    }
 
    if (global.owner.find(owner => owner[0] === number)) 
        return m.reply('✅ Ese número ya es owner.')
 
    global.owner.push([number])
-   m.reply(`👑 Ahora @${number} es un *OWNER* del bot.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
+   m.reply(`👑 Ahora @${number.split('@')[0]} es un *OWNER* del bot.`, m.chat, { mentions: [number] })
 }
 break
 
@@ -1218,11 +1218,11 @@ case 'delowner': {
 
    let number
    if (m.quoted) {
-       number = m.quoted.sender.split('@')[0]
+       number = m.quoted.sender
    } else if (m.mentionedJid && m.mentionedJid[0]) {
-       number = m.mentionedJid[0].split('@')[0]
+       number = m.mentionedJid[0]
    } else if (text) {
-       number = text.replace(/[^0-9]/g, '')
+       number = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
    } else {
        return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n/delowner @usuario`)
    }
@@ -1232,7 +1232,7 @@ case 'delowner': {
        return m.reply('⚠️ Ese número no está como owner.')
 
    global.owner.splice(index, 1)
-   m.reply(`🗑️ Se eliminó a @${number} de *OWNER*.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
+   m.reply(`🗑️ Se eliminó a @${number.split('@')[0]} de *OWNER*.`, m.chat, { mentions: [number] })
 }
 break
 
