@@ -1,4 +1,4 @@
-//Código elaborado por (https://github.com/AzamiJs)
+//Código elaborado por (https://github.com/OmarGranda)
 
 const fs = require('fs')
 const axios = require('axios')
@@ -241,7 +241,7 @@ case 'calidad': {
    if (!/image\/(jpe?g|png)/i.test(mime)) return m.reply(`⚠️ El archivo debe ser una imagen (jpg o png)`)
 
    try {
-      m.reply(`\`Mejorando la calidad de tu imagen...\``)
+      m.reply(`\`𝙈𝙚𝙟𝙤𝙧𝙖𝙣𝙙𝙤 𝙡𝙖 𝙘𝙖𝙡𝙞𝙙𝙖𝙙 𝙙𝙚 𝙨𝙪 𝙞𝙢𝙖𝙜𝙚𝙣 𝙥𝙤𝙧 𝙛𝙖𝙫𝙤𝙧 𝙚𝙨𝙥𝙚𝙧𝙚...\``)
       const media = await m.quoted.download()
 
       const FormData = require('form-data')
