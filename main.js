@@ -1192,7 +1192,7 @@ m.reply('Ha ocurrido un error al obtener el código: ' + e)
 break
 
 // ====== OWNERS ======
-global.owner = global.owner || [global.owner]
+global.owner = global.owner || ['51919199620']
 
 case 'addowner': {
     if (!global.owner.includes(m.sender.split('@')[0])) return m.reply('❌ Este comando solo puede usarlo el creador principal.')
