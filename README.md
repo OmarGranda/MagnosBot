@@ -1,6 +1,6 @@
 <p align="center"> 
   <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
-<img src="https://i.postimg.cc/3wh0Tf21/IMG-20250909-WA0062.jpg" width="500" height="500" />
+<img src="https://github.com/user-attachments/assets/f8e2705d-452a-4dad-a56b-4933b1c9d44d" width="500" height="500" />
 </p>
 <div align="center">
   
@@ -55,7 +55,15 @@ npm start
 ### 🌟 CREADOR Y DESARROLLADOR
 [![Omar Granda](https://i.postimg.cc/y8mdVMpN/IMG-20250907-083002.jpg)](https://github.com/OmarGranda)
 
+
 > Copyright (c) 2025 **[OmarGranda](https://github.com/OmarGranda/MagnosBot/blob/master/LICENSE)**.
 
 ### COLABORADOR
+
+Yuji-XDev 𓆩⚡ ✞ 𝑺𝒉𝒂𝒅𝒐𝒘 𝒐𝒇𝒇𝒊𝒄𝒊𝒂𝒍 🍧𓆪
+
 [![Yuji-XDev 𓆩⚡ ✞ 𝑺𝒉𝒂𝒅𝒐𝒘 𝒐𝒇𝒇𝒊𝒄𝒊𝒂𝒍 🍧𓆪](https://avatars.githubusercontent.com/u/196103894?v=4)](https://github.com/Yuji-XDev)
+
+carlos13ra
+
+[![carlos13ra](https://avatars.githubusercontent.com/u/225517243?v=4)](https://github.com/carlos13ra)
