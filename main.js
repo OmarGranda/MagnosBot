@@ -1191,44 +1191,48 @@ m.reply('Ha ocurrido un error al obtener el código: ' + e)
 }
 break
 
-
 case 'addowner': {
    if (!isCreator) return m.reply(mess.owner)
 
    let number
    if (m.quoted) {
-       number = m.quoted.sender.split('@')[0]
+       number = m.quoted.sender
    } else if (m.mentionedJid && m.mentionedJid[0]) {
-       number = m.mentionedJid[0].split('@')[0]
+       number = m.mentionedJid[0]
+   } else if (text) {
+       number = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
    } else {
-       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n.addowner @usuario`)
+       return m.reply(` Responde al mensaje de la persona o menciónala.\nEjemplo:\n.addowner @usuario`)
    }
 
-   if (global.owner.includes(number)) 
+   if (global.owner.find(owner => owner[0] === number)) 
        return m.reply('✅ Ese número ya es owner.')
 
-   global.owner.push(number)
-   m.reply(`👑 Ahora @${number} es un *OWNER* del bot.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
+   global.owner.push([number])
+   m.reply(`👑 Ahora @${number.split('@')[0]} es un *OWNER* del bot.`, m.chat, { mentions: [number] })
 }
 break
 
 case 'delowner': {
-    if (!isCreator) return m.reply('❌ Este comando solo puede usarlo el creador principal.')
+   if (!isCreator) return m.reply('❌ Este comando solo puede usarlo el creador principal.')
 
-    let number
-    if (m.quoted) {
-        number = m.quoted.sender.split('@')[0]
-    } else if (m.mentionedJid && m.mentionedJid[0]) {
-        number = m.mentionedJid[0].split('@')[0]
-    } else {
-        return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n/delowner @usuario`)
-    }
+   let number
+   if (m.quoted) {
+       number = m.quoted.sender
+   } else if (m.mentionedJid && m.mentionedJid[0]) {
+       number = m.mentionedJid[0]
+   } else if (text) {
+       number = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+   } else {
+       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n/delowner @usuario`)
+   }
 
-    if (!global.owner.includes(number)) 
-        return m.reply('⚠️ Ese número no está como owner.')
+   const index = global.owner.findIndex(owner => owner[0] === number)
+   if (index === -1) 
+       return m.reply('⚠️ Ese número no está como owner.')
 
-    global.owner = global.owner.filter(n => n !== number)
-    m.reply(`🗑️ Se eliminó a @${number} de *OWNER*.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
+   global.owner.splice(index, 1)
+   m.reply(`🗑️ Se eliminó a @${number.split('@')[0]} de *OWNER*.`, m.chat, { mentions: [number] })
 }
 break
 
