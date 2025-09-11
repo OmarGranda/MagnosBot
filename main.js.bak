@@ -564,9 +564,9 @@ break
 }
 break
 
-
 case 'play': {
 const fetch = require('node-fetch')
+const { ytmp3, ytmp4 } = require("@hiudyy/ytdl")
 const yts = require('yt-search')
 const { sanitizeFileName } = require('./lib/func')
 
@@ -599,54 +599,64 @@ await client.sendMessage(m.chat, {
    caption: ytMsg
 }, { quoted: m })
 
+
 switch (selection.toLowerCase()) {
 case 'audio': {
-   const res = await fetch(`https://api.vreden.my.id/api/ytplaymp3?query=${encodeURIComponent(query)}`)
-   const json = await res.json()
-   if (!json.result || !json.result.download) throw new Error("No se pudo obtener el audio")
-
-   await client.sendMessage(m.chat, {
-      audio: { url: json.result.download.url },
-      mimetype: 'audio/mpeg',
-      fileName: sanitizeFileName(json.result.download.filename)
-   }, { quoted: m })
+   try {
+      let audio = await ytmp3(url)
+      await client.sendMessage(m.chat, {
+         audio: { url: audio.url },
+         mimetype: 'audio/mpeg',
+         fileName: `${sanitizeFileName(video.title)}.mp3`
+      }, { quoted: m })
+   } catch (e) {
+      m.reply('⚠️ Error en ytmp3, intentando con API alternativa...')
+      const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${url}`)
+      let { data } = await res.json()
+      await client.sendMessage(m.chat, {
+         audio: { url: data.dl },
+         mimetype: 'audio/mpeg'
+      }, { quoted: m })
+   }
    break
 }
 
 case 'video': {
-   const res = await fetch(`https://api.vreden.my.id/api/ytmp4?url=${url}`)
-   const json = await res.json()
-   if (!json.result || !json.result.download) throw new Error("No se pudo obtener el video")
-
-   await client.sendMessage(m.chat, {
-      video: { url: json.result.download.url },
-      mimetype: 'video/mp4',
-      caption: json.result.metadata.title
-   }, { quoted: m })
+   try {
+      let vid = await ytmp4(url)
+      await client.sendMessage(m.chat, {
+         video: { url: vid.url },
+         mimetype: 'video/mp4',
+         caption: video.title
+      }, { quoted: m })
+   } catch (e) {
+      m.reply('⚠️ Error en ytmp4, intentando con API alternativa...')
+      const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${url}`)
+      let { data } = await res.json()
+      await client.sendMessage(m.chat, {
+         video: { url: data.dl },
+         mimetype: 'video/mp4',
+         caption: video.title
+      }, { quoted: m })
+   }
    break
 }
 
 case 'mp3doc': {
-   const res = await fetch(`https://api.vreden.my.id/api/ytplaymp3?query=${encodeURIComponent(query)}`)
-   const json = await res.json()
-   if (!json.result || !json.result.download) throw new Error("No se pudo obtener el audio")
-
+   let audio = await ytmp3(url)
    await client.sendMessage(m.chat, {
-      document: { url: json.result.download.url },
-      fileName: sanitizeFileName(json.result.download.filename),
+      document: { url: audio.url },
+      fileName: `${sanitizeFileName(video.title)}.mp3`,
       mimetype: 'audio/mpeg'
    }, { quoted: m })
    break
 }
 
 case 'mp4doc': {
-   const res = await fetch(`https://api.vreden.my.id/api/ytmp4?url=${url}`)
-   const json = await res.json()
-   if (!json.result || !json.result.download) throw new Error("No se pudo obtener el video")
-
+   let vid = await ytmp4(url)
    await client.sendMessage(m.chat, {
-      document: { url: json.result.download.url },
-      fileName: sanitizeFileName(json.result.download.filename),
+      document: { url: vid.url },
+      fileName: `${sanitizeFileName(video.title)}.mp4`,
       mimetype: 'video/mp4'
    }, { quoted: m })
    break
