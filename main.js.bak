@@ -1193,28 +1193,26 @@ break
 
 
 case 'addowner': {
-   if (!isCreator) {
-return m.reply(mess.owner)
-}
+   if (!isCreator) return m.reply(mess.owner)
 
-    let number
-    if (m.quoted) {
-        number = m.quoted.sender.split('@')[0]
-    } else if (m.mentionedJid && m.mentionedJid[0]) {
-        number = m.mentionedJid[0].split('@')[0]
-    } else {
-        return m.reply(`Responde al mensaje de la persona o menciónala.\nEjemplo:\n${usedPrefix + command} @usuario`)
-    }
+   let number
+   if (m.quoted) {
+       number = m.quoted.sender.split('@')[0]
+   } else if (m.mentionedJid && m.mentionedJid[0]) {
+       number = m.mentionedJid[0].split('@')[0]
+   } else {
+       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n${usedPrefix + command} @usuario`)
 
-    if (global.owner.includes(number)) return m.reply('✅ Ese número ya es owner.')
+   if (global.owner.includes(number)) 
+       return m.reply('✅ Ese número ya es owner.')
 
-    global.owner.push(number)
-    m.reply(`👑 Ahora @${number} es un *OWNER* del bot.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
+   global.owner.push(number)
+   m.reply(`👑 Ahora @${number} es un *OWNER* del bot.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
 }
 break
 
 case 'delowner': {
-    if (!global.owner.includes(m.sender.split('@')[0])) return m.reply('❌ Este comando solo puede usarlo el creador principal.')
+    if (!isCreator) return m.reply('❌ Este comando solo puede usarlo el creador principal.')
 
     let number
     if (m.quoted) {
@@ -1225,7 +1223,8 @@ case 'delowner': {
         return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n${usedPrefix + command} @usuario`)
     }
 
-    if (!global.owner.includes(number)) return m.reply('⚠️ Ese número no está como owner.')
+    if (!global.owner.includes(number)) 
+        return m.reply('⚠️ Ese número no está como owner.')
 
     global.owner = global.owner.filter(n => n !== number)
     m.reply(`🗑️ Se eliminó a @${number} de *OWNER*.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })

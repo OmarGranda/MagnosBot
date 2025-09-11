@@ -1202,6 +1202,7 @@ case 'addowner': {
        number = m.mentionedJid[0].split('@')[0]
    } else {
        return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n${usedPrefix + command} @usuario`)
+   }
 
    if (global.owner.includes(number)) 
        return m.reply('✅ Ese número ya es owner.')
