@@ -11,7 +11,7 @@ global.owner = [
 //['51965763942']
 ]
 
-global.wm = '© MagnosBot - MD'
+global.wm = '© MagnosBot'
 global.prefa = '.'
 global.session = 'session'
 global.vs = '2.0.0'
@@ -31,7 +31,7 @@ wait: '`Cargando...`'
 global.link = 'https://whatsapp.com/channel/0029Vb6wMPa8kyyTpjBG9C2H'
 global.fotos = 'https://i.postimg.cc/NGrhjVTv/IMG-20250909-WA0062.jpg'
 global.Title = wm
-global.Body = 'Zam'
+global.Body = 'Omar Granda'
 
 // IDs de canales
 global.ch = {
