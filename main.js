@@ -383,18 +383,18 @@ break
 case 'menu':
 case 'help':
 case 'allmenu': {
+   try {
+      let imagenes = [
+         'https://d.uguu.se/UblRCExD.jpg',
+         'https://files.catbox.moe/ai470b.jpg',
+         'https://files.catbox.moe/wii81m.jpg',
+         'https://files.catbox.moe/9e3x1h.jpg',
+      ];
 
-   let imagenes = [
-      'https://d.uguu.se/UblRCExD.jpg',
-      'https://files.catbox.moe/ai470b.jpg',
-      'https://files.catbox.moe/wii81m.jpg'
-      'https://files.catbox.moe/9e3x1h.jpg',
-   ]
+      let img = imagenes[Math.floor(Math.random() * imagenes.length)];
+      let thumb = await (await fetch(img)).buffer();
 
-   let img = imagenes[Math.floor(Math.random() * imagenes.length)]
-   let thumb = await (await fetch(img)).buffer()
-
-   const texto = `Menu - MAGNOS - BOT
+      const texto = `Menu - MAGNOS - BOT
 
 ┌  ◦ Información
 │  ◦ ${prefix}sc
@@ -454,29 +454,34 @@ case 'allmenu': {
 │  ◦ ${prefix}join
 │  ◦ ${prefix}getcase 
 │  ◦ ${prefix}addcase 
-└  ◦ Propietario`
+└  ◦ Propietario`;
 
-   await client.sendMessage(m.chat, {
-      text: texto,
-      contextInfo: {
-         forwardingScore: 999,
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-            newsletterName: 'MagnosBot | CHANNEL',
-            newsletterJid: "120363422169517881@newsletter",
-         },
-         externalAdReply: {
-            title: `© MagnosBot-MD`,
-            body: 'Tu asistente confiable 🤖',
-            thumbnail: thumb,
-            sourceUrl: 'https://github.com/OmarGranda',
-            mediaType: 1,
-            renderLargerThumbnail: true
+      await client.sendMessage(m.chat, {
+         text: texto,
+         contextInfo: {
+            forwardingScore: 999,
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+               newsletterName: 'MagnosBot | CHANNEL',
+               newsletterJid: "120363422169517881@newsletter",
+            },
+            externalAdReply: {
+               title: `© MagnosBot-MD`,
+               body: 'Tu asistente confiable 🤖',
+               thumbnail: thumb,
+               sourceUrl: 'https://github.com/OmarGranda',
+               mediaType: 1,
+               renderLargerThumbnail: true
+            }
          }
-      }
-   }, { quoted: fkontak })
+      }, { quoted: fkontak });
+
+   } catch (err) {
+      console.error(err);
+      m.reply('❌ Ocurrió un error al mostrar el menú.');
+   }
 }
-break
+break;
 
 case 'ping': {
 const girastamp = speed()
