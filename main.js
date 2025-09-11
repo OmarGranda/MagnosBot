@@ -566,6 +566,120 @@ break
 
 //descargar
 case 'play': {
+  import fetch from 'node-fetch'
+  import { sanitizeFileName } from './lib/func.js'
+
+  if (!text) {
+    return m.reply(
+      '*Ingrese título y tipo de media*\nEjemplo: `!play audio Those Eyes`\n\nTipos: `audio`, `video`, `mp3doc`, `mp4doc`'
+    )
+  }
+
+  const [selection, ...queryParts] = text.split(' ')
+  const query = queryParts.join(' ')
+  const validSelections = ['audio', 'video', 'mp3doc', 'mp4doc']
+
+  try {
+    if (!query) return m.reply('Falta el título del vídeo')
+    if (!validSelections.includes(selection.toLowerCase()))
+      return m.reply(`Tipo inválido. Usa: ${validSelections.join(', ')}`)
+
+    m.reply(mess.wait)
+
+    const searchRes = await fetch(
+      `https://delirius-apiofc.vercel.app/search/ytsearch?q=${encodeURIComponent(query)}`
+    )
+    const searchJson = await searchRes.json()
+    if (!searchJson.status || !searchJson.data || !searchJson.data.length) {
+      return m.reply(`No se encontraron resultados para: *${query}*`)
+    }
+
+    const video = searchJson.data[0]
+    const url = video.url
+
+    const dlRes = await fetch(
+      `https://api.starlights.uk/api/downloader/youtube?url=${encodeURIComponent(url)}`
+    )
+    const dlJson = await dlRes.json()
+    if (!dlJson.status) throw new Error("No se pudo obtener enlaces de descarga")
+
+    const { mp3, mp4 } = dlJson
+
+    const ytMsg = `*● Titulo:* ${video.title}
+👀 Vistas: ${video.views || "?"}
+⏳ Duración: ${video.duration}
+🌐 Enlace: ${url}`
+    await client.sendMessage(
+      m.chat,
+      { image: { url: video.thumbnail }, caption: ytMsg },
+      { quoted: m }
+    )
+
+    switch (selection.toLowerCase()) {
+      case 'audio': {
+        if (!mp3?.dl_url) throw new Error("No se pudo obtener el audio")
+        await client.sendMessage(
+          m.chat,
+          {
+            audio: { url: mp3.dl_url },
+            mimetype: 'audio/mpeg',
+            fileName: `${sanitizeFileName(video.title)}.mp3`
+          },
+          { quoted: m }
+        )
+        break
+      }
+
+      case 'video': {
+        if (!mp4?.dl_url) throw new Error("No se pudo obtener el video")
+        await client.sendMessage(
+          m.chat,
+          {
+            video: { url: mp4.dl_url },
+            mimetype: 'video/mp4',
+            caption: video.title
+          },
+          { quoted: m }
+        )
+        break
+      }
+
+      case 'mp3doc': {
+        if (!mp3?.dl_url) throw new Error("No se pudo obtener el audio")
+        await client.sendMessage(
+          m.chat,
+          {
+            document: { url: mp3.dl_url },
+            fileName: `${sanitizeFileName(video.title)}.mp3`,
+            mimetype: 'audio/mpeg'
+          },
+          { quoted: m }
+        )
+        break
+      }
+
+      case 'mp4doc': {
+        if (!mp4?.dl_url) throw new Error("No se pudo obtener el video")
+        await client.sendMessage(
+          m.chat,
+          {
+            document: { url: mp4.dl_url },
+            fileName: `${sanitizeFileName(video.title)}.mp4`,
+            mimetype: 'video/mp4'
+          },
+          { quoted: m }
+        )
+        break
+      }
+    }
+  } catch (e) {
+    console.error('Error en comando play:', e)
+    m.reply(`Error: ${e.message}`)
+  }
+}
+break
+/*
+case 'play': {
 const fetch = require('node-fetch')
 const { ytmp3, ytmp4 } = require("@hiudyy/ytdl");
 const yts = require('yt-search');
@@ -638,7 +752,7 @@ m.reply(`❌ Error al procesar: ${e.message?.split('\n')[0] || 'Revisa la consol
 }
 }
 break;
-
+*/
 case 'gitclone': {
 const fetch = require('node-fetch')
 
