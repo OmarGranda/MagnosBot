@@ -564,7 +564,7 @@ break
 }
 break
 
-
+// descargar
 case 'play': {
 const fetch = require('node-fetch')
 const yts = require('yt-search')
@@ -660,83 +660,7 @@ await m.react('✅')
 }
 }
 break
-//descargar
 
-/*
-case 'play': {
-const fetch = require('node-fetch')
-const { ytmp3, ytmp4 } = require("@hiudyy/ytdl");
-const yts = require('yt-search');
-const { sanitizeFileName } = require('./lib/func')
-if (!text) return m.reply('*Ingrese título y tipo de media*\nEjemplo: `!play audio Those Eyes`\n\nTipos: `audio`, `video`, `mp3doc`, `mp4doc`');
-
-const [selection, ...queryParts] = text.split(' ');
-const query = queryParts.join(' ');
-const validSelections = ['audio', 'video', 'mp3doc', 'mp4doc'];
-try {
-if (!query) return m.reply('Falta el título del vídeo');
-if (!validSelections.includes(selection.toLowerCase())) return m.reply(`Tipo inválido. Usa: ${validSelections.join(', ')}`);
-m.reply(mess.wait);
-const search = await yts(query);
-if (!search.videos.length) return m.reply('No se encontraron resultados');
-const video = search.videos[0];
-const url = video.url;
-        
-const sendVideoInfo = async () => {
-const ytMsg = `*● Titulo:* ${video.title}\n\n👀 Vistas: ${video.views}\n⏳ Duración: ${video.timestamp}\n🌐 Enlace: ${url}`;
-await client.sendMessage(m.chat, { image: { url: video.thumbnail }, caption: ytMsg }, { quoted: m });
-};
-await sendVideoInfo();
-
-switch(selection.toLowerCase()) {
-case 'audio': {
-try {
-const audio = await ytmp3(url);
-await client.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', fileName: `${sanitizeFileName(video.title)}.mp3`}, { quoted: m });
-} catch (e) {
-try {  
-const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${url}`);
-let { data } = await res.json();
-await client.sendMessage(m.chat, { audio: { url: data.dl }, mimetype: 'audio/mpeg' }, { quoted: m});
-} catch (e) {    
-m.reply(e)
-}}
-break;
-}
-            
-case 'video': {
-try {
-const videoData = await ytmp4(url);
-await client.sendMessage(m.chat, { 
-video: { url: videoData }, mimetype: 'video/mp4',caption: video.title}, { quoted: m });
-} catch (e) {
-try {  
-const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${url}`);
-let { data } = await res.json();
-await client.sendMessage(m.chat, { video: { url: data.dl }, fileName: `video.mp4`, mimetype: 'video/mp4', caption: video.title }, { quoted: m })
-} catch (e) {    
-m.reply(e)
-}}
-break;
-}
-            
-case 'mp3doc': {
-const audio = await ytmp3(url);
-await client.sendMessage(m.chat, {document: audio, fileName: `${sanitizeFileName(video.title)}.mp3`, mimetype: 'audio/mpeg'}, { quoted: m });
-break;
-}
-            
-case 'mp4doc': {
-const videoData = await ytmp4(url);
-await client.sendMessage(m.chat, {document: videoData, fileName: `${sanitizeFileName(video.title)}.mp4`, mimetype: 'video/mp4' }, { quoted: m });
-break;
-}}} catch (e) {
-console.error('Error:', e);
-m.reply(`❌ Error al procesar: ${e.message?.split('\n')[0] || 'Revisa la consola para detalles'}` + e);
-}
-}
-break;
-*/
 case 'gitclone': {
 const fetch = require('node-fetch')
 
