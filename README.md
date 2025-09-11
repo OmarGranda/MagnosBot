@@ -54,6 +54,8 @@ npm start
   
 ### 🌟 CREADOR Y DESARROLLADOR
 [![Omar Granda](https://i.postimg.cc/y8mdVMpN/IMG-20250907-083002.jpg)](https://github.com/OmarGranda)
-### COLABORADOR#
 
 > Copyright (c) 2025 **[OmarGranda](https://github.com/OmarGranda/MagnosBot/blob/master/LICENSE)**.
+
+### COLABORADOR
+[![Yuji-XDev 𓆩⚡ ✞ 𝑺𝒉𝒂𝒅𝒐𝒘 𝒐𝒇𝒇𝒊𝒄𝒊𝒂𝒍 🍧𓆪](https://avatars.githubusercontent.com/u/196103894?v=4)](https://github.com/Yuji-XDev)
