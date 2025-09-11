@@ -234,30 +234,47 @@ await m.reply('No se pudo realizar la traducción: ' + e)
 break
 
 case 'hd':
-case 'remini': 
+case 'remini':
 case 'calidad': {
-const FormData = require('form-data') 
-const Jimp =  require('jimp')
+   if (!m.quoted) return m.reply(`📌 Responde a una *imagen* con el comando *${prefix + command}*`)
+   let mime = m.quoted.mimetype || m.quoted.msg?.mimetype || ''
+   if (!/image\/(jpe?g|png)/i.test(mime)) return m.reply(`⚠️ El archivo debe ser una imagen (jpg o png)`)
 
-let q = m.quoted ? m.quoted : m
-let mime = (q.msg || q).mimetype || q.mediaType || ''
+   try {
+      m.reply(`⏳ Mejorando la calidad de tu imagen...`)
+      const media = await m.quoted.download()
 
-if (!mime) {
-return m.reply(`Responde a una *imagen* usando este mismo *comando* (${prefix + command})`)
-}
+      const FormData = require('form-data')
+      const fetch = (await import('node-fetch')).default
+      const form = new FormData()
+      form.append('image', media, { filename: 'image.jpg', contentType: mime })
+      form.append('scale', '2')
 
-if (!/image\/(jpe?g|png)/.test(mime)) {
-return m.reply(`Tipo de *media* no válida`)
-}
+      const res = await fetch('https://api2.pixelcut.app/image/upscale/v1', {
+         method: 'POST',
+         headers: {
+            ...form.getHeaders(),
+            'accept': 'application/json',
+            'x-client-version': 'web',
+            'x-locale': 'en'
+         },
+         body: form
+      })
 
-m.reply('`Cargando Imágen`') 
-try {
-let img = await q.download?.()
-let pr = await remini(img, 'enhance')
-client.sendMessage(m.chat, { image: pr, caption: `Calidad mejorada` }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100 })
-} catch (e) {
-return m.reply('Ha ocurrido un error al intentar mejorar la calidad de la imagen: ' + e) 
-}
+      const json = await res.json()
+      if (!json?.result_url) throw new Error('⚠️ No se pudo obtener la imagen mejorada.')
+
+      const resultBuffer = await (await fetch(json.result_url)).buffer()
+
+      await client.sendMessage(m.chat, {
+         image: resultBuffer,
+         caption: `☆ *Aquí tienes tu imagen en HD*`
+      }, { quoted: m })
+
+   } catch (e) {
+      console.error(e)
+      m.reply(`❌ Error al mejorar imagen:\n${e.message || e}`)
+   }
 }
 break
 
