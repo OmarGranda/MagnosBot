@@ -494,10 +494,10 @@ break
 
 case 'sc': case 'script': case 'git': {
 try {
-let res = await fetch('https://api.github.com/repos/OmarGranda/MagnosBot')
+let res = await fetch('https://api.github.com/repos/Azamijs/CuriosityBot-MD')
 let json = await res.json()
 let git = `*乂  Bot  -  Script*\n\n· *Nombre*: ${json.name}\n· *Visitantes*: ${json.watchers_count}\n· *Peso*: ${(json.size / 1024).toFixed(2)} MB\n· *Actualizado*: ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n· *Url* : ${json.html_url}\n\n	   ${json.forks_count} Forks · ${json.stargazers_count} Stars · ${json.open_issues_count} Issues`
-await client.sendMessage(m.chat, {text: git, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MAGMOSBOT | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot`, body: '', thumbnailUrl: 'https://i.postimg.cc/F1tDYDM9/IMG-20250909-WA0060.jpg', sourceUrl: 'https://github.com/OmarGranda', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
+await client.sendMessage(m.chat, {text: git, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MAGMOSBOT | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot`, body: '', thumbnailUrl: 'https://i.postimg.cc/F1tDYDM9/IMG-20250909-WA0060.jpg', sourceUrl: 'https://github.com/Azamijs', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 } catch (e) {
 m.reply(e)
 }
