@@ -1201,7 +1201,7 @@ case 'addowner': {
    } else if (m.mentionedJid && m.mentionedJid[0]) {
        number = m.mentionedJid[0].split('@')[0]
    } else {
-       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n${usedPrefix + command} @usuario`)
+       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n.addowner @usuario`)
    }
 
    if (global.owner.includes(number)) 
@@ -1221,7 +1221,7 @@ case 'delowner': {
     } else if (m.mentionedJid && m.mentionedJid[0]) {
         number = m.mentionedJid[0].split('@')[0]
     } else {
-        return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n${usedPrefix + command} @usuario`)
+        return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n/delowner @usuario`)
     }
 
     if (!global.owner.includes(number)) 
