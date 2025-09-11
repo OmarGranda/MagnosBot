@@ -294,7 +294,7 @@ case "deepseek": case "ia3": {
 if (!text) return m.reply(`Ingrese lo que *desea* preguntar a *DeepSeek-AI*\n\n\`Ejemplo\`: ${prefix + command} ¿Qué es la teología?`)
 client.sendPresenceUpdate('composing', from)
 let { data } = await axios.get(`https://archive-ui.tanakadomp.biz.id/ai/deepseek?text=${text}`)
-await m.reply(data?.result || '❌ No se obtuvo una respuesta válida de DeepSeek AI.')
+await m.reply(data?.result || '❌ *No se obtuvo una respuesta válida de DeepSeek AI*.')
 }
 break
 
@@ -394,7 +394,7 @@ case 'allmenu': {
       let img = imagenes[Math.floor(Math.random() * imagenes.length)];
       let thumb = await (await fetch(img)).buffer();
 
-      const texto = `Menu - MAGNOS - BOT
+      const texto = `Menu MAGNOSBOT
 
 ┌  ◦ Información
 │  ◦ ${prefix}sc
@@ -466,7 +466,7 @@ case 'allmenu': {
                newsletterJid: "120363422169517881@newsletter",
             },
             externalAdReply: {
-               title: `© MagnosBot-MD`,
+               title: `© MagnosBot`,
                body: 'Tu asistente confiable 🤖',
                thumbnail: thumb,
                sourceUrl: 'https://github.com/OmarGranda',
@@ -494,7 +494,7 @@ break
 
 case 'sc': case 'script': case 'git': {
 try {
-let res = await fetch('https://api.github.com/repos/AzamiJs/CuriosityBot-MD')
+let res = await fetch('https://api.github.com/repos/OmarGranda/MagnosBot')
 let json = await res.json()
 let git = `*乂  Bot  -  Script*\n\n· *Nombre*: ${json.name}\n· *Visitantes*: ${json.watchers_count}\n· *Peso*: ${(json.size / 1024).toFixed(2)} MB\n· *Actualizado*: ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n· *Url* : ${json.html_url}\n\n	   ${json.forks_count} Forks · ${json.stargazers_count} Stars · ${json.open_issues_count} Issues`
 await client.sendMessage(m.chat, {text: git, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MAGMOSBOT | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot-MD`, body: '', thumbnailUrl: 'https://i.postimg.cc/F1tDYDM9/IMG-20250909-WA0060.jpg', sourceUrl: 'https://github.com/OmarGranda', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
@@ -509,7 +509,7 @@ const cp = require('child_process')
 const {promisify} = require('util') 
 const exec = promisify(cp.exec).bind(cp)
 let o
-m.reply('> Cargando... 🚀🚀🚀')
+m.reply('> *Cargando...* 🚀🚀🚀')
 try {
 o = await exec('python3 speed.py --secure --share')
 const {stdout, stderr} = o;
@@ -1254,19 +1254,19 @@ case 'addowner': {
    } else if (text) {
        number = text.replace(/[^0-9]/g, '')
    } else {
-       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n.addowner @usuario`)
+       return m.reply(`📌 _*Responde al mensaje de la persona o menciónala.*_\nEjemplo:\n.addowner @usuario*`)
    }
 
    if (global.owner.find(owner => owner[0] === number)) 
-       return m.reply('✅ Ese número ya es owner.')
+       return m.reply('✅ _*Ese número ya es owner.*_')
 
    global.owner.push([number])
-   m.reply(`👑 Ahora @${number} es un *OWNER* del bot.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
+   m.reply(`👑 _*Ahora @${number} es un *OWNER* del bot*_.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
 }
 break
 
 case 'delowner': {
-   if (!isCreator) return m.reply('❌ Este comando solo puede usarlo el creador principal.')
+   if (!isCreator) return m.reply('❌ _*Este comando solo puede usarlo el creador principal.*_')
 
    let number
    if (m.quoted) {
@@ -1276,12 +1276,12 @@ case 'delowner': {
    } else if (text) {
        number = text.replace(/[^0-9]/g, '')
    } else {
-       return m.reply(`📌 Responde al mensaje de la persona o menciónala.\nEjemplo:\n/delowner @usuario`)
+       return m.reply(`📌 _*Responde al mensaje de la persona o menciónala*. _\nEjemplo:\n/delowner @usuario`)
    }
 
    const index = global.owner.findIndex(owner => owner[0] === number)
    if (index === -1) 
-       return m.reply('⚠️ Ese número no está como owner.')
+       return m.reply('⚠️ _*Ese número no está como owner.*_')
 
    global.owner.splice(index, 1)
    m.reply(`🗑️ Se eliminó a @${number} de *OWNER*.`, m.chat, { mentions: [number + '@s.whatsapp.net'] })
@@ -1373,8 +1373,8 @@ const locale = 'es-ES'
 const dias = d.toLocaleDateString(locale, {weekday: 'long'})
 const fecha = d.toLocaleDateString(locale, {day: '2-digit', month: '2-digit', year: 'numeric'})
 
-let sticker2 = `${wm}\nAutor:\nFecha:\nDía:\nCreador:`
-let sticker3 = `${vs}\n${pushname}\n${fecha}\n${dias}\nZam`
+let sticker2 = `${wm}\nCreador: OmarGranda`
+let sticker3 = `${vs}\n${pushname}\n${fecha}\n${dias}\`
 
 if (/image/.test(mime)) {
 media = await quoted.download()  
@@ -1386,7 +1386,7 @@ return m.reply('El video no puede ser muy largo')
 }
 media = await quoted.download()
 
-let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: sticker2, author: sticker3, contextInfo: {forwardingScore: 9999999, isForwarded: true, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: 'https://github.com/AzamiJs', thumbnailUrl: 'https://qu.ax/lFTW.jpeg'}}})
+let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: sticker2, author: sticker3, contextInfo: {forwardingScore: 9999999, isForwarded: true, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: 'https://github.com/OmarGranda', thumbnailUrl: 'https://qu.ax/lFTW.jpeg'}}})
 await new Promise((resolve) => setTimeout(resolve, 2000))
 await fs.unlinkSync(encmedia)  
 } else {
