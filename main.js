@@ -1415,7 +1415,7 @@ let id
 if (!(url && url.match(/drive\.google/i))) throw 'Invalid URL'
 id = (url.match(/\/?id=(.+)/i) || url.match(/\/d\/(.*?)\//))[1]
 if (!id) throw 'ID Not Found'
-const res = await fetch(`http://drive.google.com/uc?id=${id}&authuser=0&export=download` , {
+const res = await fetch(`https://drive.google.com/uc?id=${id}&authuser=0&export=download`, {
 method: 'post',
 headers: {
 'accept-encoding': 'gzip, deflate, br',
