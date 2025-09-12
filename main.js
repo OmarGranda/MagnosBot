@@ -1064,47 +1064,6 @@ client.sendMessage(m.chat, { text : text ? text : '' , mentions: participants.ma
 }
 break
 
-case 'kill': 
-case 'matar': 
-case 'sacar': {
-if (!m.isGroup) {
-return m.reply(mess.group)
-}
-
-if (!isBotAdmins) {
-return m.reply(mess.botAdmin)
-}
-
-if (!isAdmins) {
-return m.reply(mess.admin)
-}
-
-if (!m.mentionedJid[0] && !m.quoted) {
-return m.reply('Etiqueta o responde al mensaje de la *persona* que quieres *eliminar*')
-}
-
-let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
-
-const groupInfo = await client.groupMetadata(m.chat)
-const ownerGroup = groupInfo.owner || m.chat.split`-`[0] + '@s.whatsapp.net'
-const ownerBot = global.owner[0][0] + '@s.whatsapp.net'
-
-if (user === client.user.jid) {
-return m.reply('No puedo eliminar el *bot* del grupo')
-}
-
-if (user === ownerGroup) {
-return m.reply('No puedo eliminar al *propietario* del grupo')
-}
-
-if (user === ownerBot) {
-return m.reply('No puedo eliminar al *propietario* del bot')
-}
-
-await client.groupParticipantsUpdate(m.chat, [user], 'remove')
-}
-break
-
 case 'link':
 case 'enlace': {
 if (!m.isGroup) {
