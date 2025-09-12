@@ -1064,7 +1064,6 @@ client.sendMessage(m.chat, { text : text ? text : '' , mentions: participants.ma
 }
 break
 
-case 'kick':
 case 'kill': 
 case 'matar': 
 case 'sacar': {
