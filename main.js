@@ -394,7 +394,7 @@ case 'allmenu': {
       let img = imagenes[Math.floor(Math.random() * imagenes.length)];
       let thumb = await (await fetch(img)).buffer();
 
-      const texto = ╔════▣◎▣════╗
+      const texto = `╔════▣◎▣════╗
                    𝙈𝙚𝙣𝙪 - 𝙈𝙖𝙜𝙣𝙤𝙨𝘽𝙤𝙩
                     ╚════▣◎▣════╝
 ╭───────────────✧
@@ -457,7 +457,7 @@ case 'allmenu': {
 │  ╰┈➤ ${prefix}join
 │  ╰┈➤ ${prefix}getcase 
 │  ╰┈➤ ${prefix}addcase
-╰───────────────✧
+╰───────────────✧`
       await client.sendMessage(m.chat, {
          text: texto,
          contextInfo: {
