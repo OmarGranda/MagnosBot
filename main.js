@@ -470,9 +470,10 @@ case 'allmenu': {
             },
             externalAdReply: {
                title: `© MagnosBot`,
-               body: 'Tu asistente confiable 🤖',
+               body: 'Cuando el reto es grande y la tarea es hot,
+siempre responde firme el sabio 𝙈𝙖𝙜𝙣𝙤𝙨𝘽𝙤𝙩 ✅',
                thumbnail: thumb,
-               sourceUrl: 'https://github.com/AzamiJs',
+               sourceUrl: 'https://github.com/OmarGranda',
                mediaType: 1,
                renderLargerThumbnail: true
             }
