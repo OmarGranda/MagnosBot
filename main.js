@@ -366,67 +366,70 @@ break
 case 'menu':
 case 'help':
 case 'allmenu': {
-const texto = `Menu - MAGNOS - BOT
-
-┌  ◦ Información
-│  ◦ ${prefix}sc
-│  ◦ ${prefix}ping
-│  ◦ ${prefix}speedtest
-└  ◦ Información
-
-┌  ◦ On Off
-│  ◦ ${prefix}on
-│  ◦ ${prefix}off
-└  ◦ On Off
-
-┌  ◦ Buscadores
-│  ◦ ${prefix}google
-│  ◦ ${prefix}ia
-└  ◦ Buscadores
-
-┌  ◦ Herramientas
-│  ◦ ${prefix}hd
-│  ◦ ${prefix}traducir
-└  ◦ Herramientas
-
-┌  ◦ Descargas
-│  ◦ ${prefix}play
-│  ◦ ${prefix}play audio
-│  ◦ ${prefix}play video
-│  ◦ ${prefix}play mp3doc
-│  ◦ ${prefix}play mp4doc
-│  ◦ ${prefix}gitclone
-│  ◦ ${prefix}tiktok
-│  ◦ ${prefix}facebook
-│  ◦ ${prefix}instagram
-│  ◦ ${prefix}slider
-│  ◦ ${prefix}x
-│  ◦ ${prefix}gdrive
-└  ◦ Descargas
-
-┌  ◦ Grupo
-│  ◦ ${prefix}admins
-│  ◦ ${prefix}grupo
-│  ◦ ${prefix}demote
-│  ◦ ${prefix}fantasmas
-│  ◦ ${prefix}hidetag
-│  ◦ ${prefix}kick
-│  ◦ ${prefix}link
-│  ◦ ${prefix}promote
-│  ◦ ${prefix}tagall
-└  ◦ Grupo
-
-┌  ◦ Stickers
-│  ◦ ${prefix}s
-└  ◦ Stickers
-
-┌  ◦ Propietario
-│  ◦ ${prefix}update
-│  ◦ ${prefix}restart
-│  ◦ ${prefix}join
-│  ◦ ${prefix}getcase 
-│  ◦ ${prefix}addcase 
-└  ◦ Propietario`
+const texto =
+`╔════▣◎▣════╗
+𝙈𝙚𝙣𝙪 - 𝙈𝙖𝙜𝙣𝙤𝙨𝘽𝙤𝙩
+ ╚════▣◎▣════╝
+╭───────────────✧
+│   ‣ 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙘𝙞𝙤𝙣 🤖
+│   ╰┈➤ .${prefix}sc
+│   ╰┈➤ .${prefix}ping
+│   ╰┈➤.${prefix} peedtest
+╰───────────────✧
+╭───────────────✧
+│   ‣ 𝙊𝙣 / 𝙊𝙛𝙛 🚫
+│   ╰┈➤ .${prefix}on
+│   ╰┈➤ .${prefix}off
+╰───────────────✧
+╭───────────────✧
+│  ‣ 𝘽𝙪𝙨𝙘𝙖𝙙𝙤𝙧𝙚𝙨 🔎
+│  ╰┈➤ .${prefix}google
+│  ╰┈➤ .${prefix}ia
+╰───────────────✧
+╭───────────────✧
+│  ‣ 𝙃𝙚𝙧𝙧𝙖𝙢𝙞𝙚𝙣𝙩𝙖𝙨 ⚙️
+│  ╰┈➤ .${prefix}hd
+│  ╰┈➤ .${prefix}traducir
+╰───────────────✧
+╭───────────────✧
+│  ‣ 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 📥
+│  ╰┈➤ .${prefix}play
+│  ╰┈➤ .${prefix}play audio
+│  ╰┈➤ .${prefix}play video
+│  ╰┈➤ .${prefix}play mp3doc
+│  ╰┈➤ .${prefix}play mp4doc
+│  ╰┈➤ .${prefix}gitclone
+│  ╰┈➤ .${prefix}tiktok
+│  ╰┈➤ .${prefix}facebook
+│  ╰┈➤ .${prefix}instagram
+│  ╰┈➤ .${prefix}slider
+│  ╰┈➤ .${prefix}x
+│  ╰┈➤ .${prefix}gdrive
+╰───────────────✧
+╭───────────────✧
+│  ‣ 𝙂𝙧𝙪𝙥𝙤𝙨 👥
+│  ╰┈➤ .${prefix}admins
+│  ╰┈➤ .${prefix}grupo
+│  ╰┈➤ .${prefix}demote
+│  ╰┈➤ .${prefix}fantasmas
+│  ╰┈➤ .${prefix}hidetag
+│  ╰┈➤ .${prefix}kick
+│  ╰┈➤ .${prefix}link
+│  ╰┈➤ .${prefix}promote
+│  ╰┈➤ .${prefix}tagall
+╰───────────────✧
+╭───────────────✧
+│  ‣ 𝙎𝙩𝙞𝙠𝙚𝙧𝙨 🔰
+│  ╰┈➤ .${prefix}s
+╰───────────────✧
+╭───────────────✧
+│  ‣ 𝙋𝙧𝙤𝙥𝙞𝙚𝙩𝙖𝙧𝙞𝙤 👑
+│  ╰┈➤ .${prefix}update
+│  ╰┈➤ .${prefix}restart
+│  ╰┈➤ .${prefix}join
+│  ╰┈➤ .${prefix}getcase 
+│  ╰┈➤ .${prefix}addcase
+╰───────────────✧`
 await client.sendMessage(m.chat, {text: texto, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'MagnosBot | CHANNEL', newsletterJid: "120363422169517881@newsletter", }, externalAdReply: { title: `© MagnosBot-MD`, body: '', thumbnailUrl: 'https://i.postimg.cc/NGrhjVTv/IMG-20250909-WA0062.jpg', sourceUrl: 'https://github.com/OmarGranda', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 }
 break
