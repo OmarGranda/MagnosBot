@@ -452,6 +452,7 @@ m.reply(e)
 }
 break
 
+/*
 case 'speedtest': case 'speed': {
 const cp = require('child_process') 
 const {promisify} = require('util') 
@@ -459,4 +460,27 @@ const exec = promisify(cp.exec).bind(cp)
 let o
 m.reply('> Cargando... 🚀🚀🚀')
 try {
-o = await exec('python3 speed.py --secure 
+o = await exec('python3 speed.py --secure')
+*/
+case 'speedtest':
+case 'speed': {
+  const cp = require('child_process')
+  const { promisify } = require('util')
+  const exec = promisify(cp.exec).bind(cp)
+
+  m.reply('> 🚀 Cargando SpeedTest, espera un momento...')
+
+  try {
+    let { stdout, stderr } = await exec('python3 speed.py --secure')
+
+    if (stderr) {
+      throw new Error(stderr)
+    }
+
+    let resultado = stdout || "❌ No se obtuvo salida del script."
+    m.reply(`📡 *Resultado del SpeedTest:*\n\n${resultado}`)
+  } catch (e) {
+    m.reply(`⚠️ Ocurrió un error al ejecutar SpeedTest`)
+  }
+}
+break
