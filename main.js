@@ -486,4 +486,3 @@ case 'speed': {
     m.reply(`⚠️ Ocurrió un error al ejecutar SpeedTest`)
   }
 }
-break
