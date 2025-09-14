@@ -546,16 +546,22 @@ break
 
 
       // ---------- Descargas----------
+      
+      
+ porque lansa ese error
+ 
+ Ocurrió un error interno: conn is not defined
+ 
 case 'play':
 case 'playaudio': {
-  if (!q) return conn.sendMessage(m.chat, { text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: *${usedPrefix + command} DJ Malam Pagi Slowed*` }, { quoted: m })
+  if (!q) return conn.sendMessage(m.chat, { text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: *${usedPrefix + command} DJ Malam Pagi Slowed*` }, { quoted: fkontak })
   
   try {
     let res = await fetch(`https://api.vreden.my.id/api/ytplaymp3?query=${encodeURIComponent(q)}`)
     let json = await res.json()
 
     if (!json || json.status !== 200 || !json.result?.metadata) {
-      return conn.sendMessage(m.chat, { text: '⚠️ No se encontraron resultados o la API falló.' }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: '⚠️ No se encontraron resultados o la API falló.' }, { quoted: fkontak })
     }
 
     let meta = json.result.metadata
@@ -571,21 +577,21 @@ case 'playaudio': {
     await conn.sendMessage(m.chat, {
       image: { url: thumbnail },
       caption: caption
-    }, { quoted: m })
+    }, { quoted: fkontak })
 
     if (json.result.download?.status === true && json.result.download.url) {
       await conn.sendMessage(m.chat, {
         audio: { url: json.result.download.url },
         mimetype: 'audio/mpeg',
         fileName: `${title || 'audio'}.mp3`
-      }, { quoted: m })
+      }, { quoted: fkontak })
     } else {
       await conn.sendMessage(m.chat, { text: '❌ No se pudo convertir el audio.' }, { quoted: m })
     }
 
   } catch (e) {
     console.error(e)
-    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: m })
+    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: fkontak })
   }
 }
 break
@@ -595,7 +601,7 @@ case 'playvideo': {
   if (!q) {
     return conn.sendMessage(m.chat, {
       text: `🎥 Ingresa el enlace de YouTube.\n\nEjemplo: *${usedPrefix + command} https://youtube.com/watch?v=KHgllosZ3kA*`
-    }, { quoted: m })
+    }, { quoted: fkontak })
   }
 
   try {
@@ -626,7 +632,7 @@ case 'playvideo': {
     await conn.sendMessage(m.chat, {
       image: { url: thumbnail },
       caption: caption
-    }, { quoted: m })
+    }, { quoted: fkontak })
 
     let dload = json.result.download || {}
     if (dload.status === true && dload.url) {
@@ -634,14 +640,14 @@ case 'playvideo': {
         video: { url: dload.url },
         mimetype: 'video/mp4',
         fileName: `${title}.mp4`
-      }, { quoted: m })
+      }, { quoted: fkontak })
     } else {
       await conn.sendMessage(m.chat, { text: '❌ No se pudo convertir o descargar el video.' }, { quoted: m })
     }
 
   } catch (e) {
     console.error(e)
-    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: m })
+    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: fkontak })
   }
 }
 break
