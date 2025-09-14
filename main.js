@@ -353,7 +353,7 @@ module.exports = client = async (client, m, messages, store) => {
         const userId = m.sender
         const usedPrefix = prefix
         const texto = `
-╭━━━〔 🤖 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
+╭━━━〔 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
 ┃ Usuario: @${userId.split('@')[0]}
 ┃ Prefijo: ${usedPrefix}
 ┃ RAM usada: ${formatBytes(os.totalmem() - os.freemem())}
