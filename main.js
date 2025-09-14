@@ -419,7 +419,7 @@ module.exports = client = async (client, m, messages, store) => {
 │  ╰┈➤ ${usedPrefix}join
 │  ╰┈➤ ${usedPrefix}getcase 
 │  ╰┈➤ ${usedPrefix}addcase
-╰───────────────✧`
+╰───────────────✧
 ╭───────────────✧
 |  ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
 |  ╰┈➤ ${usedPrefix}bal 
@@ -430,7 +430,7 @@ module.exports = client = async (client, m, messages, store) => {
 |  ╰┈➤${usedPrefix}casino 
 |  ╰┈➤${usedPrefix}marry 
 |  ╰┈➤${usedPrefix}divorce
-╰───────────────✧.trim()
+╰───────────────✧`.trim()
 
         await client.sendMessage(m.ch {
           text: texto,
