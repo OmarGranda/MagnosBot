@@ -2,7 +2,7 @@ const fs = require('fs')
 const os = require('os')
 const path = require('path')
 const axios = require('axios')
-const { exec, spawn } = require('child_process')
+const { exec, spawn, execSync } = require('child_process')
 const speed = require('performance-now')
 const chalk = require('chalk')
 const _ = require('lodash')
@@ -487,7 +487,6 @@ module.exports = client = async (client, m, messages, store) => {
           await client.sendMessage(m.chat, { text: '⚠️ Error ejecutando SpeedTest (asegúrate de tener python3 speed.py disponible)' }, { quoted: fkontak })
         }
       } break
-
 
 case 'update':
 case 'actualizar':
