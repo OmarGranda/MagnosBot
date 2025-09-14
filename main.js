@@ -420,18 +420,16 @@ module.exports = client = async (client, m, messages, store) => {
 │  ╰┈➤ ${usedPrefix}getcase 
 │  ╰┈➤ ${usedPrefix}addcase
 ╰───────────────✧
-
-
 ╭───────────────✧
 │  ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
-│  ╰┈➤${usedPrefix}bal 
-│  ╰┈➤${usedPrefix}daily 
-│  ╰┈➤${usedPrefix}work 
-│  ╰┈➤${usedPrefix}rob
-│  ╰┈➤${usedPrefix}slots 
-│  ╰┈➤${usedPrefix}casino 
-│  ╰┈➤${usedPrefix}marry 
-│  ╰┈➤${usedPrefix}divorce
+│  ╰┈➤ ${usedPrefix}bal 
+│  ╰┈➤ ${usedPrefix}daily 
+│  ╰┈➤ ${usedPrefix}work 
+│  ╰┈➤ ${usedPrefix}rob
+│  ╰┈➤ ${usedPrefix}slots 
+│  ╰┈➤ ${usedPrefix}casino 
+│  ╰┈➤ ${usedPrefix}marry 
+│  ╰┈➤ ${usedPrefix}divorce
 ╰───────────────✧`.trim()
 
         await client.sendMessage(m.chat, {
