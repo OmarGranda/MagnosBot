@@ -409,6 +409,16 @@ module.exports = client = async (client, m, messages, store) => {
 │  ╰┈➤ ${usedPrefix}tagall
 ╰───────────────✧
 ╭───────────────✧
+   ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
+|  ╰┈➤ ${usedPrefix}bal 
+|  ╰┈➤${usedPrefix}daily 
+|  ╰┈➤${usedPrefix}work 
+|  ╰┈➤${usedPrefix}rob
+|  ╰┈➤${usedPrefix}slots 
+|  ╰┈➤${usedPrefix}casino 
+|  ╰┈➤${usedPrefix}marry 
+|  ╰┈➤${usedPrefix}divorce
+╭───────────────✧
 │  ‣ 𝙎𝙩𝙞𝙠𝙚𝙧𝙨 🔰
 │  ╰┈➤ ${usedPrefix}s
 ╰───────────────✧
@@ -419,21 +429,9 @@ module.exports = client = async (client, m, messages, store) => {
 │  ╰┈➤ ${usedPrefix}join
 │  ╰┈➤ ${usedPrefix}getcase 
 │  ╰┈➤ ${usedPrefix}addcase
-╰───────────────✧
+╰───────────────✧`.trim()
 
-
-
-Juegos:
- ${usedPrefix}bal 
- | ${usedPrefix}daily 
- | ${usedPrefix}work 
- | ${usedPrefix}rob
- | ${usedPrefix}slots 
- | ${usedPrefix}casino 
- | ${usedPrefix}marry 
- | ${usedPrefix}divorce`.trim()
-
-        await client.sendMessage(m.chat, {
+        await client.sendMessage(m.ch {
           text: texto,
           contextInfo: {
             forwardingScore: 999,
