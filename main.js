@@ -409,7 +409,7 @@ module.exports = client = async (client, m, messages, store) => {
 │  ╰┈➤ ${usedPrefix}tagall
 ╰───────────────✧
 ╭───────────────✧
-   ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
+|  ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
 |  ╰┈➤ ${usedPrefix}bal 
 |  ╰┈➤${usedPrefix}daily 
 |  ╰┈➤${usedPrefix}work 
@@ -418,6 +418,7 @@ module.exports = client = async (client, m, messages, store) => {
 |  ╰┈➤${usedPrefix}casino 
 |  ╰┈➤${usedPrefix}marry 
 |  ╰┈➤${usedPrefix}divorce
+╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙎𝙩𝙞𝙠𝙚𝙧𝙨 🔰
 │  ╰┈➤ ${usedPrefix}s
