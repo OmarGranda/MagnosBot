@@ -547,22 +547,20 @@ break
 
 
       // ---------- Descargas----------
-      
-      
- porque lansa ese error
- 
- Ocurrió un error interno: conn is not defined
- 
 case 'play':
 case 'playaudio': {
-  if (!q) return conn.sendMessage(m.chat, { text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: *${usedPrefix + command} DJ Malam Pagi Slowed*` }, { quoted: fkontak })
+  if (!q) return client.sendMessage(m.chat, { 
+    text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: *${usedPrefix + command} DJ Malam Pagi Slowed*` 
+  }, { quoted: fkontak })
   
   try {
     let res = await fetch(`https://api.vreden.my.id/api/ytplaymp3?query=${encodeURIComponent(q)}`)
     let json = await res.json()
 
     if (!json || json.status !== 200 || !json.result?.metadata) {
-      return conn.sendMessage(m.chat, { text: '⚠️ No se encontraron resultados o la API falló.' }, { quoted: fkontak })
+      return client.sendMessage(m.chat, { 
+        text: '⚠️ No se encontraron resultados o la API falló.' 
+      }, { quoted: fkontak })
     }
 
     let meta = json.result.metadata
@@ -575,24 +573,28 @@ case 'playaudio': {
 📅 *Publicado:* ${ago || 'No definido'}
 🔗 *Enlace:* ${url || 'No disponible'}`.trim()
 
-    await conn.sendMessage(m.chat, {
+    await client.sendMessage(m.chat, {
       image: { url: thumbnail },
       caption: caption
     }, { quoted: fkontak })
 
     if (json.result.download?.status === true && json.result.download.url) {
-      await conn.sendMessage(m.chat, {
+      await client.sendMessage(m.chat, {
         audio: { url: json.result.download.url },
         mimetype: 'audio/mpeg',
         fileName: `${title || 'audio'}.mp3`
       }, { quoted: fkontak })
     } else {
-      await conn.sendMessage(m.chat, { text: '❌ No se pudo convertir el audio.' }, { quoted: m })
+      await client.sendMessage(m.chat, { 
+        text: '❌ No se pudo convertir el audio.' 
+      }, { quoted: m })
     }
 
   } catch (e) {
     console.error(e)
-    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: fkontak })
+    client.sendMessage(m.chat, { 
+      text: '⚠️ Error al procesar la solicitud.' 
+    }, { quoted: fkontak })
   }
 }
 break
