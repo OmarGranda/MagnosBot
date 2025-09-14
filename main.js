@@ -548,35 +548,107 @@ break
 
 
 
-      // ---------- YT / PLAY----------
-      case 'play':
-      case 'playaudio':
-      case 'playaudio': {
-        if (!text) return m.reply(`Usar: ${prefix}play <enlace o búsqueda>`)
-        try {
-          // si es url de yt
-          if (isUrl(text) && text.includes('youtube')) {
-            const info = await ytdl.getInfo(text)
-            const format = ytdl.chooseFormat(info.formats, { quality: 'highestaudio' })
-            const title = info.videoDetails.title
-            const stream = ytdl(text, { filter: 'audioonly', quality: 'highestaudio' })
-            // guardar temporalmente y enviar (por simplicidad, enviamos como documento stream buffer)
-            let chunks = []
-            stream.on('data', c => chunks.push(c))
-            stream.on('end', async () => {
-              const buffer = Buffer.concat(chunks)
-              await client.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mpeg', fileName: `${title}.mp3` }, { quoted: m })
-            })
-            stream.on('error', e => m.reply('Error ytdl: ' + String(e)))
-          } else {
-            // búsqueda YT
-            let res = await yts(text)
-            let first = (res && res.all && res.all[0]) ? res.all[0] : null
-            if (!first) return m.reply('No se encontró video')
-            await client.sendMessage(m.chat, { text: `Encontrado: ${first.title}\n${first.url}` }, { quoted: m })
-          }
-        } catch (e) { m.reply('Error Play: ' + String(e)) }
-      } break
+      // ---------- Descargas----------
+case 'play':
+case 'playaudio': {
+  if (!q) return conn.sendMessage(m.chat, { text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: *${usedPrefix + command} DJ Malam Pagi Slowed*` }, { quoted: m })
+  
+  try {
+    let res = await fetch(`https://api.vreden.my.id/api/ytplaymp3?query=${encodeURIComponent(q)}`)
+    let json = await res.json()
+
+    if (!json || json.status !== 200 || !json.result?.metadata) {
+      return conn.sendMessage(m.chat, { text: '⚠️ No se encontraron resultados o la API falló.' }, { quoted: m })
+    }
+
+    let meta = json.result.metadata
+    let { title, url, thumbnail, timestamp, ago, views, author } = meta
+
+    let caption = `🎵 *Título:* ${title || 'Desconocido'}
+📺 *Canal:* ${author?.name || 'No definido'}
+⏳ *Duración:* ${timestamp || meta.duration?.timestamp || 'No definido'}
+👀 *Vistas:* ${views?.toLocaleString() || '0'}
+📅 *Publicado:* ${ago || 'No definido'}
+🔗 *Enlace:* ${url || 'No disponible'}`.trim()
+
+    await conn.sendMessage(m.chat, {
+      image: { url: thumbnail },
+      caption: caption
+    }, { quoted: m })
+
+    if (json.result.download?.status === true && json.result.download.url) {
+      await conn.sendMessage(m.chat, {
+        audio: { url: json.result.download.url },
+        mimetype: 'audio/mpeg',
+        fileName: `${title || 'audio'}.mp3`
+      }, { quoted: m })
+    } else {
+      await conn.sendMessage(m.chat, { text: '❌ No se pudo convertir el audio.' }, { quoted: m })
+    }
+
+  } catch (e) {
+    console.error(e)
+    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: m })
+  }
+}
+break
+
+case 'play2':
+case 'playvideo': {
+  if (!q) {
+    return conn.sendMessage(m.chat, {
+      text: `🎥 Ingresa el enlace de YouTube.\n\nEjemplo: *${usedPrefix + command} https://youtube.com/watch?v=KHgllosZ3kA*`
+    }, { quoted: m })
+  }
+
+  try {
+    let res = await fetch(`https://api.vreden.my.id/api/ytmp4?url=${encodeURIComponent(q)}`)
+    let json = await res.json()
+
+    if (!json || json.status !== 200 || !json.result?.metadata) {
+      return conn.sendMessage(m.chat, { text: '⚠️ No se encontró el video o la API falló.' }, { quoted: m })
+    }
+
+    let meta = json.result.metadata || {}
+    let title = meta.title || 'Título no disponible'
+    let url = meta.url || q
+    let thumbnail = meta.thumbnail || meta.image || 'https://telegra.ph/file/9dc4d6f69a3b64b62b6a3.jpg'
+    let timestamp = meta.timestamp || (meta.duration ? meta.duration.timestamp : 'Desconocido')
+    let ago = meta.ago || 'Fecha no disponible'
+    let views = meta.views || 0
+    let author = meta.author || {}
+    let channel = author.name || 'Autor no definido'
+
+    let caption = `🎵 *Título:* ${title}
+📺 *Canal:* ${channel}
+⏳ *Duración:* ${timestamp}
+👀 *Vistas:* ${views.toLocaleString()}
+📅 *Publicado:* ${ago}
+🔗 *Enlace:* ${url}`.trim()
+
+    await conn.sendMessage(m.chat, {
+      image: { url: thumbnail },
+      caption: caption
+    }, { quoted: m })
+
+    let dload = json.result.download || {}
+    if (dload.status === true && dload.url) {
+      await conn.sendMessage(m.chat, {
+        video: { url: dload.url },
+        mimetype: 'video/mp4',
+        fileName: `${title}.mp4`
+      }, { quoted: m })
+    } else {
+      await conn.sendMessage(m.chat, { text: '❌ No se pudo convertir o descargar el video.' }, { quoted: m })
+    }
+
+  } catch (e) {
+    console.error(e)
+    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: m })
+  }
+}
+break
+
 
       // ---------- ECONOMY & GAMES ----------
       case 'bal':
