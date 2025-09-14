@@ -550,7 +550,7 @@ break
 case 'play':
 case 'playaudio': {
   if (!q) return client.sendMessage(m.chat, { 
-    text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: *${usedPrefix + command} DJ Malam Pagi Slowed*` 
+    text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: */play DJ Malam Pagi Slowed*` 
   }, { quoted: fkontak })
   
   try {
@@ -603,7 +603,7 @@ case 'play2':
 case 'playvideo': {
   if (!q) {
     return conn.sendMessage(m.chat, {
-      text: `🎥 Ingresa el enlace de YouTube.\n\nEjemplo: *${usedPrefix + command} https://youtube.com/watch?v=KHgllosZ3kA*`
+      text: `🎥 Ingresa el enlace de YouTube.\n\nEjemplo: */play2 https://youtube.com/watch?v=KHgllosZ3kA*`
     }, { quoted: fkontak })
   }
 
