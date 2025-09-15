@@ -1,8 +1,9 @@
+
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
 const axios = require('axios')
-const { exec, spawn, execSyncjn } = require('child_process')
+const { exec, spawn, execSync} = require('child_process')
 const speed = require('performance-now')
 const chalk = require('chalk')
 const _ = require('lodash')
