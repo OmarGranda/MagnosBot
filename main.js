@@ -855,3 +855,24 @@ break
     try { m.reply('Ocurrió un error interno: ' + String(err.message || err)) } catch (e) { /* nada */ }
   }
 }
+break
+
+
+// ---------- Propietario & Owner ----------
+
+case 'addcase': {
+if (!isCreator) {
+return m.reply(mess.owner)
+}
+	
+if (!text) {
+return m.reply('Ingrese el *código* que desea agregar como *comando*')
+}
+
+try {
+const addcase =[fs.readFileSync('main.js', 'utf8').slice(0, fs.readFileSync('main.js', 'utf8').lastIndexOf('break') + 5), q, fs.readFileSync('main.js', 'utf8').slice(fs.readFileSync('main.js', 'utf8').lastIndexOf('break') + 5)].join('\n')
+fs.writeFileSync('main.js', addcase)
+m.reply(`Comando:\n${text}\nAgregado con éxito.`) 
+} catch (e) {
+return m.reply('Ha ocurrido un error al agregar su comando: ' + e)
+}
