@@ -2,7 +2,7 @@ const fs = require('fs')
 const os = require('os')
 const path = require('path')
 const axios = require('axios')
-const { exec, spawn, execSync } = require('child_process')
+const { exec, spawn } = require('child_process')
 const speed = require('performance-now')
 const chalk = require('chalk')
 const _ = require('lodash')
@@ -237,6 +237,22 @@ module.exports = client = async (client, m, messages, store) => {
         }
       } break
 
+      case 'hd':
+      case 'remini':
+      case 'calidad': {
+        if (!m.quoted) return m.reply(`Responde a una imagen con ${prefix + command}`)
+        if (!isMedia) return m.reply('El contenido no es una imagen válida')
+        await m.reply('`Cargando imagen para mejorar...`')
+        try {
+         
+          const stream = await downloadContentFromMessage(quoted, 'image')
+          let buffer = Buffer.from([])
+          for await (const chunk of stream) buffer = Buffer.concat([buffer, chunk])
+          await client.sendMessage(m.chat, { image: buffer, caption: `🔧 Calidad procesada (placeholder)` }, { quoted: m })
+        } catch (e) {
+          m.reply('Error procesando imagen: ' + String(e))
+        }
+      } break
 
       case 'ia':
       case 'chatgpt': {
@@ -313,8 +329,8 @@ module.exports = client = async (client, m, messages, store) => {
         } catch (e) {
           m.reply('Error Google: ' + String(e))
         }
-break;
-*/
+      } break
+
       // ---------- YT SEARCH ----------
       case 'yts':
       case 'ytsearch': {
@@ -335,84 +351,85 @@ break;
       case 'help':
       case 'allmenu': {
         const userId = m.sender
+        const usedPrefix = prefix
         const texto = `
-╭━━━〔 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
+╭━━━〔 🤖 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
 ┃ Usuario: @${userId.split('@')[0]}
-┃ Prefijo: ${prefix}
+┃ Prefijo: ${usedPrefix}
 ┃ RAM usada: ${formatBytes(os.totalmem() - os.freemem())}
 ┃ RAM total: ${formatBytes(os.totalmem())}
 ╰━━━━━━━━━━━━━━━━━━━━⬣
 
 ╭───────────────✧
 │   ‣ 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙘𝙞𝙤𝙣 🤖
-│   ╰┈➤ ${prefix}sc
-│   ╰┈➤ ${prefix}ping
-│   ╰┈➤ ${prefix} peedtest
+│   ╰┈➤ ${usedPrefix}sc
+│   ╰┈➤ ${usedPrefix}ping
+│   ╰┈➤ ${usedPrefix} peedtest
 ╰───────────────✧
 ╭───────────────✧
 │   ‣ 𝙊𝙣 / 𝙊𝙛𝙛 🚫
-│   ╰┈➤ ${prefix}on
-│   ╰┈➤ ${prefix}off
+│   ╰┈➤ ${usedPrefix}on
+│   ╰┈➤ ${usedPrefix}off
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝘽𝙪𝙨𝙘𝙖𝙙𝙤𝙧𝙚𝙨 🔎
-│  ╰┈➤ ${prefix}google
-│  ╰┈➤ ${prefix}ia
+│  ╰┈➤ ${usedPrefix}google
+│  ╰┈➤ ${usedPrefix}ia
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙃𝙚𝙧𝙧𝙖𝙢𝙞𝙚𝙣𝙩𝙖𝙨 ⚙️
-│  ╰┈➤ ${prefix}hd
-│  ╰┈➤ ${prefix}traducir
+│  ╰┈➤ ${usedPrefix}hd
+│  ╰┈➤ ${usedPrefix}traducir
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 📥
-│  ╰┈➤ ${prefix}play
-│  ╰┈➤ ${prefix}play audio
-│  ╰┈➤ ${prefix}play video
-│  ╰┈➤ ${prefix}play mp3doc
-│  ╰┈➤ ${prefix}play mp4doc
-│  ╰┈➤ ${prefix}gitclone
-│  ╰┈➤ ${prefix}tiktok
-│  ╰┈➤ ${prefix}facebook
-│  ╰┈➤ ${prefix}instagram
-│  ╰┈➤ ${prefix}slider
-│  ╰┈➤ ${prefix}x
-│  ╰┈➤ ${prefix}gdrive
+│  ╰┈➤ ${usedPrefix}play
+│  ╰┈➤ ${usedPrefix}play audio
+│  ╰┈➤ ${usedPrefix}play video
+│  ╰┈➤ ${usedPrefix}play mp3doc
+│  ╰┈➤ ${usedPrefix}play mp4doc
+│  ╰┈➤ ${usedPrefix}gitclone
+│  ╰┈➤ ${usedPrefix}tiktok
+│  ╰┈➤ ${usedPrefix}facebook
+│  ╰┈➤ ${usedPrefix}instagram
+│  ╰┈➤ ${usedPrefix}slider
+│  ╰┈➤ ${usedPrefix}x
+│  ╰┈➤ ${usedPrefix}gdrive
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙂𝙧𝙪𝙥𝙤𝙨 👥
-│  ╰┈➤ ${prefix}admins
-│  ╰┈➤ ${prefix}grupo
-│  ╰┈➤ ${prefix}demote
-│  ╰┈➤ ${prefix}fantasmas
-│  ╰┈➤ ${prefix}hidetag
-│  ╰┈➤ ${prefix}kick
-│  ╰┈➤ ${prefix}link
-│  ╰┈➤ ${prefix}promote
-│  ╰┈➤ ${prefix}tagall
+│  ╰┈➤ ${usedPrefix}admins
+│  ╰┈➤ ${usedPrefix}grupo
+│  ╰┈➤ ${usedPrefix}demote
+│  ╰┈➤ ${usedPrefix}fantasmas
+│  ╰┈➤ ${usedPrefix}hidetag
+│  ╰┈➤ ${usedPrefix}kick
+│  ╰┈➤ ${usedPrefix}link
+│  ╰┈➤ ${usedPrefix}promote
+│  ╰┈➤ ${usedPrefix}tagall
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙎𝙩𝙞𝙠𝙚𝙧𝙨 🔰
-│  ╰┈➤ ${prefix}s
+│  ╰┈➤ ${usedPrefix}s
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙋𝙧𝙤𝙥𝙞𝙚𝙩𝙖𝙧𝙞𝙤 👑
-│  ╰┈➤ ${prefix}update
-│  ╰┈➤ ${prefix}restart
-│  ╰┈➤ ${prefix}join
-│  ╰┈➤ ${prefix}getcase 
-│  ╰┈➤ ${prefix}addcase
+│  ╰┈➤ ${usedPrefix}update
+│  ╰┈➤ ${usedPrefix}restart
+│  ╰┈➤ ${usedPrefix}join
+│  ╰┈➤ ${usedPrefix}getcase 
+│  ╰┈➤ ${usedPrefix}addcase
 ╰───────────────✧
 ╭───────────────✧
-│  ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
-│  ╰┈➤ ${prefix}bal 
-│  ╰┈➤ ${prefix}daily 
-│  ╰┈➤ ${prefix}work 
-│  ╰┈➤ ${prefix}rob
-│  ╰┈➤ ${prefix}slots 
-│  ╰┈➤ ${prefix}casino 
-│  ╰┈➤ ${prefix}marry 
-│  ╰┈➤ ${prefix}divorce
+ |   ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
+ |  ╰┈➤${usedPrefix}bal 
+ |  ╰┈➤${usedPrefix}daily 
+ |  ╰┈➤${usedPrefix}work 
+ |  ╰┈➤${usedPrefix}rob
+ |  ╰┈➤${usedPrefix}slots 
+ |  ╰┈➤${usedPrefix}casino 
+ |  ╰┈➤${usedPrefix}marry 
+ |  ╰┈➤${usedPrefix}divorce
 ╰───────────────✧`.trim()
 
         await client.sendMessage(m.chat, {
@@ -471,215 +488,68 @@ break;
         }
       } break
 
-case 'update':
-case 'actualizar':
-case 'gitpull': {
-  if (!isCreator) return m.reply(mess.owner)
 
-  try {
-    const stdout = execSync('git pull' + (m.fromMe && q ? ' ' + q : ''))
-    let message = stdout.toString()
+    case 'update': {
+    const cp = require('child_process')
+    const { promisify } = require('util')
+    const execp = promisify(cp.exec).bind(cp)
 
-    if (message.includes('Already up to date.')) {
-      message = '✅ Todo actualizado, no hay cambios nuevos.'
-    } else if (message.includes('Updating')) {
-      message = '🆕 Actualización completada:\n\n' + stdout.toString()
-    }
-
-    m.reply(message)
-  } catch (e) {
-    try {
-      const status = execSync('git status --porcelain')
-      if (status.length > 0) {
-        const conflictedFiles = status
-          .toString()
-          .split('\n')
-          .filter(line => line.trim() !== '')
-          .map(line => {
-            if (
-              line.includes('.npm/') ||
-              line.includes('.cache/') ||
-              line.includes('tmp/') ||
-              line.includes('session/') ||
-              line.includes('npm-debug.log')
-            ) {
-              return null
-            }
-            return '→ *' + line.slice(3) + '*'
-          })
-          .filter(Boolean)
-
-        if (conflictedFiles.length > 0) {
-          const errorMessage = `⚠️ Se han detectado cambios locales en archivos del bot que entran en conflicto con las actualizaciones del repositorio.\n\n📌 Para actualizar, reinstala el bot o realiza las actualizaciones manualmente.\n\n🗂 Archivos en conflicto:\n\n${conflictedFiles.join('\n')}`
-          await m.reply(errorMessage)
-        }
-      }
-    } catch (error) {
-      console.error(error)
-      let errorMessage2 = '❌ Ha ocurrido un error inesperado.'
-      if (error.message) {
-        errorMessage2 += '\n\n💬 Mensaje de error: ' + error.message
-      }
-      await m.reply(errorMessage2)
-    }
-  }
-}
-break
-
-
-
-      // ---------- Descargas----------
-case 'play':
-case 'playaudio': {
-  if (!q) return client.sendMessage(m.chat, { 
-    text: `✨ Ingresa el nombre de la canción a buscar.\n\nEjemplo: */play DJ Malam Pagi Slowed*` 
-  }, { quoted: fkontak })
-  
-  try {
-    let res = await fetch(`https://api.vreden.my.id/api/ytplaymp3?query=${encodeURIComponent(q)}`)
-    let json = await res.json()
-
-    if (!json || json.status !== 200 || !json.result?.metadata) {
-      return client.sendMessage(m.chat, { 
-        text: '⚠️ No se encontraron resultados o la API falló.' 
-      }, { quoted: fkontak })
-    }
-
-    let meta = json.result.metadata
-    let { title, url, thumbnail, timestamp, ago, views, author } = meta
-
-    let caption = `🎵 *Título:* ${title || 'Desconocido'}
-📺 *Canal:* ${author?.name || 'No definido'}
-⏳ *Duración:* ${timestamp || meta.duration?.timestamp || 'No definido'}
-👀 *Vistas:* ${views?.toLocaleString() || '0'}
-📅 *Publicado:* ${ago || 'No definido'}
-🔗 *Enlace:* ${url || 'No disponible'}`.trim()
-
-    await client.sendMessage(m.chat, {
-      image: { url: thumbnail },
-      caption: caption
-    }, { quoted: fkontak })
-
-    if (json.result.download?.status === true && json.result.download.url) {
-      await client.sendMessage(m.chat, {
-        audio: { url: json.result.download.url },
-        mimetype: 'audio/mpeg',
-        fileName: `${title || 'audio'}.mp3`
-      }, { quoted: fkontak })
-    } else {
-      await client.sendMessage(m.chat, { 
-        text: '❌ No se pudo convertir el audio.' 
-      }, { quoted: m })
-    }
-
-  } catch (e) {
-    console.error(e)
-    client.sendMessage(m.chat, { 
-      text: '⚠️ Error al procesar la solicitud.' 
-    }, { quoted: fkontak })
-  }
-}
-break
-
-case 'play2':
-case 'playvideo': {
-  if (!q) {
-    return client.sendMessage(m.chat, {
-      text: `🎥 Ingresa el enlace de YouTube.\n\nEjemplo: */play2 https://youtube.com/watch?v=KHgllosZ3kA*`
-    }, { quoted: fkontak })
-  }
-
-  try {
-    let res = await fetch(`https://api.vreden.my.id/api/ytmp4?url=${encodeURIComponent(q)}`)
-    let json = await res.json()
-
-    if (!json || json.status !== 200 || !json.result?.metadata) {
-      return client.sendMessage(m.chat, { 
-        text: '⚠️ No se encontró el video o la API falló.' 
-      }, { quoted: m })
-    }
-
-    let meta = json.result.metadata || {}
-    let title = meta.title || 'Título no disponible'
-    let url = meta.url || q
-    let thumbnail = meta.thumbnail || meta.image || 'https://telegra.ph/file/9dc4d6f69a3b64b62b6a3.jpg'
-    let timestamp = meta.timestamp || (meta.duration ? meta.duration.timestamp : 'Desconocido')
-    let ago = meta.ago || 'Fecha no disponible'
-    let views = meta.views || 0
-    let author = meta.author || {}
-    let channel = author.name || 'Autor no definido'
-
-    let caption = `🎵 *Título:* ${title}
-📺 *Canal:* ${channel}
-⏳ *Duración:* ${timestamp}
-👀 *Vistas:* ${views.toLocaleString()}
-📅 *Publicado:* ${ago}
-🔗 *Enlace:* ${url}`.trim()
-
-    await client.sendMessage(m.chat, {
-      image: { url: thumbnail },
-      caption: caption
-    }, { quoted: fkontak })
-
-    let dload = json.result.download || {}
-    if (dload.status === true && dload.url) {
-      await client.sendMessage(m.chat, {
-        video: { url: dload.url },
-        mimetype: 'video/mp4',
-        fileName: `${title}.mp4`
-      }, { quoted: fkontak })
-    } else {
-      await client.sendMessage(m.chat, { 
-        text: '❌ No se pudo convertir o descargar el video.' 
-      }, { quoted: m })
-    }
-
-  } catch (e) {
-    console.error(e)
-    client.sendMessage(m.chat, { 
-      text: '⚠️ Error al procesar la solicitud.' 
-    }, { quoted: fkontak })
-  }
-}
-break
-/*
-case 'tiktok':
-case 'tt': {
-    if (!q) return m.reply(` Ingresa el enlace de TikTok\n\nEjemplo: ${usedPrefix + command} https://vt.tiktok.com/ZSB2HNoKR/`);
+    await client.sendMessage(
+      m.chat,
+      { text: '📡 Actualizando repositorio, espera un momento...' },
+      { quoted: fkontak }
+    )
 
     try {
-        await m.reply('*🔎 Descargando TikTok...*');
+      const { stdout, stderr } = await execp('git pull').catch(() => ({ stdout: '', stderr: '' }))
+      if (stderr) throw new Error(stderr)
 
-        let res = await fetch(`https://delirius-apiofc.vercel.app/download/tiktok?url=${encodeURIComponent(q)}`);
-        let json = await res.json();
-
-        if (!json.status) return m.reply('❌ Error al obtener el video.');
-
-        const data = json.data || {};
-        const author = data.author || {};
-        const music = data.music || {};
-        const media = data.meta?.media?.[0] || {};
-
-        let caption = `🎵 *${data.title || 'Sin título'}*\n`;
-        caption += `👤 Autor: ${author.nickname || author.username || 'Desconocido'}\n`;
-        caption += `🕒 Duración: ${data.duration || 'N/A'} seg\n`;
-        caption += `👍 Likes: ${data.like || 0}  💬 Comentarios: ${data.comment || 0}  🔄 Shares: ${data.share || 0}\n`;
-        caption += `🎶 Música: ${music.title || 'Desconocida'} - ${music.author || 'Desconocido'}\n`;
-        caption += `📅 Publicado: ${data.published || 'N/A'}`;
-        let videoUrl = media.hd || media.org || media.wm;
-        if (!videoUrl) return m.reply('❌ No se encontró video disponible.');
-
-        await client.sendMessage(m.chat, {
-            video: { url: videoUrl },
-            caption: caption
-        }, { quoted: m });
-
+      await client.sendMessage(
+        m.chat,
+        { text: `✅ *Update completado:*\n\n${stdout}` },
+        { quoted: fkontak }
+      )
     } catch (e) {
-        console.error(e);
-        m.reply('❌ Ocurrió un error al descargar el TikTok.');
+      await client.sendMessage(
+        m.chat,
+        { text: `⚠️ Error al ejecutar.\n\n${e.message}` },
+        { quoted: fkontak }
+      )
     }
-    break;
-*/
+  }
+ break
+
+
+
+      // ---------- YT / PLAY----------
+      case 'play':
+      case 'playaudio':
+      case 'playaudio': {
+        if (!text) return m.reply(`Usar: ${prefix}play <enlace o búsqueda>`)
+        try {
+          // si es url de yt
+          if (isUrl(text) && text.includes('youtube')) {
+            const info = await ytdl.getInfo(text)
+            const format = ytdl.chooseFormat(info.formats, { quality: 'highestaudio' })
+            const title = info.videoDetails.title
+            const stream = ytdl(text, { filter: 'audioonly', quality: 'highestaudio' })
+            // guardar temporalmente y enviar (por simplicidad, enviamos como documento stream buffer)
+            let chunks = []
+            stream.on('data', c => chunks.push(c))
+            stream.on('end', async () => {
+              const buffer = Buffer.concat(chunks)
+              await client.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/mpeg', fileName: `${title}.mp3` }, { quoted: m })
+            })
+            stream.on('error', e => m.reply('Error ytdl: ' + String(e)))
+          } else {
+            // búsqueda YT
+            let res = await yts(text)
+            let first = (res && res.all && res.all[0]) ? res.all[0] : null
+            if (!first) return m.reply('No se encontró video')
+            await client.sendMessage(m.chat, { text: `Encontrado: ${first.title}\n${first.url}` }, { quoted: m })
+          }
+        } catch (e) { m.reply('Error Play: ' + String(e)) }
+      } break
 
       // ---------- ECONOMY & GAMES ----------
       case 'bal':
