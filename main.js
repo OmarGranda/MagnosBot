@@ -699,6 +699,43 @@ case 'playvideo': {
 }
 break
 
+case 'tiktok':
+case 'tt': {
+    if (!q) return m.reply(` Ingresa el enlace de TikTok\n\nEjemplo: ${usedPrefix + command} https://vt.tiktok.com/ZSB2HNoKR/`);
+
+    try {
+        await m.reply('*🔎 Descargando TikTok...*');
+
+        let res = await fetch(`https://delirius-apiofc.vercel.app/download/tiktok?url=${encodeURIComponent(q)}`);
+        let json = await res.json();
+
+        if (!json.status) return m.reply('❌ Error al obtener el video.');
+
+        const data = json.data || {};
+        const author = data.author || {};
+        const music = data.music || {};
+        const media = data.meta?.media?.[0] || {};
+
+        let caption = `🎵 *${data.title || 'Sin título'}*\n`;
+        caption += `👤 Autor: ${author.nickname || author.username || 'Desconocido'}\n`;
+        caption += `🕒 Duración: ${data.duration || 'N/A'} seg\n`;
+        caption += `👍 Likes: ${data.like || 0}  💬 Comentarios: ${data.comment || 0}  🔄 Shares: ${data.share || 0}\n`;
+        caption += `🎶 Música: ${music.title || 'Desconocida'} - ${music.author || 'Desconocido'}\n`;
+        caption += `📅 Publicado: ${data.published || 'N/A'}`;
+        let videoUrl = media.hd || media.org || media.wm;
+        if (!videoUrl) return m.reply('❌ No se encontró video disponible.');
+
+        await client.sendMessage(m.chat, {
+            video: { url: videoUrl },
+            caption: caption
+        }, { quoted: m });
+
+    } catch (e) {
+        console.error(e);
+        m.reply('❌ Ocurrió un error al descargar el TikTok.');
+    }
+    break;
+}
 
       // ---------- ECONOMY & GAMES ----------
       case 'bal':
