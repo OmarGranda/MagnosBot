@@ -1,4 +1,3 @@
-
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
@@ -314,33 +313,6 @@ module.exports = client = async (client, m, messages, store) => {
         } catch (e) {
           m.reply('Error Google: ' + String(e))
         }
-     break
-
-case 'hd':
-case 'remini': 
-case 'calidad': {
-const FormData = require('form-data') 
-const Jimp =  require('jimp')
-
-let q = m.quoted ? m.quoted : m
-let mime = (q.msg || q).mimetype || q.mediaType || ''
-
-if (!mime) {
-return m.reply(`Responde a una *imagen* usando este mismo *comando* (${prefix + command})`)
-}
-
-if (!/image\/(jpe?g|png)/.test(mime)) {
-return m.reply(`Tipo de *media* no válida`)
-}
-
-m.reply('`Cargando Imágen`') 
-try {
-let img = await q.download?.()
-let pr = await remini(img, 'enhance')
-client.sendMessage(m.chat, { image: pr, caption: `Calidad mejorada` }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100 })
-} catch (e) {
-return m.reply('Ha ocurrido un error al intentar mejorar la calidad de la imagen: ' + e) 
-}
 break
 case 's': case 'sticker': {
 const d = new Date(new Date + 3600000)
