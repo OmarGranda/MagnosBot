@@ -341,8 +341,35 @@ client.sendMessage(m.chat, { image: pr, caption: `Calidad mejorada` }, { quoted:
 } catch (e) {
 return m.reply('Ha ocurrido un error al intentar mejorar la calidad de la imagen: ' + e) 
 }
-} 
-} break;
+break
+
+//sticker
+case 's': case 'sticker': {
+const d = new Date(new Date + 3600000)
+const locale = 'es-ES'
+const dias = d.toLocaleDateString(locale, {weekday: 'long'})
+const fecha = d.toLocaleDateString(locale, {day: '2-digit', month: '2-digit', year: 'numeric'})
+
+let sticker2 = `${wm}\nAutor:\nFecha:\nDía:\nCreador:`
+let sticker3 = `${vs}\n${pushname}\n${fecha}\n${dias}\nZam`
+
+if (/image/.test(mime)) {
+media = await quoted.download()  
+let encmedia = await client.sendImageAsSticker(m.chat, media, m, { packname: sticker2, author: sticker3, contextInfo: {forwardingScore: 9999999, isForwarded: true, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: 'https://github.com/AzamiJs', thumbnailUrl: 'https://qu.ax/lFTW.jpeg'}}})
+await fs.unlinkSync(encmedia)  
+} else if (/video/.test(mime)) {
+if ((quoted.msg || quoted).seconds > 20) {
+return m.reply('El video no puede ser muy largo')
+}
+media = await quoted.download()
+
+let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: sticker2, author: sticker3, contextInfo: {forwardingScore: 9999999, isForwarded: true, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: 'https://github.com/AzamiJs', thumbnailUrl: 'https://qu.ax/lFTW.jpeg'}}})
+await new Promise((resolve) => setTimeout(resolve, 2000))
+await fs.unlinkSync(encmedia)  
+} else {
+m.reply('Responda a una *imagen* o *video*')
+}
+break;
 */
       // ---------- YT SEARCH ----------
       case 'yts':
