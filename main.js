@@ -314,7 +314,7 @@ module.exports = client = async (client, m, messages, store) => {
         } catch (e) {
           m.reply('Error Google: ' + String(e))
         }
-      }break
+     break
 
 case 'hd':
 case 'remini': 
@@ -342,8 +342,6 @@ client.sendMessage(m.chat, { image: pr, caption: `Calidad mejorada` }, { quoted:
 return m.reply('Ha ocurrido un error al intentar mejorar la calidad de la imagen: ' + e) 
 }
 break
-
-//sticker
 case 's': case 'sticker': {
 const d = new Date(new Date + 3600000)
 const locale = 'es-ES'
