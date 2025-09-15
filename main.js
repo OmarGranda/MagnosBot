@@ -876,3 +876,4 @@ m.reply(`Comando:\n${text}\nAgregado con éxito.`)
 } catch (e) {
 return m.reply('Ha ocurrido un error al agregar su comando: ' + e)
 }
+break
