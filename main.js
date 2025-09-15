@@ -241,10 +241,7 @@ module.exports = client = async (client, m, messages, store) => {
 case 'hd':
 case 'remini':
 case 'calidad': {
-  if (!client.public && !m.key.fromMe && m.messageStubType === 'notify') return;
-  if (m.key.id && m.key.id.startsWith('BAE5') && m.key.id.length === 16) return;
-  m = smsg(client, m);
-  if (!m.quoted) return m.reply(`Responde a una imagen con .hd`);
+  if (!m.quoted) return m.reply(`Responde a una imagen con /hd`);
   const mime = m.quoted.mimetype || m.quoted.msg?.mimetype || '';
   if (!/image\/(jpe?g|png)/i.test(mime)) return m.reply('El contenido no es una imagen válida');
 
@@ -284,7 +281,7 @@ case 'calidad': {
 
     await conn.sendMessage(m.chat, {
       image: resultBuffer,
-      caption: `xd `.trim()
+      caption: `mielda aqui tienes`.trim()
     }, { quoted: m });
 
     await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } });
@@ -292,8 +289,7 @@ case 'calidad': {
     await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } });
     m.reply(`❌ Ocurrió un error:\n${err.message || err}`);
   }
-} break
-
+} break;
       case 'ia':
       case 'chatgpt': {
         if (!text) return m.reply(`Envía lo que quieras preguntar. Ejemplo: ${prefix}ia ¿Qué es Node.js?`)
