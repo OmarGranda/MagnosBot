@@ -894,6 +894,16 @@ case 'tt': {
 }
 break
 
+// ---------- Stikers ----------
+
+case 's': case 'sticker': {
+const d = new Date(new Date + 3600000)
+const locale = 'es-ES'
+const dias = d.toLocaleDateString(locale, {weekday: 'long'})
+const fecha = d.toLocaleDateString(locale, {day: '2-digit', month: '2-digit', year: 'numeric'})
+}
+Break
+ 
 
 // ---------- Propietario & Owner ----------
 case 'getcase': {
