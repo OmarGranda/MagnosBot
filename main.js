@@ -314,61 +314,34 @@ module.exports = client = async (client, m, messages, store) => {
         } catch (e) {
           m.reply('Error Google: ' + String(e))
         }
-      } break
-/*
+      }break
+
 case 'hd':
-case 'remini':
+case 'remini': 
 case 'calidad': {
-  if (!m.quoted) {
-    return m.reply(`❌ Responde a una imagen con el comando *${usedPrefix + command}*`);
-  }
-  const mime = m.quoted.mimetype || m.quoted.msg?.mimetype || '';
-  if (!/image\/(jpe?g|png)/i.test(mime)) {
-    return m.reply('❌ El contenido no es una imagen válida');
-  }
-  await m.reply('⏳ Cargando imagen para mejorar...');
+const FormData = require('form-data') 
+const Jimp =  require('jimp')
 
-  try {
-    const media = await m.quoted.download();
-    const ext = mime.split('/')[1];
-    const filename = `enhanced_${Date.now()}.${ext}`;
+let q = m.quoted ? m.quoted : m
+let mime = (q.msg || q).mimetype || q.mediaType || ''
 
-    const FormData = (await import('form-data')).default;
-    const form = new FormData();
-    form.append('image', media, { filename, contentType: mime });
-    form.append('scale', '2');
-    const fetch = (await import('node-fetch')).default;
-    const headers = {
-      ...form.getHeaders(),
-      'accept': 'application/json',
-      'x-client-version': 'web',
-      'x-locale': 'en'
-    };
+if (!mime) {
+return m.reply(`Responde a una *imagen* usando este mismo *comando* (${prefix + command})`)
+}
 
-    const response = await fetch('https://api2.pixelcut.app/image/upscale/v1', {
-      method: 'POST',
-      headers,
-      body: form
-    });
+if (!/image\/(jpe?g|png)/.test(mime)) {
+return m.reply(`Tipo de *media* no válida`)
+}
 
-    const result = await response.json();
-
-    if (!result?.result_url || !result.result_url.startsWith('http')) {
-      throw new Error('❌ No se pudo obtener la imagen mejorada de Pixelcut.');
-    }
-    const enhancedBuffer = await (await fetch(result.result_url)).buffer();
-
-    await conn.sendMessage(m.chat, {
-      image: enhancedBuffer,
-      caption: `✅ *Imagen mejorada con éxito*`
-    }, { quoted: m });
-
-    await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } });
-
-  } catch (error) {
-    await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } });
-    m.reply(`❌ Ocurrió un error al mejorar la imagen:\n${error.message || error}`);
-  }
+m.reply('`Cargando Imágen`') 
+try {
+let img = await q.download?.()
+let pr = await remini(img, 'enhance')
+client.sendMessage(m.chat, { image: pr, caption: `Calidad mejorada` }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100 })
+} catch (e) {
+return m.reply('Ha ocurrido un error al intentar mejorar la calidad de la imagen: ' + e) 
+}
+} 
 } break;
 */
       // ---------- YT SEARCH ----------
