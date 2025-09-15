@@ -698,7 +698,7 @@ case 'playvideo': {
   }
 }
 break
-
+/*
 case 'tiktok':
 case 'tt': {
     if (!q) return m.reply(` Ingresa el enlace de TikTok\n\nEjemplo: ${usedPrefix + command} https://vt.tiktok.com/ZSB2HNoKR/`);
@@ -735,7 +735,7 @@ case 'tt': {
         m.reply('❌ Ocurrió un error al descargar el TikTok.');
     }
     break;
-}
+*/
 
       // ---------- ECONOMY & GAMES ----------
       case 'bal':
