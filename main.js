@@ -905,7 +905,7 @@ const fecha = d.toLocaleDateString(locale, {day: '2-digit', month: '2-digit', ye
 let sticker2 = `${wm}\nAutor:\nFecha:\nDía:\nCreador:`
 let sticker3 = `${vs}\n${pushname}\n${fecha}\n${dias}\nZam`
 }
-Break
+break
  
 
 // ---------- Propietario & Owner ----------
