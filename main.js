@@ -238,22 +238,61 @@ module.exports = client = async (client, m, messages, store) => {
         }
       } break
 
-      case 'hd':
-      case 'remini':
-      case 'calidad': {
-        if (!m.quoted) return m.reply(`Responde a una imagen con ${prefix + command}`)
-        if (!isMedia) return m.reply('El contenido no es una imagen válida')
-        await m.reply('`Cargando imagen para mejorar...`')
-        try {
-         
-          const stream = await downloadContentFromMessage(quoted, 'image')
-          let buffer = Buffer.from([])
-          for await (const chunk of stream) buffer = Buffer.concat([buffer, chunk])
-          await client.sendMessage(m.chat, { image: buffer, caption: `🔧 Calidad procesada (placeholder)` }, { quoted: m })
-        } catch (e) {
-          m.reply('Error procesando imagen: ' + String(e))
-        }
-      } break
+case 'hd':
+case 'remini':
+case 'calidad': {
+  if (!client.public && !m.key.fromMe && m.messageStubType === 'notify') return;
+  if (m.key.id && m.key.id.startsWith('BAE5') && m.key.id.length === 16) return;
+  m = smsg(client, m);
+  if (!m.quoted) return m.reply(`Responde a una imagen con .hd`);
+  const mime = m.quoted.mimetype || m.quoted.msg?.mimetype || '';
+  if (!/image\/(jpe?g|png)/i.test(mime)) return m.reply('El contenido no es una imagen válida');
+
+  await m.reply('`Cargando imagen para mejorar...`');
+
+  try {
+    const media = await m.quoted.download();
+    const ext = mime.split('/')[1];
+    const filename = `upscaled_${Date.now()}.${ext}`;
+
+    const FormData = (await import('form-data')).default;
+    const form = new FormData();
+    form.append('image', media, { filename, contentType: mime });
+    form.append('scale', '2');
+
+    const fetch = (await import('node-fetch')).default;
+    const headers = {
+      ...form.getHeaders(),
+      'accept': 'application/json',
+      'x-client-version': 'web',
+      'x-locale': 'en'
+    };
+
+    const res = await fetch('https://api2.pixelcut.app/image/upscale/v1', {
+      method: 'POST',
+      headers,
+      body: form
+    });
+
+    const json = await res.json();
+
+    if (!json?.result_url || !json.result_url.startsWith('http')) {
+      throw new Error('❌ No se pudo obtener la imagen mejorada de Pixelcut.');
+    }
+
+    const resultBuffer = await (await fetch(json.result_url)).buffer();
+
+    await conn.sendMessage(m.chat, {
+      image: resultBuffer,
+      caption: `xd `.trim()
+    }, { quoted: m });
+
+    await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } });
+  } catch (err) {
+    await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } });
+    m.reply(`❌ Ocurrió un error:\n${err.message || err}`);
+  }
+} break
 
       case 'ia':
       case 'chatgpt': {
