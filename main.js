@@ -896,6 +896,22 @@ break
 
 
 // ---------- Propietario & Owner ----------
+case 'getcase': {
+if (!isCreator) {
+return m.reply(mess.owner)
+}
+	
+if (!text) {
+return m.reply('Ingrese el *comando* que desea obtener *código*\n\n`Ejemplo`: .getcase play')
+}
+
+try {
+bbreak = 'break'
+m.reply('case ' + `'${args[0]}'` + fs.readFileSync('./main.js').toString().split(`case '${args[0]}'`)[1].split(bbreak)[0] + bbreak)
+} catch (e) { 
+m.reply('Ha ocurrido un error al obtener el código: ' + e)+
+}
+break
 
 case 'addcase': {
 if (!isCreator) {
