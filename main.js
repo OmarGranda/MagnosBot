@@ -353,7 +353,7 @@ module.exports = client = async (client, m, messages, store) => {
         const userId = m.sender
         const usedPrefix = prefix
         const texto = `
-╭━━━〔 🤖 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
+╭━━━〔 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
 ┃ Usuario: @${userId.split('@')[0]}
 ┃ Prefijo: ${usedPrefix}
 ┃ RAM usada: ${formatBytes(os.totalmem() - os.freemem())}
@@ -421,15 +421,15 @@ module.exports = client = async (client, m, messages, store) => {
 │  ╰┈➤ ${usedPrefix}addcase
 ╰───────────────✧
 ╭───────────────✧
- |   ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
- |  ╰┈➤${usedPrefix}bal 
- |  ╰┈➤${usedPrefix}daily 
- |  ╰┈➤${usedPrefix}work 
- |  ╰┈➤${usedPrefix}rob
- |  ╰┈➤${usedPrefix}slots 
- |  ╰┈➤${usedPrefix}casino 
- |  ╰┈➤${usedPrefix}marry 
- |  ╰┈➤${usedPrefix}divorce
+|   ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
+|  ╰┈➤ ${usedPrefix}bal 
+|  ╰┈➤ ${usedPrefix}daily 
+|  ╰┈➤ ${usedPrefix}work 
+|  ╰┈➤ ${usedPrefix}rob
+|  ╰┈➤ ${usedPrefix}slots 
+|  ╰┈➤ ${usedPrefix}casino 
+|  ╰┈➤ ${usedPrefix}marry 
+|  ╰┈➤ ${usedPrefix}divorce
 ╰───────────────✧`.trim()
 
         await client.sendMessage(m.chat, {
