@@ -315,7 +315,7 @@ module.exports = client = async (client, m, messages, store) => {
           m.reply('Error Google: ' + String(e))
         }
       } break
-      
+/*
 case 'hd':
 case 'remini':
 case 'calidad': {
@@ -370,7 +370,7 @@ case 'calidad': {
     m.reply(`❌ Ocurrió un error al mejorar la imagen:\n${error.message || error}`);
   }
 } break;
-
+*/
       // ---------- YT SEARCH ----------
       case 'yts':
       case 'ytsearch': {
