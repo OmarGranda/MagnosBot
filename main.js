@@ -554,7 +554,7 @@ case 'playaudio': {
   try {
     let res = await fetch(`https://api.vreden.my.id/api/ytplaymp3?query=${encodeURIComponent(q)}`)
     let json = await res.json()
-    if (!json || json.status !== 200 || !json.result?.Meta data) {
+    if (!json || json.status !== 200 || !json.result?.metadata) {
 return client.sendMessage(m.chat, { 
         text: '⚠️ No se encontraron resultados o la API falló.' 
       }, { quoted: fkontak })
