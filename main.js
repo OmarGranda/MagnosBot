@@ -356,81 +356,81 @@ module.exports = client = async (client, m, messages, store) => {
         const texto = `
 ╭━━━〔 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
 ┃ Usuario: @${userId.split('@')[0]}
-┃ Prefijo: ${usedPrefix}
+┃ Prefijo: ${Prefix}
 ┃ RAM usada: ${formatBytes(os.totalmem() - os.freemem())}
 ┃ RAM total: ${formatBytes(os.totalmem())}
 ╰━━━━━━━━━━━━━━━━━━━━⬣
 
 ╭───────────────✧
 │   ‣ 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙘𝙞𝙤𝙣 🤖
-│   ╰┈➤ ${usedPrefix}sc
-│   ╰┈➤ ${usedPrefix}ping
-│   ╰┈➤ ${usedPrefix} peedtest
+│   ╰┈➤ ${Prefix}sc
+│   ╰┈➤ ${Prefix}ping
+│   ╰┈➤ ${Prefix} peedtest
 ╰───────────────✧
 ╭───────────────✧
 │   ‣ 𝙊𝙣 / 𝙊𝙛𝙛 🚫
-│   ╰┈➤ ${usedPrefix}on
-│   ╰┈➤ ${usedPrefix}off
+│   ╰┈➤ ${Prefix}on
+│   ╰┈➤ ${Prefix}off
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝘽𝙪𝙨𝙘𝙖𝙙𝙤𝙧𝙚𝙨 🔎
-│  ╰┈➤ ${usedPrefix}google
-│  ╰┈➤ ${usedPrefix}ia
+│  ╰┈➤ ${Prefix}google
+│  ╰┈➤ ${Prefix}ia
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙃𝙚𝙧𝙧𝙖𝙢𝙞𝙚𝙣𝙩𝙖𝙨 ⚙️
-│  ╰┈➤ ${usedPrefix}hd
-│  ╰┈➤ ${usedPrefix}traducir
+│  ╰┈➤ ${Prefix}hd
+│  ╰┈➤ ${Prefix}traducir
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 📥
-│  ╰┈➤ ${usedPrefix}play
-│  ╰┈➤ ${usedPrefix}play audio
-│  ╰┈➤ ${usedPrefix}play video
-│  ╰┈➤ ${usedPrefix}play mp3doc
-│  ╰┈➤ ${usedPrefix}play mp4doc
-│  ╰┈➤ ${usedPrefix}gitclone
-│  ╰┈➤ ${usedPrefix}tiktok
-│  ╰┈➤ ${usedPrefix}facebook
-│  ╰┈➤ ${usedPrefix}instagram
-│  ╰┈➤ ${usedPrefix}slider
-│  ╰┈➤ ${usedPrefix}x
-│  ╰┈➤ ${usedPrefix}gdrive
+│  ╰┈➤ ${Prefix}play
+│  ╰┈➤ ${Prefix}play audio
+│  ╰┈➤ ${Prefix}play video
+│  ╰┈➤ ${Prefix}play mp3doc
+│  ╰┈➤ ${Prefix}play mp4doc
+│  ╰┈➤ ${Prefix}gitclone
+│  ╰┈➤ ${Prefix}tiktok
+│  ╰┈➤ ${Prefix}facebook
+│  ╰┈➤ ${Prefix}instagram
+│  ╰┈➤ ${Prefix}slider
+│  ╰┈➤ ${Prefix}x
+│  ╰┈➤ ${Prefix}gdrive
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙂𝙧𝙪𝙥𝙤𝙨 👥
-│  ╰┈➤ ${usedPrefix}admins
-│  ╰┈➤ ${usedPrefix}grupo
-│  ╰┈➤ ${usedPrefix}demote
-│  ╰┈➤ ${usedPrefix}fantasmas
-│  ╰┈➤ ${usedPrefix}hidetag
-│  ╰┈➤ ${usedPrefix}kick
-│  ╰┈➤ ${usedPrefix}link
-│  ╰┈➤ ${usedPrefix}promote
-│  ╰┈➤ ${usedPrefix}tagall
+│  ╰┈➤ ${Prefix}admins
+│  ╰┈➤ ${Prefix}grupo
+│  ╰┈➤ ${Prefix}demote
+│  ╰┈➤ ${Prefix}fantasmas
+│  ╰┈➤ ${Prefix}hidetag
+│  ╰┈➤ ${Prefix}kick
+│  ╰┈➤ ${Prefix}link
+│  ╰┈➤ ${Prefix}promote
+│  ╰┈➤ ${Prefix}tagall
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙎𝙩𝙞𝙠𝙚𝙧𝙨 🔰
-│  ╰┈➤ ${usedPrefix}s
+│  ╰┈➤ ${Prefix}s
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙋𝙧𝙤𝙥𝙞𝙚𝙩𝙖𝙧𝙞𝙤 👑
-│  ╰┈➤ ${usedPrefix}update
-│  ╰┈➤ ${usedPrefix}restart
-│  ╰┈➤ ${usedPrefix}join
-│  ╰┈➤ ${usedPrefix}getcase 
-│  ╰┈➤ ${usedPrefix}addcase
+│  ╰┈➤ ${Prefix}update
+│  ╰┈➤ ${Prefix}restart
+│  ╰┈➤ ${Prefix}join
+│  ╰┈➤ ${Prefix}getcase 
+│  ╰┈➤ ${Prefix}addcase
 ╰───────────────✧
 ╭───────────────✧
 |   ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
-|  ╰┈➤ ${usedPrefix}bal 
-|  ╰┈➤ ${usedPrefix}daily 
-|  ╰┈➤ ${usedPrefix}work 
-|  ╰┈➤ ${usedPrefix}rob
-|  ╰┈➤ ${usedPrefix}slots 
-|  ╰┈➤ ${usedPrefix}casino 
-|  ╰┈➤ ${usedPrefix}marry 
-|  ╰┈➤ ${usedPrefix}divorce
+|  ╰┈➤ ${Prefix}bal 
+|  ╰┈➤ ${Prefix}daily 
+|  ╰┈➤ ${Prefix}work 
+|  ╰┈➤ ${Prefix}rob
+|  ╰┈➤ ${Prefix}slots 
+|  ╰┈➤ ${Prefix}casino 
+|  ╰┈➤ ${Prefix}marry 
+|  ╰┈➤ ${Prefix}divorce
 ╰───────────────✧`.trim()
 
         await client.sendMessage(m.chat, {
@@ -593,7 +593,7 @@ break
 case 'play2':
 case 'playvideo': {
   if (!q) {
-    return conn.sendMessage(m.chat, {
+    return client.sendMessage(m.chat, {
       text: `🎥 Ingresa el enlace de YouTube.\n\nEjemplo: *${usedPrefix + command} https://youtube.com/watch?v=KHgllosZ3kA*`
     }, { quoted: m })
   }
@@ -601,7 +601,9 @@ case 'playvideo': {
     let res = await fetch(`https://api.vreden.my.id/api/ytmp4?url=${encodeURIComponent(q)}`)
     let json = await res.json()
     if (!json || json.status !== 200 || !json.result?.metadata) {
-      return conn.sendMessage(m.chat, { text: '⚠️ No se encontró el video o la API falló.' }, { quoted: m })
+      return client.sendMessage(m.chat, { 
+        text: '⚠️ No se encontró el video o la API falló.' 
+      }, { quoted: m })
     }
     let meta = json.result.metadata || {}
     let title = meta.title || 'Título no disponible'
@@ -618,23 +620,27 @@ case 'playvideo': {
 👀 *Vistas:* ${views.toLocaleString()}
 📅 *Publicado:* ${ago}
 🔗 *Enlace:* ${url}`.trim()
-    await conn.sendMessage(m.chat, {
+    await client.sendMessage(m.chat, {
       image: { url: thumbnail },
       caption: caption
     }, { quoted: m })
     let dload = json.result.download || {}
     if (dload.status === true && dload.url) {
-      await conn.sendMessage(m.chat, {
+      await client.sendMessage(m.chat, {
         video: { url: dload.url },
         mimetype: 'video/mp4',
         fileName: `${title}.mp4`
       }, { quoted: m })
     } else {
-      await conn.sendMessage(m.chat, { text: '❌ No se pudo convertir o descargar el video.' }, { quoted: m })
+await client.sendMessage(m.chat, { 
+        text: '❌ No se pudo convertir o descargar el video.' 
+      }, { quoted: m })
     }
   } catch (e) {
     console.error(e)
-    conn.sendMessage(m.chat, { text: '⚠️ Error al procesar la solicitud.' }, { quoted: m })
+    client.sendMessage(m.chat, { 
+      text: '⚠️ Error al procesar la solicitud.' 
+    }, { quoted: fkontak })
   }
 }
 break
