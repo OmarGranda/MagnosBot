@@ -352,85 +352,84 @@ module.exports = client = async (client, m, messages, store) => {
       case 'help':
       case 'allmenu': {
         const userId = m.sender
-        const usedPrefix = prefix
         const texto = `
 ╭━━━〔 𝗠𝗔𝗚𝗡𝗢𝗦𝗕𝗢𝗧 〕━━⬣
 ┃ Usuario: @${userId.split('@')[0]}
-┃ Prefijo: ${Prefix}
+┃ Prefijo: ${prefix}
 ┃ RAM usada: ${formatBytes(os.totalmem() - os.freemem())}
 ┃ RAM total: ${formatBytes(os.totalmem())}
 ╰━━━━━━━━━━━━━━━━━━━━⬣
 
 ╭───────────────✧
 │   ‣ 𝙄𝙣𝙛𝙤𝙧𝙢𝙖𝙘𝙞𝙤𝙣 🤖
-│   ╰┈➤ ${Prefix}sc
-│   ╰┈➤ ${Prefix}ping
-│   ╰┈➤ ${Prefix} peedtest
+│   ╰┈➤ ${prefix}sc
+│   ╰┈➤ ${prefix}ping
+│   ╰┈➤ ${prefix} peedtest
 ╰───────────────✧
 ╭───────────────✧
 │   ‣ 𝙊𝙣 / 𝙊𝙛𝙛 🚫
-│   ╰┈➤ ${Prefix}on
-│   ╰┈➤ ${Prefix}off
+│   ╰┈➤ ${prefix}on
+│   ╰┈➤ ${prefix}off
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝘽𝙪𝙨𝙘𝙖𝙙𝙤𝙧𝙚𝙨 🔎
-│  ╰┈➤ ${Prefix}google
-│  ╰┈➤ ${Prefix}ia
+│  ╰┈➤ ${prefix}google
+│  ╰┈➤ ${prefix}ia
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙃𝙚𝙧𝙧𝙖𝙢𝙞𝙚𝙣𝙩𝙖𝙨 ⚙️
-│  ╰┈➤ ${Prefix}hd
-│  ╰┈➤ ${Prefix}traducir
+│  ╰┈➤ ${prefix}hd
+│  ╰┈➤ ${prefix}traducir
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝘿𝙚𝙨𝙘𝙖𝙧𝙜𝙖𝙨 📥
-│  ╰┈➤ ${Prefix}play
-│  ╰┈➤ ${Prefix}play audio
-│  ╰┈➤ ${Prefix}play video
-│  ╰┈➤ ${Prefix}play mp3doc
-│  ╰┈➤ ${Prefix}play mp4doc
-│  ╰┈➤ ${Prefix}gitclone
-│  ╰┈➤ ${Prefix}tiktok
-│  ╰┈➤ ${Prefix}facebook
-│  ╰┈➤ ${Prefix}instagram
-│  ╰┈➤ ${Prefix}slider
-│  ╰┈➤ ${Prefix}x
-│  ╰┈➤ ${Prefix}gdrive
+│  ╰┈➤ ${prefix}play
+│  ╰┈➤ ${prefix}play audio
+│  ╰┈➤ ${prefix}play video
+│  ╰┈➤ ${prefix}play mp3doc
+│  ╰┈➤ ${prefix}play mp4doc
+│  ╰┈➤ ${prefix}gitclone
+│  ╰┈➤ ${prefix}tiktok
+│  ╰┈➤ ${prefix}facebook
+│  ╰┈➤ ${prefix}instagram
+│  ╰┈➤ ${prefix}slider
+│  ╰┈➤ ${prefix}x
+│  ╰┈➤ ${prefix}gdrive
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙂𝙧𝙪𝙥𝙤𝙨 👥
-│  ╰┈➤ ${Prefix}admins
-│  ╰┈➤ ${Prefix}grupo
-│  ╰┈➤ ${Prefix}demote
-│  ╰┈➤ ${Prefix}fantasmas
-│  ╰┈➤ ${Prefix}hidetag
-│  ╰┈➤ ${Prefix}kick
-│  ╰┈➤ ${Prefix}link
-│  ╰┈➤ ${Prefix}promote
-│  ╰┈➤ ${Prefix}tagall
+│  ╰┈➤ ${prefix}admins
+│  ╰┈➤ ${prefix}grupo
+│  ╰┈➤ ${prefix}demote
+│  ╰┈➤ ${prefix}fantasmas
+│  ╰┈➤ ${prefix}hidetag
+│  ╰┈➤ ${prefix}kick
+│  ╰┈➤ ${prefix}link
+│  ╰┈➤ ${prefix}promote
+│  ╰┈➤ ${prefix}tagall
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙎𝙩𝙞𝙠𝙚𝙧𝙨 🔰
-│  ╰┈➤ ${Prefix}s
+│  ╰┈➤ ${prefix}s
 ╰───────────────✧
 ╭───────────────✧
 │  ‣ 𝙋𝙧𝙤𝙥𝙞𝙚𝙩𝙖𝙧𝙞𝙤 👑
-│  ╰┈➤ ${Prefix}update
-│  ╰┈➤ ${Prefix}restart
-│  ╰┈➤ ${Prefix}join
-│  ╰┈➤ ${Prefix}getcase 
-│  ╰┈➤ ${Prefix}addcase
+│  ╰┈➤ ${prefix}update
+│  ╰┈➤ ${prefix}restart
+│  ╰┈➤ ${prefix}join
+│  ╰┈➤ ${prefix}getcase 
+│  ╰┈➤ ${prefix}addcase
 ╰───────────────✧
 ╭───────────────✧
 |   ‣ 𝙅𝙪𝙚𝙜𝙤𝙨 🎮
-|  ╰┈➤ ${Prefix}bal 
-|  ╰┈➤ ${Prefix}daily 
+|  ╰┈➤ ${prefix}bal 
+|  ╰┈➤ ${prefix}daily 
 |  ╰┈➤ ${Prefix}work 
-|  ╰┈➤ ${Prefix}rob
-|  ╰┈➤ ${Prefix}slots 
-|  ╰┈➤ ${Prefix}casino 
-|  ╰┈➤ ${Prefix}marry 
-|  ╰┈➤ ${Prefix}divorce
+|  ╰┈➤ ${prefix}rob
+|  ╰┈➤ ${prefix}slots 
+|  ╰┈➤ ${prefix}casino 
+|  ╰┈➤ ${prefix}marry 
+|  ╰┈➤ ${prefix}divorce
 ╰───────────────✧`.trim()
 
         await client.sendMessage(m.chat, {
