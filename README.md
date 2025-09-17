@@ -62,7 +62,7 @@ npm start
 [![Omar Granda](https://i.postimg.cc/y8mdVMpN/IMG-20250907-083002.jpg)](https://github.com/OmarGranda)
 
 
-> Copyright (c) 2025 **[OmarGranda](https://github.com/OmarGranda/MagnosBot/blob/master/LICENSE)**.
+> Copyright (c) 2025 **[OmarGranda]()**.
 
 ### COLABORADOR 🤝
 
