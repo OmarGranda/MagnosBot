@@ -1,123 +1,62 @@
-> [!IMPORTANT]
-> **Este proyecto está en constante evolución. Estamos comprometidos en ofrecer a nuestra comunidad un Bot increíble. Te invitamos a instalarlo y para estar al tanto de todas las novedades. [¡Únete a nuestro nuevo canal!](https://stellarw.xyz/channel)**
-
 <p align="center"> 
-<img src="https://cdn.stellarwa.xyz/files/1757603651149.jpeg" alt="SakuraBot-MD" style="width: 75%; height: auto; max-width: 100px;">
-
-<p align="center"> 
-<a href="#"><img title="SakuraBot-MD" src="https://img.shields.io/badge/¡Disfruta de un Bot totalmente gratuito, con múltiples funciones y de código abierto! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
+  <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=🤖MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
+<img src="https://i.postimg.cc/KY9V4vsf/c1f681f18a013222527b66d1d9d32cee.jpg" width="500" height="500" />
 </p>
 
----
+<p align="center">
+<a ojohref="https://github.com/GataNina-Li/GataBot-MD"><img title="GataBot-MD" src="https://img.shields.io/badge/🌸 ESTÁ ES LA VERSIÓN SIMPLIFICADA De MagnosBot 🌸 -red?colorA=%233CCED8&colorB=%233CCED8&style=for-the-badge"></a>
+</p>
 
-## 🪻 Descripción 
+<div align="center">
+  
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ommargranda673@gmail.com)
+[![Support](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/omar_granda)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/51927303598?text=Hola%20Omar%20%F0%9F%91%8B)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@sakurabotlite-md?si=sgBFmnO5SCqgB0lz)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/omxr_7w)
 
-Sakura Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofrece una variedad de características para mejorar tu experiencia en WhatsApp.
+</div>
 
----
-
-## 🪻 Características
-
-- Respuestas automáticas
-- Gestión de grupos
-- Juegos interactivos
-- Integración con APIs externas
-
----
-
-## Instalación por Termux
-> [!IMPORTANT]
-> **No garantizamos un funcionamiento perfecto en Termux, aunque trabajamos constantemente para asegurar una buena compatibilidad. Si experimentas lentitud o errores, por favor envía una solicitud con la evidencia correspondiente para que nuestro equipo pueda solucionarlo. Si el problema persiste, te recomendamos considerar los servicios de alojamiento de bots de nuestros patrocinadores.**
-
+## ✅ Plataformas Disponibles  
 <details>
-  <summary><b>🍄 Instalación Manual</b></summary>
+  <summary>Haz clic para ver las plataformas disponibles</summary>
 
-> *Comandos para instalar de forma manual*
+  - 📱 **Termux**
+  - ☁️ **SkyUltraPlus**
+
+</details>
+
+[`♻️ Descargar Termux aquí`](https://f-droid.org/es/packages/com.termux/)
+
+### 🌸 INSTALACIÓN MANUAL - TERMUX 🌸
 ```bash
 termux-setup-storage
-```
-```bash
-apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
-```
-```bash
-git clone https://github.com/DevAlexJs/SakuraBot-MD && cd SakuraBot-MD
-```
-```bash
+apt update
+apt upgrade
+pkg install -y git nodejs ffmpeg imagemagick yarn
+git clone https://github.com/OmarGranda/MagnosBot
+cd MagnosBot
 yarn install
-```
-```bash
 npm install
-```
-```bash
 npm start
 ```
-> *Si aparece **(Y/I/N/O/D/Z) [default=N] ?** use la letra **"y"** y luego **"ENTER"** para continuar con la instalación.*
-</details>
 
-<details>
-  <summary><b>🪻 Comandos para mantener más tiempo activo el Bot</b></summary>
+> **Advertencia** Si aparece (Y/I/N/O/D/Z) [default=N] ? use la letra "y" + "ENTER" para continuar con la instalación 
+-----
+### ☁️ SKY ULTRA PLUS
+[![YouTube](https://img.shields.io/badge/SkyUltraPlus-Host-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/fZbcCLpSH6Y?si=1sDen7Bzmb7jVpAI)
 
-> *Ejecutar estos comandos dentro de la carpeta SakuraBot-MD*
-```bash
-termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
-``` 
-#### Opciones Disponibles
-> *Esto eliminará todo el historial que hayas establecido con PM2:*
-```bash 
-pm2 delete index
-``` 
-> *Si tienes cerrado Termux y quiere ver de nuevo la ejecución use:*
-```bash 
-pm2 logs 
-``` 
-> *Si desea detener la ejecución de Termux use:*
-```bash 
-pm2 stop index
-``` 
-> *Si desea iniciar de nuevo la ejecución de Termux use:*
-```bash 
-pm2 start index
-```
----- 
-### En caso de detenerse
-> _Si despues que ya instalastes tu bot y termux te salta en blanco, se fue tu internet o reiniciaste tu celular, solo realizaras estos pasos:_
-```bash
-cd && cd SakuraBot-MD && npm start
-```
-----
-### Obtener nuevo código QR 
-> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `SakuraBot-MD $`*
-> **Escribe los siguientes comando uno x uno :**
-```bash 
-cd && cd SakuraBot-MD && rm -rf sessions/session-bot && npm run qr
-```
-----
-### Obtener nuevo código de teléfono 
-```bash 
-cd && cd SakuraBot-MD && rm -rf sessions/session-bot && npm run code
-```
-</details>
+<a href="https://dash.corinplus.com"><img src="https://qu.ax/wbJoB.png" height="125px"></a>
 
-<details>
-<summary><b>🫛 Actualizar SakuraBot</b></summary>
-
-> **Utiliza esta opción únicamente si deseas actualizar a la última versión de SakuraBot. Hemos implementado un método ingenioso mediante comandos para realizar la actualización, pero ten en cuenta que al usarla se eliminarán todos los archivos de la versión actual y se reemplazarán con los de la nueva versión. Solo se conservará la base de datos, por lo que será necesario volver a vincular el Bot.**  
-
-**Comandos para actualizar SakuraBot-MD de forma automática**
-
-```bash
-grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/DevAlexJs/SakuraBot-MD/master/update.sh | bash 
-```
-#### Para que no pierda su progreso en SakuraBot, estos comandos realizarán un respaldo de su `datos.json` y se agregará a la versión más reciente.
-> *Estos comandos solo funcionan para TERMUX, REPLIT, LINUX*
-</details>
-
----
-
-### 🫛 Colaboradores
-<a href="https://github.com/DevAlexJs/SakuraBot-MD/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=DevAlexJs/SakuraBot-MD" /> 
-</a> 
-
-### 🌾 Autor Del Proyecto
-[![Alexius](https://github.com/DevAlexJs.png?size=100)](https://github.com/DevAlexJs) 
+### Información sobre Sky
+- **Pagina Oficial:** [`Aqui`](https://skyultraplus.com)
+- **Dashboard:** [`Aquí`](https://dash.skyultraplus.com)
+- **Estado de servicios:** [`Aquí`](https://estado.skyultraplus.com)
+- **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029VakUvreFHWpyWUr4Jr0g)
+- **Comunidad:** [`Aquí`](https://chat.whatsapp.com/E6iWpvGuJ8zJNPbN3zOr0D)
+- **Contacto(s):** [`Gata Dios`](https://wa.me/message/B3KTM5XN2JMRD1) / [`Russell`](https://api.whatsapp.com/send/?phone=15167096032&text&type=phone_number&app_absent=0) / [`elrebelde21`](https://facebook.com/elrebelde21)
+- **Discord:** [`SkyUltraPlus`](https://discord.gg/6saUm5cw)
+  
+### 🌟 CREADOR Y DESARROLLADOR
+[![Omar Granda](https://i.postimg.cc/y8mdVMpN/IMG-20250907-083002.jpg)](https://github.com/OmarGranda) 
+> Copyright (c) 2025 **[OmarGranda](https://github.com/OmarGranda/MagnosBot/blob/master/LICENSE)**.
