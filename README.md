@@ -1,5 +1,5 @@
 <p align="center"> 
-  <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
+  <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=20&duration=3000&pause=1000&color=000&center=true&width=435&lines=MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
 <img src="https://github.com/user-attachments/assets/f8e2705d-452a-4dad-a56b-4933b1c9d44d" width="500" height="500" />
 </p>
 <div align="center">
@@ -23,16 +23,23 @@
 
 [`♻️ Descargar Termux aquí`](https://f-droid.org/es/packages/com.termux/)
 
-### 🌸 INSTALACIÓN MANUAL - TERMUX 🌸
+### INSTALACIÓN MANUAL - Termux 📱
 ```bash
 termux-setup-storage
-apt update
-apt upgrade
-pkg install -y git nodejs ffmpeg imagemagick yarn
-git clone https://github.com/OmarGranda/MagnosBot
-cd MagnosBot
+```
+```bash
+apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
+```
+```bash
+git clone https://github.com/OmarGranda/MagnosBot && cd MagnosBot
+```
+```bash
 yarn install
+```
+```bash
 npm install
+```
+```bash
 npm start
 ```
 
@@ -49,21 +56,20 @@ npm start
 - **Estado de servicios:** [`Aquí`](https://estado.skyultraplus.com)
 - **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029VakUvreFHWpyWUr4Jr0g)
 - **Comunidad:** [`Aquí`](https://chat.whatsapp.com/E6iWpvGuJ8zJNPbN3zOr0D)
-- **Contacto(s):** [`Gata Dios`](https://wa.me/message/B3KTM5XN2JMRD1) / [`Russell`](https://api.whatsapp.com/send/?phone=15167096032&text&type=phone_number&app_absent=0) / [`elrebelde21`](https://facebook.com/elrebelde21)
 - **Discord:** [`SkyUltraPlus`](https://discord.gg/6saUm5cw)
   
-### 🌟 CREADOR Y DESARROLLADOR
+### PROPIETARIO 👑
 [![Omar Granda](https://i.postimg.cc/y8mdVMpN/IMG-20250907-083002.jpg)](https://github.com/OmarGranda)
 
 
 > Copyright (c) 2025 **[OmarGranda](https://github.com/OmarGranda/MagnosBot/blob/master/LICENSE)**.
 
-### COLABORADOR
+### COLABORADOR 🤝
 
-Yuji-XDev 𓆩⚡ ✞ 𝑺𝒉𝒂𝒅𝒐𝒘 𝒐𝒇𝒇𝒊𝒄𝒊𝒂𝒍 🍧𓆪
+- **Yuji-XDev 𓆩⚡ ✞ 𝑺𝒉𝒂𝒅𝒐𝒘 𝒐𝒇𝒇𝒊𝒄𝒊𝒂𝒍 🍧𓆪**
 
 [![Yuji-XDev 𓆩⚡ ✞ 𝑺𝒉𝒂𝒅𝒐𝒘 𝒐𝒇𝒇𝒊𝒄𝒊𝒂𝒍 🍧𓆪](https://avatars.githubusercontent.com/u/196103894?v=4)](https://github.com/Yuji-XDev)
 
-Carlos Ramirez
+- **Carlos Ramires**
 
 [![carlos13ra](https://avatars.githubusercontent.com/u/225517243?v=4)](https://github.com/carlos13ra)
