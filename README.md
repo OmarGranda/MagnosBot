@@ -1,5 +1,5 @@
 <p align="center"> 
-  <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=🤖MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
+  <a href="https://github.com/GataNina-Li"><img src="https://readme-typing-svg.herokuapp.com?font=Boldonse&size=15&duration=3000&pause=1000&color=DEACF7FF&center=true&width=435&lines=MagnosBot;%C2%A1El+mejor+bot+de+WhatsApp!" height="500px"></a> 
 <img src="https://i.postimg.cc/KY9V4vsf/c1f681f18a013222527b66d1d9d32cee.jpg" width="500" height="500" />
 </p>
 
@@ -28,7 +28,7 @@
 
 [`♻️ Descargar Termux aquí`](https://f-droid.org/es/packages/com.termux/)
 
-### 🌸 INSTALACIÓN MANUAL - TERMUX 🌸
+### INSTALACIÓN MANUAL - TERMUX 📱
 ```bash
 termux-setup-storage
 apt update
@@ -57,6 +57,8 @@ npm start
 - **Contacto(s):** [`Gata Dios`](https://wa.me/message/B3KTM5XN2JMRD1) / [`Russell`](https://api.whatsapp.com/send/?phone=15167096032&text&type=phone_number&app_absent=0) / [`elrebelde21`](https://facebook.com/elrebelde21)
 - **Discord:** [`SkyUltraPlus`](https://discord.gg/6saUm5cw)
   
-### 🌟 CREADOR Y DESARROLLADOR
+### PROPIETARIO 👑
 [![Omar Granda](https://i.postimg.cc/y8mdVMpN/IMG-20250907-083002.jpg)](https://github.com/OmarGranda) 
 > Copyright (c) 2025 **[OmarGranda](https://github.com/OmarGranda/MagnosBot/blob/master/LICENSE)**.
+### COLABORADOR 🤝
+[![Omar Granda]
