@@ -64,7 +64,7 @@ npm start
 
 > Copyright (c) 2025 **[OmarGranda]()**.
 
-### COLABORADOR 🤝
+### COLABORADORES 🤝
 
 - **Yuji-XDev 𓆩⚡ ✞ 𝑺𝒉𝒂𝒅𝒐𝒘 𝒐𝒇𝒇𝒊𝒄𝒊𝒂𝒍 🍧𓆪**
 
