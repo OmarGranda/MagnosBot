@@ -11,13 +11,13 @@ global.owner = [
   "51946200884"
 ]
 
-global.botname = '🕸 𝐌𝐚𝐠𝐧𝐨𝐬𝐁𝐨𝐭-𝐌𝐃'
-global.namebot = '🥗 𝐌𝐚𝐠𝐧𝐨𝐬 𝐁𝐨𝐭'
-global.bot = 'SakuraBot'
-global.packname = '💦 𝗠𝗮𝗴𝗻𝗼𝘀 𝗕𝗼𝘁 𝗩2'
+global.botname = '𝗠𝗮𝗴𝗻𝗼𝘀𝗕𝗼𝘁'
+global.namebot = '𝗠𝗮𝗴𝗻𝗼𝘀𝗕𝗼𝘁'
+global.bot = 'MagnosBot'
+global.packname = '𝗠𝗮𝗴𝗻𝗼𝘀 𝗕𝗼𝘁'
 global.wm = '🌿 𝗕𝗼𝘁 𝗩2'
-global.author = '🥗 DevAlexJs'
-global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ DᴇᴠAʟᴇxJs.'
+global.author = 'Omar Granda'
+global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ Omar Granda.'
 
 global.banner = 'https://stellarwa.xyz/files/1757377941018.jpeg'
 global.icon = 'https://stellarwa.xyz/files/1757378468505.jpeg'
