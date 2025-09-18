@@ -15,7 +15,7 @@ let handler = async (m, { conn }) => {
     const usedRAM = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2); // en MB
 
     setTimeout(async () => {
-        let response = '╭━━━〔 *Info Bot* 〕━━⬣
+        let response = `╭━━━〔 *Info Bot* 〕━━⬣
  │  Hola 👋 @${m.sender.split('@')[0]}.
  │ 📍 \`Ping:\` ${latency} ms
  │ 🎌 \`Uptime:\` [ ${uptimeFormatted} ]
