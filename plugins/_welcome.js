@@ -34,23 +34,23 @@ export async function before(m, { conn, participants, groupMetadata }) {
   if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) memberCount += 1;
   else if ([WAMessageStubType.GROUP_PARTICIPANT_REMOVE, WAMessageStubType.GROUP_PARTICIPANT_LEAVE].includes(m.messageStubType)) memberCount -= 1;
 
-const welcomeMessage = formatText(chat.sWelcome || `╭┈──̇─̇─̇────̇─̇─̇──◯◝
+const welcomeMessage = formatText(chat.sWelcome || `╭┈────────────◯◝
 ┊「 *Bienvenido* 🤗 」
 ┊  *Nombre:* @user
 ┊  *Grupo:* @group
-┊┈─────̇─̇─̇─────◯◝ @type
+┊┈────────────◯◝ @type
 ┊➤ *Usa .menu para ver los* 
 ┊ *comandos.*
 ┊➤ *Ahora somos @users miembros.*
-╰─────────────────╯`, memberCount);
+╰─────────────────◯`, memberCount);
 
-  const byeMessage = formatText(chat.sBye || `╭┈──̇─̇─̇────̇─̇─̇──◯◝
+  const byeMessage = formatText(chat.sBye || `╭┈────────────◯◝
 ┊「 *Hasta pronto 👋* 」
 ┊  *Nombre:* @user
-┊┈─────̇─̇─̇─────◯◝ @type
+┊┈────────────◯◝ @type
 ┊➤ *Ojalá que vuelva pronto.*
 ┊➤ *Ahora somos @users miembros.*
-╰─────────────────╯`, memberCount);
+╰─────────────────◯`, memberCount);
 
   const leaveMessage = formatText(chat.sBye || byeMessage, memberCount);
   const mentions = [userss, m.key.participant];
