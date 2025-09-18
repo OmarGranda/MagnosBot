@@ -27,8 +27,7 @@ let rtx = ` *🔰 MAGNOS BOT 🔰*
 *2️⃣ Toca WhatsApp Web*
 *3️⃣ Escanee este código QR*
 *El codigo es valido por 60 segundos.!*
-
-> *⚠️ No nos hacemos responsable del mal uso que se le pueda dar.`
+> ⚠️ No nos hacemos responsable del mal uso que se le pueda dar.`
 let rtx2 = `*🔰 MAGNOS BOT 🔰*
 ㅤㅤㅤㅤSer Sub Bot
 *1️⃣ Dirígete a los tres puntos en la esquina superior derecha*
@@ -36,7 +35,7 @@ let rtx2 = `*🔰 MAGNOS BOT 🔰*
 *3️⃣ Vincular con código de teléfono*
 *4️⃣ Pega el código a continuación*
 > El código de 8 dígitos es válido por 60 segundos.
-> 🧠 Recuerda qué no es recomendable usar tu cuenta principal para registrar un SubBot.`
+> 🗣️ Recuerda qué no es recomendable usar tu cuenta principal para registrar un SubBot.`
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
