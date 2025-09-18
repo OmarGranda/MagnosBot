@@ -35,24 +35,29 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ╭───────────────✧
 │ ‣🌿ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨ𝗔𝗻𝗶𝗺𝗲ㅤꤪꤨㅤ֢ㅤׄㅤׅ
 │ ╰┈➤ .peek + _<mention>_
-│  Espiar a alguien. 
+│  *Espiar a alguien.* 
 │ ╰┈➤ .comfort + _<mention>_
-│  Consolar a alguien. 
+│  *Consolar a alguien* 
 │ ╰┈➤ .thinkhard + _<mention>_
-│  Pensar intensivamente
+│  *Pensar intensivamente*
 │ ╰┈➤ .curious + _<mention>_
-│  Sentir curiosidad. 
+│  *Sentir curiosidad* 
 │ ╰┈➤ .sniff + _<mention>_
-│  Olfatear a alguien. 
+│  *Olfatear a alguien* 
 │ ╰┈➤ .stare + _<mention>_
-│  Mirar fijamente
+│  *Mirar fijamente*
 │ ╰┈➤ .trip + _<mention>_
-│ 
+│  *Tropezar accidentalmente*
 │ ╰┈➤ .blowkiss + _<mention>_
+│  *Lanzar un beso*
 │ ╰┈➤ .snuggle + _<mention>_
+│  *Acurrucarse con alguien 
 │ ╰┈➤ .angry + _<mention>_
-│ ╰┈➤ .bored › .aburrido + _<mention>_
+│  *Estar enojado*
+│ ╰┈➤ .bored + _<mention>_
+│  *Sacar la lengua*
 │ ╰┈➤ .bleh + _<mention>_
+│ 
 │ ╰┈➤ .clap + _<mention>_
 │ ╰┈➤ .coffee › .cafe + _<mention>_
 │ ╰┈➤ .cold + _<mention>_
