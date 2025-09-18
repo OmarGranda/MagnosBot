@@ -31,7 +31,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ┃ 📦 RAM Total: *${totalMem.toFixed(2)} MB*
 ╰━━━━━━━━━━━━━━━━━━⬣
 
-
 ╭───────────────✧
 │ ‣ 𝘼𝙉𝙄𝙈𝙀 🌸
 │ ╰┈➤ .peek + (@citar)
@@ -281,8 +280,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *atravez de código de 8*
 │  *dijitos.*
 │ ╰┈➤ .leave
-│  *El bot avandona el grupo.*
-│  *actual*
+│  *El bot abandona el grupo*
+│  *actual.*
 │ ╰┈➤ .self on
 │  *Bot privado.*
 │ ╰┈➤ .self off
