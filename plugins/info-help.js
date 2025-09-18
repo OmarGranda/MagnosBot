@@ -181,9 +181,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ ╰┈➤ .mp4 + (link/name)
 │  *videos en documentos.*
 │ ╰┈➤ .playaudio + (link/name)
-│  *Descargar audios
+│ 
+│  *Descargar audios.*
 │ ╰┈➤ .playvideo + (link/name)
-│  *Descargar videos
+│ 
+│  *Descargar videos.*
 │ ╰┈➤ .facebook + (Link)
 │ *Descargar videos de
 │  Facebook.*
