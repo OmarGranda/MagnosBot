@@ -181,7 +181,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ ╰┈➤ .mp4 + (link/name)
 │  *videos en documentos.*
 │ ╰┈➤ .playaudio + (link
-│                   /name)
+│ /name)
 │  *Descargar audios.*
 │ ╰┈➤ .playvideo + (link
 │ /name)
@@ -199,15 +199,28 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 ╭───────────────✧
 │ ‣🍧ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨGrupoㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .bot + _<on|off>_
-│ ╰┈➤ .promote + _<mention>_
-│ ╰┈➤ .setprimary + _<mention>_
-│ ╰┈➤ .demote + _<mention>_
-│ ╰┈➤ .closet › .open 
-│ ╰┈➤ .on › .off + _<welcome|alerts|alertas|antilinks|antienlaces|onlyadmin|adminonly|nsfw>_
-│ ╰┈➤ .tag › .hidetag + _<text>_
-│ ╰┈➤ .groupinfo › .gp 
-│ ╰┈➤ .kick + _<mention>_
+│ ╰┈➤ .bot on
+│ ╰┈➤ .bot off
+│ ╰┈➤ .promote + (@citar)
+│ ╰┈➤ .setprimary + (@citar)
+│ ╰┈➤ .demote + (@citar)
+│ ╰┈➤ .opem
+│ ╰┈➤ .closet
+│ ╰┈➤ .on welcome
+│ ╰┈➤ .off welcome
+│ ╰┈➤ .on alertas
+│ ╰┈➤ .off alertas
+│ ╰┈➤ .on antilinks
+│ ╰┈➤ .off antilinks
+│ ╰┈➤ .on antienlaces
+│ ╰┈➤ .off antienlaces
+│ ╰┈➤ .on onlyadmin
+│ ╰┈➤ .off onlyadmin
+│ ╰┈➤ .on nsfw
+│ ╰┈➤ .off nsfw
+│ ╰┈➤ .hidetag + (texto)
+│ ╰┈➤ .groupinfo
+│ ╰┈➤ .kick + (@citar)
 ╰───────────────✧
 
 ╭───────────────✧
