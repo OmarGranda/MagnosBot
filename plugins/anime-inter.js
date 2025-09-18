@@ -1,7 +1,7 @@
 /*
  - Comando de interacciones, todo junto y mejor.
- - Author del código: DevAlexJs
- - github.com/DevAlexJs
+ - Author del código: OmarGranda
+ - github.com/OmarGranda
 
  - Todos los derechos reservados por el author.
 */
