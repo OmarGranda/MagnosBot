@@ -197,7 +197,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ╰───────────────✧
 
 ╭───────────────✧
-│ ‣🍧ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨGrupoㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ‣  Grupos 👥ㅤׅ
 │ ╰┈➤ .bot on
 │  *Activar el bot en*
 │  *el grupo.*
@@ -209,10 +209,10 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *administrador.*
 │ ╰┈➤ .demote + (@citar)
 │  *Elimina a un usuario de*
-│  *administrador"
+│  *administrador.*
 │ ╰┈➤ .setprimary + (@citar)
 │  *Establece un Bot como*
-│  *primario del grupo. 
+│  *primario del grupo.*
 │ ╰┈➤ .open
 │  *Abre el grupo.*
 │ ╰┈➤ .closet
@@ -226,7 +226,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ ╰┈➤ .off alertas
 │  *Desactivar alertas.*
 │ ╰┈➤ .on antilinks
-│  *Activar antilinks *
+│  *Activar antilink.*
 │ ╰┈➤ .off antilinks
 │  *Desactivar antilink.*
 │ ╰┈➤ .on antienlaces
@@ -234,13 +234,15 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ ╰┈➤ .off antienlaces
 │  *Desactivar antienlaces.*
 │ ╰┈➤ .on onlyadmin
-│  *Activar solo administradores.*
+│  *Activar solo*
+│  *administradores.*
 │ ╰┈➤ .off onlyadmin
-│  *Desactivar solo administradores*
+│  *Desactivar solo*
+│  *administradores*
 │ ╰┈➤ .on nsfw
 │  *Activar los comandos +18*
 │ ╰┈➤ .off nsfw
-│  *Desactivar los comandosb +18*
+│  *Desactivar los comandos +18*
 │ ╰┈➤ .kick + (@citar)
 │  *Expulsar a un usuario del*
 │  *grupo*
