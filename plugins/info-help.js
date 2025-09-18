@@ -119,7 +119,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
           newsletterJid: "120363422169517881@newsletter" 
         },
         externalAdReply: {
-          title: `𝐌𝐚𝐠𝐧𝐨𝐬 𝐁𝐨𝐭 𝐕2 `,
+          title: `𝙈𝙖𝙜𝙣𝙤𝙨 𝘽𝙤𝙩 `,
           body: dev,
           thumbnailUrl: randomImg,
           sourceUrl: 'https://github.com/OmarGranda',
