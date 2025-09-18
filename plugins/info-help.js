@@ -199,31 +199,57 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ╭───────────────✧
 │ ‣🍧ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨGrupoㅤꤪꤨㅤ֢ㅤׄㅤׅ
 │ ╰┈➤ .bot on
-│  /Activar el bot en el grupo./
+│  *Activar el bot en*
+│  *el grupo.*
 │ ╰┈➤ .bot off
-│  /Desactivar el bot en el grupo./
+│  *Desactivar el bot en*
+│  *el grupo.*
 │ ╰┈➤ .promote + (@citar)
-│  /Promueve a un usuario/
-│  /a administrado./
+│  *Promueve a un usuario a*
+│  *administrador.*
 │ ╰┈➤ .demote + (@citar)
+│  *Elimina a un usuario de*
+│  *administrador"
 │ ╰┈➤ .setprimary + (@citar)
-│ ╰┈➤ .opem
+│  *Establece un Bot como*
+│  *primario del grupo. 
+│ ╰┈➤ .open
+│  *Abre el grupo.*
 │ ╰┈➤ .closet
+│  *Cierra el grupo.*
 │ ╰┈➤ .on welcome
+│  *Activar vienvenidas.*
 │ ╰┈➤ .off welcome
+│  *Desactivar vienvenidas.*
 │ ╰┈➤ .on alertas
+│  *Activar alertas.*
 │ ╰┈➤ .off alertas
+│  *Desactivar alertas.*
 │ ╰┈➤ .on antilinks
+│  *Activar antilinks *
 │ ╰┈➤ .off antilinks
+│  *Desactivar antilink.*
 │ ╰┈➤ .on antienlaces
+│  *Activar entienlaces.*
 │ ╰┈➤ .off antienlaces
+│  *Desactivar antienlaces.*
 │ ╰┈➤ .on onlyadmin
+│  *Activar solo administradores.*
 │ ╰┈➤ .off onlyadmin
+│  *Desactivar solo administradores*
 │ ╰┈➤ .on nsfw
+│  *Activar los comandos +18*
 │ ╰┈➤ .off nsfw
-│ ╰┈➤ .hidetag + (texto)
-│ ╰┈➤ .groupinfo
+│  *Desactivar los comandosb +18*
 │ ╰┈➤ .kick + (@citar)
+│  *Expulsar a un usuario del*
+│  *grupo*
+│ ╰┈➤ .hidetag + (texto)
+│  *Menciona a todos los*
+│  *usaríos del grupo*
+│ ╰┈➤ .groupinfo
+│  *Muestra la información del*
+│  *grupo*
 ╰───────────────✧
 
 ╭───────────────✧
