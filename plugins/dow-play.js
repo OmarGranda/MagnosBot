@@ -15,22 +15,22 @@ const handler = async (m, { conn, text, command }) => {
 
     if (!esURL) {
       const search = await yts(text);
-      if (!search.all.length) return m.reply('🍁 No se encontraron resultados.');
+      if (!search.all.length) return m.reply('❌ No se encontraron resultados.');
 
       const videoInfo = search.all[0];
       ({ title, url } = videoInfo);
 
       const vistas = (videoInfo.views || 0).toLocaleString();
       const canal = videoInfo.author?.name || 'Desconocido';
-      const infoMessage = `˚∩　ׅ　🅨𝗈𝗎𝖳𝗎𝖻𝖾 🅟𝗅𝖺𝗒　ׄᰙ　ׅ
+      const infoMessage = `˚∩　ׅ　Y𝗈𝗎𝖳𝗎𝖻𝖾 P𝗅𝖺𝗒　ׄᰙ　ׅ
 
-> 🕸̴𖫲᮫ִ۫𝆬  Descargando › *${title}*
+> 📽️ Descargando › *${title}*
 
-𖣣ֶㅤ֯⌗ 🐤 ׄ ⬭ Canal › *${canal}*
-𖣣ֶㅤ֯⌗ 🌿 ׄ ⬭ Duración › *${videoInfo.timestamp}*
-𖣣ֶㅤ֯⌗ 🌾 ׄ ⬭ Vistas › *${vistas}*
-𖣣ֶㅤ֯⌗ ⭐ ׄ ⬭ Publicado › *${videoInfo.ago}*
-𖣣ֶㅤ֯⌗ 🥙 ׄ ⬭ Enlace › *${url}*
+𖣣ֶㅤ֯⌗ 🎬 : Canal › *${canal}*
+𖣣ֶㅤ֯⌗ ⏰ : Duración › *${videoInfo.timestamp}*
+𖣣ֶㅤ֯⌗ 👀 : Vistas › *${vistas}*
+𖣣ֶㅤ֯⌗ 🗓️ : Publicado › *${videoInfo.ago}*
+𖣣ֶㅤ֯⌗ 🔗 : Enlace › *${url}*
 
 ${dev}`;
 
