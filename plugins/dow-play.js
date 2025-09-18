@@ -23,7 +23,9 @@ const handler = async (m, { conn, text, command }) => {
       const vistas = (videoInfo.views || 0).toLocaleString();
       const canal = videoInfo.author?.name || 'Desconocido';
       const infoMessage = ` *ＹＯＵＴＵＢＥ - ＰＬＡＹ*
+
 ⏳ Descargando : *${title}*
+
 > Canal 🎬 : *${canal}*
 > Duración ⏰ : *${videoInfo.timestamp}*
 > Vistas 👀 : *${vistas}*
