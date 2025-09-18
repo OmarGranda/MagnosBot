@@ -16,14 +16,12 @@ let handler = async (m, { conn }) => {
 
     setTimeout(async () => {
         let response = 
-`﹒⌗﹒🫛 .˚₊‧  Hola, @${m.sender.split('@')[0]}.
-
-🌾  .→﹒ Ping Status .  ◌Ⳋ𝅄
-
-🌱 \`Ping:\` ${latency} ms
-🍁 \`Uptime:\` [ ${uptimeFormatted} ]
-🕸 \`RAM usada:\` ${usedRAM} MB`;
-
+`╭━━━〔 *Info Bot* 〕━━⬣
+ │ Hola 👋 @${m.sender.split('@')[0]}.
+ │ 📍\`Ping:\` ${latency} ms
+ │ 🎌\`Uptime:\` [ ${uptimeFormatted} ]
+ │ 💾\`RAM usada:\` ${usedRAM} MB
+ ╰━━━〔 *MAGNOS BOT* 〕━━⬣`;
         await conn.sendMessage(m.chat, { text: response, edit: key, mentions: [m.sender] }, { quoted: m });
     }, latency);
 };
