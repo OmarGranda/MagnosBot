@@ -270,7 +270,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ ‣ SubBots 🤖ㅤׅ
 │ ╰┈➤ .bots
 │  *Muestra el número de los*
-|  *SubBots conectados.*
+│  *SubBots conectados.*
 │ ╰┈➤ .logout
 │  *Cierra la secion del SubBot.*
 │ ╰┈➤ .qr
