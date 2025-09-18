@@ -35,8 +35,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ╭───────────────✧
 │ ‣🌿ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨ𝗔𝗻𝗶𝗺𝗲ㅤꤪꤨㅤ֢ㅤׄㅤׅ
 │ ╰┈➤ .peek + _<mention>_
+|  Espiar a alguien
 │ ╰┈➤ .comfort + _<mention>_
+|  Consolar a alguien
 │ ╰┈➤ .thinkhard + _<mention>_
+|  Pensar intensivamente
 │ ╰┈➤ .curious + _<mention>_
 │ ╰┈➤ .sniff + _<mention>_
 │ ╰┈➤ .stare + _<mention>_
