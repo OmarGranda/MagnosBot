@@ -34,7 +34,7 @@ let { say } = cfonts
 
 console.log(chalk.magentaBright('\nIniciando...'))
 
-say('SakuraBot', {
+say('MagnosBot', {
   font: 'simple',
   align: 'left',
   gradient: ['green', 'white']
