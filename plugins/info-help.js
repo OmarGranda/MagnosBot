@@ -278,48 +278,85 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *atravez de código QR.*
 │ ╰┈➤ .code
 │  *Vincula un nuevo SubBot*
-│  *atragez de código de 8*
+│  *atravez de código de 8*
 │  *dijitos.*
 │ ╰┈➤ .leave
 │  *El bot avandona el grupo*
 │  *actual*
 │ ╰┈➤ .self on
-   *Bot privado
+   *Bot privado.*
 │ ╰┈➤ .self off
-│  *Bot publicó
+│  *Bot publicó.*
 ╰───────────────✧
 
 ╭───────────────✧
-│  ‣🌷ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨIaㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ ..chatgpt + _<query>_
+│  ‣ Buscadores 🔎
+│ ╰┈➤ .chatgpt + (texto)
+│  *Reliza una petición a*
+│  *chat gpt.*
 ╰───────────────✧
 
 ╭───────────────✧
-│ ‣⭐ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨNsfwㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .danbooru › .dbooru + _<tag>_
-│ ╰┈➤ .gelbooru › .gbooru + _<tag>_
-│ ╰┈➤ .blowjob › .bj + _<mention>_
-│ ╰┈➤ .boobjob + _<mention>_
-│ ╰┈➤ .cum + _<mention>_
-│ ╰┈➤ .anal + _<mention>_
-│ ╰┈➤ .fap › .paja + _<mention>_
-│ ╰┈➤ .grabboobs + _<mention>_
-│ ╰┈➤ .footjob + _<mention>_
-│ ╰┈➤ .undress › .encuerar + _<mention>_
-│ ╰┈➤ .grope + _<mention>_
-│ ╰┈➤ .sixnine › .69 + _<mention>_
-│ ╰┈➤ .lickpussy + _<mention>_
-│ ╰┈➤ .spank › .nalgada + _<mention>_
-│ ╰┈➤ .fuck › .coger + _<mention>_
-│ ╰┈➤ .suckboobs + _<mention>_
+│ ‣ Utilidadesㅤׅ
+│ ╰┈➤ .s
+│ *Convierte imágenes o*
+│ *videos en stikers*
+│ ╰┈➤ .pfp + (@citar)
+│ *Ver la foto de perfil de un
+│ *usuario.*
+│ ╰┈➤ .get + (ulr)
+│ *Reliza solicitudes get a*
+│ *páginas web.*
+│ ╰┈➤ .hd
+│ *Mejora la calidad de una*
+│ *imagen.*
 ╰───────────────✧
 
 ╭───────────────✧
-│ ‣🌤️ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨUtilsㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .sticker › .s 
-│ ╰┈➤ .getpic › .pfp + _<mention>_
-│ ╰┈➤ .get + _<url>_
-│ ╰┈➤ .hd 
+│ ‣ Comandos +18 🚫
+│ ╰┈➤ .dbooru + (@citar)
+│  *Buscar imágenes en*
+│  *danbooru.*
+│ ╰┈➤ .gbooru + (@citar)
+│  *Buscar imágenes en*
+│  *gelbooru
+│ ╰┈➤ .blowjob + (@citar)
+│  *Dale una mamada a un*
+|  *usuario.*
+│ ╰┈➤ .boobjob + (@citar)
+│  *Hacerle una rusa a un*
+│  *usuario.*
+│ ╰┈➤ .cum + (@citar)
+│  *Venirse en alguien.*
+│ ╰┈➤ .anal + (@citar)
+│  *Hacer un anal.*
+│ ╰┈➤ .fap + (@citar)
+│  *Hacer una paja.*
+│ ╰┈➤ .grabboobs + (@citar)
+│  *Agarrar las retas de un*
+│  *usuario.*
+│ ╰┈➤ .footjob + (@citar)
+│  *Hacer una paja con los pies*
+│  *a un usuario.*
+│ ╰┈➤ .undress + (@citar)
+│  *Encuerate o encuera a un*
+│  *usuario.*
+│ ╰┈➤ .grope + (@citar)
+│  *Manosear las nalgas a un*
+│  *usuario.*
+│ ╰┈➤ .sixnine + (@citar)
+│  *Hacer un 69 con un usuario.*
+│ ╰┈➤ .lickpussy + (@citar)
+│  *Lamer el coño de un
+│  *usuario.*
+│ ╰┈➤ .spank + (@citar)
+│  *Darle una nalgada a un*
+│  *usuario.*
+│ ╰┈➤ .fuck + (@citar)
+│  *Coger a un usuario.*
+│ ╰┈➤ .suckboobs + (@citar)
+│  *Chupar las tetas de un*
+│  *usuario.*
 ╰───────────────✧`
 
     await conn.sendMessage(m.chat, {
