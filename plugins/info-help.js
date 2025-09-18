@@ -34,31 +34,31 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 ╭───────────────✧
 │ ‣🌿ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨ𝗔𝗻𝗶𝗺𝗲ㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .peek + _<mention>_
+│ ╰┈➤ .peek + (@mencion) 
 │  *Espiar a alguien.* 
-│ ╰┈➤ .comfort + _<mention>_
+│ ╰┈➤ .comfort + (@mencion)
 │  *Consolar a alguien* 
-│ ╰┈➤ .thinkhard + _<mention>_
+│ ╰┈➤ .thinkhard + (@mencion)
 │  *Pensar intensivamente*
-│ ╰┈➤ .curious + _<mention>_
+│ ╰┈➤ .curious + (@mencion)
 │  *Sentir curiosidad* 
-│ ╰┈➤ .sniff + _<mention>_
+│ ╰┈➤ .sniff + (@mencion)
 │  *Olfatear a alguien* 
-│ ╰┈➤ .stare + _<mention>_
+│ ╰┈➤ .stare + (@mencion)
 │  *Mirar fijamente*
-│ ╰┈➤ .trip + _<mention>_
+│ ╰┈➤ .trip + (@mencion)
 │  *Tropezar accidentalmente*
-│ ╰┈➤ .blowkiss + _<mention>_
+│ ╰┈➤ .blowkiss + (@mencion)
 │  *Lanzar un beso*
-│ ╰┈➤ .snuggle + _<mention>_
+│ ╰┈➤ .snuggle + (@mencion)
 │  *Acurrucarse con alguien 
-│ ╰┈➤ .angry + _<mention>_
+│ ╰┈➤ .angry + (@mencion)
 │  *Estar enojado*
-│ ╰┈➤ .bored + _<mention>_
-│  *Sacar la lengua*
-│ ╰┈➤ .bleh + _<mention>_
-│ 
-│ ╰┈➤ .clap + _<mention>_
+│ ╰┈➤ .bored + (@mencion)
+│  *Estar aburrido*
+│ ╰┈➤ .bleh + (@mencion)
+│  *Sacar la lengua
+│ ╰┈➤ .clap + _<@mención>_
 │ ╰┈➤ .coffee › .cafe + _<mention>_
 │ ╰┈➤ .cold + _<mention>_
 │ ╰┈➤ .sing + _<mention>_
