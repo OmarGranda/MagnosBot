@@ -240,9 +240,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *Desactivar solo*
 │  *administradores*
 │ ╰┈➤ .on nsfw
-│  *Activar los comandos +18*
+│  *Activar los*
+│  *comandos +18.*
 │ ╰┈➤ .off nsfw
-│  *Desactivar los comandos +18*
+│  *Desactivar los*
+│  *comandos +18*
 │ ╰┈➤ .kick + (@citar)
 │  *Expulsar a un usuario del*
 │  *grupo*
@@ -255,9 +257,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ╰───────────────✧
 
 ╭───────────────✧
-│ ‣🍂ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨInfoㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .menu › .help + _<category>_
-│ ╰┈➤ .ping › .p 
+│ ‣ Información 🤖
+│ ╰┈➤ .menu
+│ ╰┈➤ .ping
 ╰───────────────✧
 
 ╭───────────────✧
