@@ -29,8 +29,8 @@ const handler = async (m, { conn, text, command }) => {
 │ Duración ⏰ : *${videoInfo.timestamp}*
 │ Vistas 👀 : *${vistas}*
 │ Publicado 🗓️ : *${videoInfo.ago}*
-│ Enlace 🔗 : 
-│ *${url}*
+│ Enlace 🔗 :  *${url}*
+│ 
 ╰━━━━━━━━━━━━━━━━━━⬣
 ${dev}`;
 
