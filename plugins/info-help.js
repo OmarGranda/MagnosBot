@@ -20,7 +20,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     ]
     let randomImg = imgs[Math.floor(Math.random() * imgs.length)]
     
-    let menu = `╭━━〔 ⚡ *MENÚ ° MAGNOS* ⚡ 〕━⬣
+    let menu = `
+╭━〔 *MENÚ ° MAGNOS* 〕━⬣
 ┃ 👤 Usuario: *${user}*
 ┃ 📅 Fecha: *${fecha}*
 ┃ 🕒 Hora: *${hora}*
@@ -28,7 +29,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ┃ 💾 RAM Usada: *${usedMem.toFixed(2)} MB*
 ┃ 📂 RAM Libre: *${freeMem.toFixed(2)} MB*
 ┃ 📦 RAM Total: *${totalMem.toFixed(2)} MB*
-╰━━━━━━━━━━━━━━━━━━━━━━⬣
+╰━━━━━━━━━━━━━━━⬣
 
 
 ╭───────────────✧
