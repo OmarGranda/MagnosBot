@@ -226,9 +226,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ ╰┈➤ .off alertas
 │  *Desactivar alertas.*
 │ ╰┈➤ .on antilinks
-│  *Activar antilink.*
+│  *Activar antilinks.*
 │ ╰┈➤ .off antilinks
-│  *Desactivar antilink.*
+│  *Desactivar antilinks.*
 │ ╰┈➤ .on antienlaces
 │  *Activar entienlaces.*
 │ ╰┈➤ .off antienlaces
@@ -238,42 +238,60 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *administradores.*
 │ ╰┈➤ .off onlyadmin
 │  *Desactivar solo*
-│  *administradores*
+│  *administradores.*
 │ ╰┈➤ .on nsfw
 │  *Activar los*
 │  *comandos +18.*
 │ ╰┈➤ .off nsfw
 │  *Desactivar los*
-│  *comandos +18*
+│  *comandos +18.*
 │ ╰┈➤ .kick + (@citar)
 │  *Expulsar a un usuario del*
-│  *grupo*
+│  *grupo.*
 │ ╰┈➤ .hidetag + (texto)
 │  *Menciona a todos los*
-│  *usaríos del grupo*
+│  *usaríos del grupo.*
 │ ╰┈➤ .groupinfo
 │  *Muestra la información del*
-│  *grupo*
+│  *grupo.*
 ╰───────────────✧
 
 ╭───────────────✧
 │ ‣ Información 🤖
 │ ╰┈➤ .menu
+│  *Muestra la lista de*
+│  *comandos.*
 │ ╰┈➤ .ping
+│  *Muestra la velocidad*
+│  *del bot.*
 ╰───────────────✧
 
 ╭───────────────✧
-│ ‣🎋ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨSocketsㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .bots › .sockets 
-│ ╰┈➤ .logout 
-│ ╰┈➤ .qr › .code 
-│ ╰┈➤ .leave 
-│ ╰┈➤ .self + _<on|off>_
+│ ‣ SubBots 🤖ㅤׅ
+│ ╰┈➤ .bots
+│  *Muestra el número de los*
+|  *SubBots conectados.*
+│ ╰┈➤ .logout
+│  *Cierra la secion del SubBot.*
+│ ╰┈➤ .qr
+│  *Vincula un nuevo SubBot*
+│  *atravez de código QR.*
+│ ╰┈➤ .code
+│  *Vincula un nuevo SubBot*
+│  *atragez de código de 8*
+│  *dijitos.*
+│ ╰┈➤ .leave
+│  *El bot avandona el grupo*
+│  *actual*
+│ ╰┈➤ .self on
+   *Bot privado
+│ ╰┈➤ .self off
+│  *Bot publicó
 ╰───────────────✧
 
 ╭───────────────✧
-│ ‣🌷ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨIaㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .ia › .chatgpt + _<query>_
+│  ‣🌷ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨIaㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ ..chatgpt + _<query>_
 ╰───────────────✧
 
 ╭───────────────✧
