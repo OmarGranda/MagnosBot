@@ -1,23 +1,17 @@
-import fetch from 'node-fetch'
-import fs from 'fs'
-import axios from 'axios'
-import moment from 'moment-timezone'
 import os from 'os'
-import { performance } from 'perf_hooks'
-import { commands } from '../lib/commands.js'
+import moment from 'moment-timezone'
 
-let handler = async (m, { conn, args, usedPrefix }) => { 
+let handler = async (m, { conn, usedPrefix, command }) => {
   try {
+    let totalMem = os.totalmem() / 1024 / 1024
+    let freeMem = os.freemem() / 1024 / 1024
+    let usedMem = totalMem - freeMem
+    let user = m.pushName || "Usuario"
 
-    const cmdsList = commands
-    let now = new Date()
-    let colombianTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Bogota' }))
-    let tiempo = colombianTime.toLocaleDateString('en-GB', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric', 
-    }).replace(/,/g, '')
-    
+    let fecha = moment().tz('America/Lima').format('DD/MM/YYYY')
+    let hora = moment().tz('America/Lima').format('HH:mm:ss')
+    let dia = moment().tz('America/Lima').format('dddd')
+
     const imgs = [
       "https://files.catbox.moe/iw8yi8.jpg",
       "https://files.catbox.moe/2bezkd.jpg",
@@ -25,89 +19,157 @@ let handler = async (m, { conn, args, usedPrefix }) => {
       "https://files.catbox.moe/ai470b.jpg"
     ]
     let randomImg = imgs[Math.floor(Math.random() * imgs.length)]
-
     
-    let tiempo2 = moment.tz('America/Bogota').format('hh:mm A')
-    let sessionFolder = './plugins'
-    let subSessions = fs.existsSync(sessionFolder) ? fs.readdirSync(sessionFolder) : []
-    let plugins = subSessions.length
+    let menu = `╭━━〔 ⚡ *MENÚ ° MAGNOS* ⚡ 〕━⬣
+┃ 👤 Usuario: *${user}*
+┃ 📅 Fecha: *${fecha}*
+┃ 🕒 Hora: *${hora}*
+┃ 📆 Día: *${dia}*
+┃ 💾 RAM Usada: *${usedMem.toFixed(2)} MB*
+┃ 📂 RAM Libre: *${freeMem.toFixed(2)} MB*
+┃ 📦 RAM Total: *${totalMem.toFixed(2)} MB*
+╰━━━━━━━━━━━━━━━━━━━━━━⬣
 
-    let isOficialBot = conn.user.jid === globalThis.conn.user.jid
-    let botType = isOficialBot ? 'Principal' : 'Sub-Bot'
 
-    const jam = moment.tz('America/Lima').locale('id').format('HH:mm:ss')
-    const ucapan = jam < '05:00:00' ? 'Buen día' : 
-                   jam < '11:00:00' ? 'Buen día' : 
-                   jam < '15:00:00' ? 'Buenas tardes' : 
-                   jam < '18:00:00' ? 'Buenas tardes' : 
-                   jam < '19:00:00' ? 'Buenas tardes' : 
-                   jam < '23:59:00' ? 'Buenas noches' : 
-                   'Buenas noches';
+╭───────────────✧
+│ ‣🌿ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨ𝗔𝗻𝗶𝗺𝗲ㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .peek + _<mention>_
+│ ╰┈➤ .comfort + _<mention>_
+│ ╰┈➤ .thinkhard + _<mention>_
+│ ╰┈➤ .curious + _<mention>_
+│ ╰┈➤ .sniff + _<mention>_
+│ ╰┈➤ .stare + _<mention>_
+│ ╰┈➤ .trip + _<mention>_
+│ ╰┈➤ .blowkiss + _<mention>_
+│ ╰┈➤ .snuggle + _<mention>_
+│ ╰┈➤ .angry + _<mention>_
+│ ╰┈➤ .bored › .aburrido + _<mention>_
+│ ╰┈➤ .bleh + _<mention>_
+│ ╰┈➤ .clap + _<mention>_
+│ ╰┈➤ .coffee › .cafe + _<mention>_
+│ ╰┈➤ .cold + _<mention>_
+│ ╰┈➤ .sing + _<mention>_
+│ ╰┈➤ .tickle + _<mention>_
+│ ╰┈➤ .scream + _<mention>_
+│ ╰┈➤ .push + _<mention>_
+│ ╰┈➤ .nope + _<mention>_
+│ ╰┈➤ .jump + _<mention>_
+│ ╰┈➤ .heat + _<mention>_
+│ ╰┈➤ .gaming + _<mention>_
+│ ╰┈➤ .draw + _<mention>_
+│ ╰┈➤ .call + _<mention>_
+│ ╰┈➤ .dramatic › .drama + _<mention>_
+│ ╰┈➤ .drunk + _<mention>_
+│ ╰┈➤ .impregnate › .preg + _<mention>_
+│ ╰┈➤ .kisscheek › .beso + _<mention>_
+│ ╰┈➤ .laugh + _<mention>_
+│ ╰┈➤ .love › .amor + _<mention>_
+│ ╰┈➤ .pout + _<mention>_
+│ ╰┈➤ .punch + _<mention>_
+│ ╰┈➤ .run › .correr + _<mention>_
+│ ╰┈➤ .sad › .triste + _<mention>_
+│ ╰┈➤ .scared + _<mention>_
+│ ╰┈➤ .seduce + _<mention>_
+│ ╰┈➤ .shy › .timido + _<mention>_
+│ ╰┈➤ .sleep + _<mention>_
+│ ╰┈➤ .smoke › .fumar + _<mention>_
+│ ╰┈➤ .spit › .escupir + _<mention>_
+│ ╰┈➤ .step › .pisar + _<mention>_
+│ ╰┈➤ .think + _<mention>_
+│ ╰┈➤ .walk + _<mention>_
+│ ╰┈➤ .hug + _<mention>_
+│ ╰┈➤ .kill + _<mention>_
+│ ╰┈➤ .eat › .nom › .comer + _<mention>_
+│ ╰┈➤ .kiss › .muak + _<mention>_
+│ ╰┈➤ .wink + _<mention>_
+│ ╰┈➤ .pat + _<mention>_
+│ ╰┈➤ .happy › .feliz + _<mention>_
+│ ╰┈➤ .bully + _<mention>_
+│ ╰┈➤ .bite › .morder + _<mention>_
+│ ╰┈➤ .wave + _<mention>_
+│ ╰┈➤ .blush + _<mention>_
+│ ╰┈➤ .bath + _<mention>_
+│ ╰┈➤ .smug + _<mention>_
+│ ╰┈➤ .smile + _<mention>_
+│ ╰┈➤ .highfive + _<mention>_
+│ ╰┈➤ .handhold + _<mention>_
+│ ╰┈➤ .cringe + _<mention>_
+│ ╰┈➤ .bonk + _<mention>_
+│ ╰┈➤ .cry + _<mention>_
+│ ╰┈➤ .lick + _<mention>_
+│ ╰┈➤ .slap + _<mention>_
+│ ╰┈➤ .cuddle + _<mention>_
+│ ╰┈➤ .dance + _<mention>_
+╰───────────────✧
 
-    let uptimeSeg = Math.floor(process.uptime())
-    let uptimeStr = convertirTiempo(uptimeSeg)
+╭───────────────✧
+│ ‣🍏ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨDownloadㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .play › .play2 › .mp3 › .mp4 › .playaudio › .playvideo + _<url|query>_
+│ ╰┈➤ .facebook › .fb + _<url>_
+│ ╰┈➤ .mediafire › .mf + _<url|query>_
+│ ╰┈➤ .tiktok › .tt + _<url|query>_
+╰───────────────✧
 
-    let memoriaTotal = os.totalmem() / 1024 / 1024 / 1024
-    let memoriaLibre = os.freemem() / 1024 / 1024 / 1024
-    let memoriaUsada = memoriaTotal - memoriaLibre
+╭───────────────✧
+│ ‣🍧ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨGrupoㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .bot + _<on|off>_
+│ ╰┈➤ .promote + _<mention>_
+│ ╰┈➤ .setprimary + _<mention>_
+│ ╰┈➤ .demote + _<mention>_
+│ ╰┈➤ .closet › .open 
+│ ╰┈➤ .on › .off + _<welcome|alerts|alertas|antilinks|antienlaces|onlyadmin|adminonly|nsfw>_
+│ ╰┈➤ .tag › .hidetag + _<text>_
+│ ╰┈➤ .groupinfo › .gp 
+│ ╰┈➤ .kick + _<mention>_
+╰───────────────✧
 
-    let menu = `\n\n`
-    menu += `> . ﹡ ﹟ 🌹 ׄ ⬭ ${ucapan}  *${m.pushName ? m.pushName : 'Sin nombre'}*\n\n`
-    menu += `ׅㅤꨶ〆⁾ ㅤׄㅤ⸼ㅤׄ *͜🐼* ㅤ֢ㅤ⸱ㅤᯭִ\n`
-    menu += `ׅㅤ𓏸𓈒ㅤׄ *Plugins ›* ${plugins}\n`
-    menu += `ׅㅤ𓏸𓈒ㅤׄ *Versión ›* ^0.0.9 ⋆. 𐙚 ˚\n\n`
-    menu += `ׅㅤ𓏸𓈒ㅤׄ *Fecha ›* ${tiempo}, ${tiempo2}\n`
-    menu += `ׅㅤ𓏸𓈒ㅤׄ *Tiempo activo ›* ${uptimeStr}\n`
-    menu += `ׅㅤ𓏸𓈒ㅤׄ *RAM usada ›* ${memoriaUsada.toFixed(2)} GB\n`
-    menu += `ׅㅤ𓏸𓈒ㅤׄ *RAM total ›* ${memoriaTotal.toFixed(2)} GB\n`
+╭───────────────✧
+│ ‣🍂ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨInfoㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .menu › .help + _<category>_
+│ ╰┈➤ .ping › .p 
+╰───────────────✧
 
-    const categoryArg = args[0]?.toLowerCase();
-    const categories = {};
+╭───────────────✧
+│ ‣🎋ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨSocketsㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .bots › .sockets 
+│ ╰┈➤ .logout 
+│ ╰┈➤ .qr › .code 
+│ ╰┈➤ .leave 
+│ ╰┈➤ .self + _<on|off>_
+╰───────────────✧
 
-    for (const command of cmdsList) {
-      const category = command.category || 'otros';
-      if (!categories[category]) {
-        categories[category] = [];
-      }
-      categories[category].push(command);
-    }
+╭───────────────✧
+│ ‣🌷ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨIaㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .ia › .chatgpt + _<query>_
+╰───────────────✧
 
-    if (categoryArg && !categories[categoryArg]) {
-      return m.reply(`⭐ La categoría *${categoryArg}* no encontrada.`);
-    }
+╭───────────────✧
+│ ‣⭐ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨNsfwㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .danbooru › .dbooru + _<tag>_
+│ ╰┈➤ .gelbooru › .gbooru + _<tag>_
+│ ╰┈➤ .blowjob › .bj + _<mention>_
+│ ╰┈➤ .boobjob + _<mention>_
+│ ╰┈➤ .cum + _<mention>_
+│ ╰┈➤ .anal + _<mention>_
+│ ╰┈➤ .fap › .paja + _<mention>_
+│ ╰┈➤ .grabboobs + _<mention>_
+│ ╰┈➤ .footjob + _<mention>_
+│ ╰┈➤ .undress › .encuerar + _<mention>_
+│ ╰┈➤ .grope + _<mention>_
+│ ╰┈➤ .sixnine › .69 + _<mention>_
+│ ╰┈➤ .lickpussy + _<mention>_
+│ ╰┈➤ .spank › .nalgada + _<mention>_
+│ ╰┈➤ .fuck › .coger + _<mention>_
+│ ╰┈➤ .suckboobs + _<mention>_
+╰───────────────✧
 
-    for (const [category, cmds] of Object.entries(categories)) {
-      if (categoryArg && category.toLowerCase() !== categoryArg) {
-        continue;
-      }
-      const catName = category.charAt(0).toUpperCase() + category.slice(1)
-      menu += `\nㅤ🍂ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨ${catName}ㅤꤪꤨㅤ֢ㅤׄㅤׅ\n`
-      cmds.forEach(cmd => {
-        const match = usedPrefix.match(/[#\/+.!-]$/);
-        const separator = match ? match[0] : '';
-        const cleanPrefix = separator ? separator : usedPrefix;
-        const aliases = cmd.alias.map(a => {
-          const aliasClean = a.split(/[\/#!+.\-]+/).pop().toLowerCase();
-          return `${cleanPrefix}${aliasClean}`
-        }).join(' › ');
-        menu += `֯　ׅ🍃ֶ֟፝֯ㅤ *${aliases}* ${cmd.uso ? `+ ${cmd.uso}` : ''}\n`;
-        menu += `> _*${cmd.desc}*_\n`;
-      });
-    }
-
-    const canales = Object.entries(global.my)
-      .reduce((acc, [key, value]) => {
-        if (key.startsWith('ch')) {
-          const index = key.slice(2)
-          const nombre = global.my[`name${index}`]
-          if (nombre) {
-            acc.push({ id: value, nombre })
-          }
-        }
-        return acc
-      }, [])
-
-    const channelRD = canales[Math.floor(Math.random() * canales.length)]
+╭───────────────✧
+│ ‣🌤️ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨUtilsㅤꤪꤨㅤ֢ㅤׄㅤׅ
+│ ╰┈➤ .sticker › .s 
+│ ╰┈➤ .getpic › .pfp + _<mention>_
+│ ╰┈➤ .get + _<url>_
+│ ╰┈➤ .hd 
+╰───────────────✧`
 
     await conn.sendMessage(m.chat, {
       text: menu.trim(),
@@ -119,7 +181,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
           newsletterJid: "120363422169517881@newsletter" 
         },
         externalAdReply: {
-          title: `𝙈𝙖𝙜𝙣𝙤𝙨 𝘽𝙤𝙩 `,
+          title: `⚡ 𝙈𝙖𝙜𝙣𝙤𝙨 𝘽𝙤𝙩 ⚡`,
           body: dev,
           thumbnailUrl: randomImg,
           sourceUrl: 'https://github.com/OmarGranda',
@@ -134,16 +196,8 @@ let handler = async (m, { conn, args, usedPrefix }) => {
   }
 }
 
-function convertirTiempo(segundos) {
-  let horas = Math.floor(segundos / 3600)
-  let minutos = Math.floor((segundos % 3600) / 60)
-  let seg = segundos % 60
-  return [horas, minutos, seg]
-    .map(v => v.toString().padStart(2, '0'))
-    .join(':')
-}
+handler.help = ['help', 'menu']
+handler.tags = ['main']
+handler.command = ['help', 'menu', 'ayuda']
 
-handler.help = ['menu', 'help']
-handler.tags = ['info']
-handler.command = ['menu', 'help'] 
 export default handler
