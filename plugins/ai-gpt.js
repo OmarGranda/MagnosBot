@@ -4,7 +4,7 @@ let handler = async (m, { conn, args }) => {
   const text = args.join(' ').trim();
 
   if (!text) {
-    return m.reply('🫟 Escribe una *petición* para que *ChatGPT* te responda.');
+    return m.reply('✍️ Escribe una *petición* para que *ChatGPT* te responda.');
   }
 
   const apiUrl = `${api.url}/ai/chatgpt?text=${encodeURIComponent(text)}&apikey=${api.key}`;
@@ -12,7 +12,7 @@ let handler = async (m, { conn, args }) => {
   try {
     const { key } = await conn.sendMessage(
       m.chat,
-      { text: '🐼 *ChatGPT* está procesando tu respuesta...' },
+      { text: '🟢 *ChatGPT* está procesando tu respuesta...' },
       { quoted: m }
     );
 
@@ -20,7 +20,7 @@ let handler = async (m, { conn, args }) => {
     const json = await res.json();
 
     if (!json || !json.result) {
-      return conn.reply(m.chat, '🫆 No se pudo obtener una *respuesta* válida.');
+      return conn.reply(m.chat, '❌ No se pudo obtener una *respuesta* válida.');
     }
 
     const response = json.result.trim();
