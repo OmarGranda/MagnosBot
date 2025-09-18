@@ -35,18 +35,18 @@ export async function before(m, { conn, participants, groupMetadata }) {
   else if ([WAMessageStubType.GROUP_PARTICIPANT_REMOVE, WAMessageStubType.GROUP_PARTICIPANT_LEAVE].includes(m.messageStubType)) memberCount -= 1;
 
 const welcomeMessage = formatText(chat.sWelcome || `╭┈──̇─̇─̇────̇─̇─̇──◯◝
-┊「 *Bienvenido (⁠ ⁠ꈍ⁠ᴗ⁠ꈍ⁠)* 」
+┊「 *Bienvenido* 🤗」
 ┊︶︶︶︶︶︶︶︶︶︶︶
 ┊  *Nombre ›* @user
 ┊  *Grupo ›* @group
 ┊┈─────̇─̇─̇─────◯◝ @type
-┊➤ *Usa /menu para ver los comandos.*
+┊➤ *Usa .menu para ver los comandos.*
 ┊➤ *Ahora somos @users miembros.*
 ┊ ︿︿︿︿︿︿︿︿︿︿︿
 ╰─────────────────╯`, memberCount);
 
   const byeMessage = formatText(chat.sBye || `╭┈──̇─̇─̇────̇─̇─̇──◯◝
-┊「 *Hasta pronto (⁠╥⁠﹏⁠╥⁠)* 」
+┊「 *Hasta pronto 👋* 」
 ┊︶︶︶︶︶︶︶︶︶︶︶
 ┊  *Nombre ›* @user
 ┊┈─────̇─̇─̇─────◯◝ @type
@@ -62,9 +62,9 @@ const welcomeMessage = formatText(chat.sWelcome || `╭┈──̇─̇─̇─�
     contextInfo: {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: "120363420992828502@newsletter",
+        newsletterJid: "120363422169517881@newsletter",
         serverMessageId: '',
-        newsletterName: "₊· ͟͟͞͞꒰✩ 𝐒𝐭𝐞𝐥𝐥𝐚𝐫 𝐖𝐚𝐁𝐨𝐭 - 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⏤͟͟͞͞✿"
+        newsletterName: "MagnosBot| CHANNEL"
       },
       externalAdReply: {
         title: namebot,
