@@ -16,7 +16,7 @@ let handler = async (m, { conn }) => {
 
     setTimeout(async () => {
         let response = `╭━━━〔 *Info Bot* 〕━━⬣
- │  Hola 👋 @${m.sender.split('@')[0]}.
+│ Hola 👋 @${m.sender.split('@')[0]}.
  │ 📍 \`Ping:\` ${latency} ms
  │ 🎌 \`Uptime:\` [ ${uptimeFormatted} ]
  │ 💾 \`RAM usada:\` ${usedRAM} MB
