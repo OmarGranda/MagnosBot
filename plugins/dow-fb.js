@@ -4,7 +4,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     if (!args[0]) {
       return m.reply(
-        `🕸 Ingresa un enlace de un video de Facebook`
+        `🫵 Ingresa un enlace de un video de Facebook`
       );
     }
 
