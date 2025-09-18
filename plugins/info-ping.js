@@ -1,6 +1,6 @@
 let handler = async (m, { conn }) => {
     const start = new Date().getTime();
-    const { key } = await conn.sendMessage(m.chat, {text: `Status Charging 🫛`}, {quoted: m});
+    const { key } = await conn.sendMessage(m.chat, {text: `Status Charging 🚀`}, {quoted: m});
     const end = new Date().getTime();
 
     const latency = end - start;
