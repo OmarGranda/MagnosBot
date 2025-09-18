@@ -33,140 +33,140 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 
 ╭───────────────✧
-│ ‣🌿ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨ𝗔𝗻𝗶𝗺𝗲ㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .peek + (@mencionar)
+│ ‣ 🅰🅽🅸🅼🅴 🌸
+│ ╰┈➤ .peek + (@citar)
 │  *Espiar a alguien.* 
-│ ╰┈➤ .comfort + (@mencionar)
+│ ╰┈➤ .comfort + (@citar)
 │  *Consolar a alguien.* 
-│ ╰┈➤ .thinkhard + (@mencionar)
+│ ╰┈➤ .thinkhard + (@citar)
 │  *Pensar intensivamente.*
-│ ╰┈➤ .curious + (@mencionar)
+│ ╰┈➤ .curious + (@citar)
 │  *Sentir curiosidad.* 
-│ ╰┈➤ .sniff + (@mencionar)
+│ ╰┈➤ .sniff + (@citar)
 │  *Olfatear a alguien.* 
-│ ╰┈➤ .stare + (@mencionar)
+│ ╰┈➤ .stare + (@citar)
 │  *Mirar fijamente.*
-│ ╰┈➤ .trip + (@mencionar)
+│ ╰┈➤ .trip + (@citar)
 │  *Tropezar accidentalmente.*
-│ ╰┈➤ .blowkiss + (@mencionar)
+│ ╰┈➤ .blowkiss + (@citar)
 │  *Lanzar un beso.*
-│ ╰┈➤ .snuggle + (@mencion)
+│ ╰┈➤ .snuggle + (@citar)
 │  *Acurrucarse con alguien.* 
-│ ╰┈➤ .angry + (@mencion)
+│ ╰┈➤ .angry + (@citar)
 │  *Estar enojado.*
-│ ╰┈➤ .bored + (@mencion)
+│ ╰┈➤ .bored + (@citar)
 │  *Estar aburrido.*
-│ ╰┈➤ .bleh + (@mencion)
+│ ╰┈➤ .bleh + (@citar)
 │  *Sacar la lengua.*
-│ ╰┈➤ .clap + (@mencionar)
+│ ╰┈➤ .clap + (@citar)
 │  *Aplaudir.*
-│ ╰┈➤ .Coffee + (@mencionar)
+│ ╰┈➤ .Coffee + (@citar)
 │  *Tomar café.*
-│ ╰┈➤ .cold + (@mencionar)
+│ ╰┈➤ .cold + (@citar)
 │  *Mucho frío.*
-│ ╰┈➤ .sing + (@mencionar)
+│ ╰┈➤ .sing + (@citar)
 │  *Mucho frio.*
-│ ╰┈➤ .tickle + (@mencionar)
+│ ╰┈➤ .tickle + (@citar)
 │  *Cantarle a alguien.*
-│ ╰┈➤ .scream + (@mencionar)
+│ ╰┈➤ .scream + (@citar)
 │  *Gritar fuerte.*
-│ ╰┈➤ .push + (@mencionar)
+│ ╰┈➤ .push + (@citar)
 │  *Empujar a alguien.*
-│ ╰┈➤ .nope + (@mencionar)
+│ ╰┈➤ .nope + (@citar)
 │  *Expresar desacuerdo.*
-│ ╰┈➤ .jump + (@mencionar)
+│ ╰┈➤ .jump + (@citar)
 │  *Saltar de felicidad.*
-│ ╰┈➤ .heat + (@mencionar)
+│ ╰┈➤ .heat + (@citar)
 │  *Sentir calor.*
-│ ╰┈➤ .gaming + (@mencionar)
+│ ╰┈➤ .gaming + (@citar)
 │  *Jugar Videojuegos.*
-│ ╰┈➤ .draw + (@mencionar)
+│ ╰┈➤ .draw + (@citar)
 │  *Hacer dibujo.*
-│ ╰┈➤ .call + (@mencionar)
+│ ╰┈➤ .call + (@citar)
 │  *Llamar a alguien.*
-│ ╰┈➤ .dramatic + (@mencionar)
+│ ╰┈➤ .dramatic + (@citar)
 │  *Hacer un drama.*
-│ ╰┈➤ .drunk + (@mencionar)
+│ ╰┈➤ .drunk + (@citar)
 │  *Estar borracho.*
-│ ╰┈➤ .impregnate + (@mencionar)
+│ ╰┈➤ .impregnate + (@citar)
 │  *Embarazar.*
-│ ╰┈➤ .kisscheek + (@mencionar)
+│ ╰┈➤ .kisscheek + (@citar)
 │  *Besar en la mejilla.*
-│ ╰┈➤ .laugh + (@mencionar)
+│ ╰┈➤ .laugh + (@citar)
 │  *Reírse.*
-│ ╰┈➤ .love › + (@mencionar)
+│ ╰┈➤ .love › + (@citar)
 │  *Sentir atracción.*
-│ ╰┈➤ .pout + (@mencionar)
+│ ╰┈➤ .pout + (@citar)
 │  *Hacer pucheros.*
-│ ╰┈➤ .punch + (@mencionar)
+│ ╰┈➤ .punch + (@citar)
 │  *Dar un peñetazo.*
-│ ╰┈➤ .run + (mencionar)
+│ ╰┈➤ .run + (@citar)
 │  *Correr.*
-│ ╰┈➤ .sad + (@mencionar)
+│ ╰┈➤ .sad + (@citar)
 │  *Sentir tristeza.*
-│ ╰┈➤ .scared + (mencionar)
+│ ╰┈➤ .scared + (@citar)
 │  *Estar asustado.*
-│ ╰┈➤ .seduce + (@mencionar)
+│ ╰┈➤ .seduce + (@citar)
 │  *Seducir.*
-│ ╰┈➤ .shy + (@mencionar)
+│ ╰┈➤ .shy + (@citar)
 │  *Sentir timidez.*
-│ ╰┈➤ .sleep + (@mencionar)
+│ ╰┈➤ .sleep + (@citar)
 │  *Dormir.*
-│ ╰┈➤ .smoke + (@mencionar)
+│ ╰┈➤ .smoke + (@citar)
 │  *Fumar.*
-│ ╰┈➤ .spit + (@mencionar)
+│ ╰┈➤ .spit + (@citar)
 │  *Escupir.*
-│ ╰┈➤ .step + (@mencionar)
+│ ╰┈➤ .step + (@citar)
 │  *Pisar.*
-│ ╰┈➤ .think + (@mencionar)
+│ ╰┈➤ .think + (@citar)
 │  *Pensar.*
-│ ╰┈➤ .walk + (@mencionar)
+│ ╰┈➤ .walk + (@citar)
 │  *Caminar.*
-│ ╰┈➤ .hug + (@mencionar)
+│ ╰┈➤ .hug + (@citar)
 │  *Dar un abrazo.*
-│ ╰┈➤ .kill + (@mencionar)
+│ ╰┈➤ .kill + (@citar)
 │  *Asesinar.*
-│ ╰┈➤ .eat + (@mencionar)
+│ ╰┈➤ .eat + (@citar)
 │  *Comer.*
-│ ╰┈➤ .Kiss + (@mencionar)
+│ ╰┈➤ .Kiss + (@citar)
 │  *Dar un beso.*
-│ ╰┈➤ .wink + (@mencionar)
+│ ╰┈➤ .wink + (@citar)
 │  *Guiñar.*
-│ ╰┈➤ .pat + (@mencionar)
+│ ╰┈➤ .pat + (@citar)
 │  *Dar una caricia.*
-│ ╰┈➤ .happy + (@mencionar)
+│ ╰┈➤ .happy + (@citar)
 │  *Saltos de felicidad.*
-│ ╰┈➤ .bully + (@mencionar)
+│ ╰┈➤ .bully + (@citar)
 │  *Hacer bullying.*
-│ ╰┈➤ .bite + (@mencionar)
+│ ╰┈➤ .bite + (@citar)
 │  *Morder.*
-│ ╰┈➤ .wave + (@mencionar)
+│ ╰┈➤ .wave + (@citar)
 │  *Saludar.*
-│ ╰┈➤ .blush + (@mencionar)
+│ ╰┈➤ .blush + (@citar)
 │  *Sonrojarse.*
-│ ╰┈➤ .bath + (@mencionar)
+│ ╰┈➤ .bath + (@citar)
 │  *Bañarse.*
-│ ╰┈➤ .smug + (@mencionar)
+│ ╰┈➤ .smug + (@citar)
 │  *Presumír.*
-│ ╰┈➤ .smile + (@mencionar)
+│ ╰┈➤ .smile + (@citar)
 │  *Sonreir.*
-│ ╰┈➤ .highfive + (@mencionar)
+│ ╰┈➤ .highfive + (@citar)
 │  *Chocar los cinco.*
-│ ╰┈➤ .handhold + (@mencionar)
+│ ╰┈➤ .handhold + (@citar)
 │  *Tomar de la mano.*
-│ ╰┈➤ .cringe + (@mencionar)
+│ ╰┈➤ .cringe + (@citar)
 │  *Sentir cringe.*
-│ ╰┈➤ .bonk + (@mencionar)
+│ ╰┈➤ .bonk + (@citar)
 │  *Golpear.*
-│ ╰┈➤ .cry + (@mencionar)
+│ ╰┈➤ .cry + (@citar)
 │  *Llorar.*
-│ ╰┈➤ .lick + (@mencionar)
+│ ╰┈➤ .lick + (@citar)
 │  *Lamer.*
-│ ╰┈➤ .slap + (@mencionar)
+│ ╰┈➤ .slap + (@citar)
 │  *Dar una bofetada.*
-│ ╰┈➤ .cuddle + (@mencionar)
+│ ╰┈➤ .cuddle + (@citar)
 │  *Acurrucarse.*
-│ ╰┈➤ .dance + (@mencionar)
+│ ╰┈➤ .dance + (@citar)
 │  *Bailar.*
 ╰───────────────✧
 
