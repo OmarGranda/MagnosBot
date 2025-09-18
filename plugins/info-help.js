@@ -322,7 +322,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *gelbooru
 │ ╰┈➤ .blowjob + (@citar)
 │  *Dale una mamada a un*
-|  *usuario.*
+│  *usuario.*
 │ ╰┈➤ .boobjob + (@citar)
 │  *Hacerle una rusa a un*
 │  *usuario.*
