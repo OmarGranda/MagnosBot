@@ -12,10 +12,10 @@ global.owner = [
 ]
 
 global.botname = '𝗠𝗮𝗴𝗻𝗼𝘀𝗕𝗼𝘁'
-global.namebot = '𝗠𝗮𝗴𝗻𝗼𝘀𝗕𝗼𝘁'
+global.namebot = '𝗠𝗮𝗴𝗻𝗼𝘀 𝗕𝗼𝘁'
 global.bot = 'MagnosBot'
-global.packname = '𝗠𝗮𝗴𝗻𝗼𝘀 𝗕𝗼𝘁'
-global.wm = '🌿 𝗕𝗼𝘁 𝗩2'
+global.packname = '𝙈𝙖𝙜𝙣𝙤𝙨 𝘽𝙤𝙩'
+global.wm = '𝙈𝙖𝙜𝙣𝙤𝙨 𝘽𝙤𝙩'
 global.author = 'Omar Granda'
 global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ Omar Granda.'
 
