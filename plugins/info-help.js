@@ -105,7 +105,12 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 ╭───────────────✧
 │ ‣🍏ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨDownloadㅤꤪꤨㅤ֢ㅤׄㅤׅ
-│ ╰┈➤ .play › .play2 › .mp3 › .mp4 › .playaudio › .playvideo + _<url|query>_
+│ ╰┈➤ .play
+| ╰┈➤ .play2
+| ╰┈➤ .mp3
+| ╰┈➤ .mp4
+| ╰┈➤ .playaudio
+| ╰┈➤ .playvideo + _<url|query>_
 │ ╰┈➤ .facebook › .fb + _<url>_
 │ ╰┈➤ .mediafire › .mf + _<url|query>_
 │ ╰┈➤ .tiktok › .tt + _<url|query>_
