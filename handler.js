@@ -231,7 +231,7 @@ export async function handler(chatUpdate) {
         }
         }
 
-// Primary by: Alex 🐼
+// Primary by:OmarGranda 
 if (globalThis.db.data.chats[m.chat].primaryBot && globalThis.db.data.chats[m.chat].primaryBot !== this.user.jid) {
 const primaryBotConn = globalThis.conns.find(conn => conn.user.jid === globalThis.db.data.chats[m.chat].primaryBot && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED)
 const participants = m.isGroup ? (await this.groupMetadata(m.chat).catch(() => ({ participants: [] }))).participants : []
