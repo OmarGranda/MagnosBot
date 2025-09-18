@@ -25,9 +25,9 @@
   "author": "OfcKing",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DevAlexJs/SakuraBot-MD/issues"
+    "url": "https://github.com/OmarGranda/MagnosBot.git/issues"
   },
-  "homepage": "https://github.com/DevAlexJs/SakuraBot-MD#readme",
+  "homepage": "https://github.com/OmarGranda/MagnosBot#readme",
   "dependencies": {
     "@whiskeysockets/baileys": "github:shiroko-devs/star-baileys",
     "@bochilteam/scraper": "^4.2.4",
