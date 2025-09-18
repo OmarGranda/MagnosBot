@@ -32,7 +32,6 @@ const handler = async (m, { conn, text, command }) => {
 │ Publicado 🗓️ : *${videoInfo.ago}*
 │ Enlace 🔗 : *${url}*
 ╰━━━━━━━━━━━━━━━━━━⬣
-
 ${dev}`;
 
       const thumb = (await conn.getFile(videoInfo.thumbnail))?.data;
