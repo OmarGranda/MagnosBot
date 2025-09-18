@@ -19,10 +19,10 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     }).replace(/,/g, '')
     
     const imgs = [
-      "https://files.catbox.moe/wwo7th.jpg",
-      "https://files.catbox.moe/wwo7th.jpg",
-      "https://files.catbox.moe/wwo7th.jpg",
-      "https://files.catbox.moe/wwo7th.jpg"
+      "https://files.catbox.moe/iw8yi8.jpg",
+      "https://files.catbox.moe/2bezkd.jpg",
+      "https://files.catbox.moe/g1lzu6.jpg",
+      "https://files.catbox.moe/ai470b.jpg"
     ]
     let randomImg = imgs[Math.floor(Math.random() * imgs.length)]
 
@@ -119,8 +119,8 @@ let handler = async (m, { conn, args, usedPrefix }) => {
           newsletterJid: "120363422169517881@newsletter" 
         },
         externalAdReply: {
-          title: `© MagnosBot`,
-          body: 'Multipropósito - IA, Descargas, Juegos y más',
+          title: `𝐌𝐚𝐠𝐧𝐨𝐬 𝐁𝐨𝐭 𝐕2 `,
+          body: dev,
           thumbnailUrl: randomImg,
           sourceUrl: 'https://github.com/OmarGranda',
           mediaType: 1,
