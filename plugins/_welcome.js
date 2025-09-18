@@ -37,10 +37,11 @@ export async function before(m, { conn, participants, groupMetadata }) {
 const welcomeMessage = formatText(chat.sWelcome || `╭┈──̇─̇─̇────̇─̇─̇──◯◝
 ┊「 *Bienvenido* 🤗」
 ┊︶︶︶︶︶︶︶︶︶︶︶
-┊  *Nombre ›* @user
-┊  *Grupo ›* @group
+┊  *Nombre:* @user
+┊  *Grupo:* @group
 ┊┈─────̇─̇─̇─────◯◝ @type
-┊➤ *Usa .menu para ver los comandos.*
+┊➤ *Usa .menu para ver* 
+┊ comandos.*
 ┊➤ *Ahora somos @users miembros.*
 ┊ ︿︿︿︿︿︿︿︿︿︿︿
 ╰─────────────────╯`, memberCount);
@@ -48,7 +49,7 @@ const welcomeMessage = formatText(chat.sWelcome || `╭┈──̇─̇─̇─�
   const byeMessage = formatText(chat.sBye || `╭┈──̇─̇─̇────̇─̇─̇──◯◝
 ┊「 *Hasta pronto 👋* 」
 ┊︶︶︶︶︶︶︶︶︶︶︶
-┊  *Nombre ›* @user
+┊  *Nombre:* @user
 ┊┈─────̇─̇─̇─────◯◝ @type
 ┊➤ *Ojalá que vuelva pronto.*
 ┊➤ *Ahora somos @users miembros.*
