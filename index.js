@@ -39,7 +39,7 @@ say('MagnosBot', {
   align: 'left',
   gradient: ['green', 'white']
 })
-say('Powered By Night Light', {
+say('Powered By Omar Granda', {
   font: 'console',
   align: 'center',
   colors: ['cyan', 'magenta', 'yellow']
