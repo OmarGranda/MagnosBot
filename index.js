@@ -34,7 +34,7 @@ let { say } = cfonts
 
 console.log(chalk.magentaBright('\nIniciando...'))
 
-say('MagnosBot', {
+say('SakuraBot', {
   font: 'simple',
   align: 'left',
   gradient: ['green', 'white']
@@ -208,7 +208,7 @@ console.log(chalk.green.bold(`
         if (connection === "open") {
         await joinChannels(conn)
         await startSub()
- console.log(chalk.bold.greenBright('\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ 𝗢𝗡𝗟𝗜𝗡𝗘 ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩\n│\n│★ CONEXIÓN EXITOSA CON WhatsApp 🚀\n│\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ ✅  ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩'))
+ console.log(chalk.bold.greenBright('\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ 𝗢𝗡𝗟𝗜𝗡𝗘 ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩\n│\n│★ CONEXIÓN EXITOSA CON WHATSAPP 🌷\n│\n✩ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈✦ ✅  ✦┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ ✩'))
         }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === "close") {
@@ -353,7 +353,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn?.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = ``;
+  const bio = `${packname} | 🫛 Uptime: ${uptime}`;
   await conn?.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 function clockString(ms) {
