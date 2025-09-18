@@ -127,7 +127,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
           renderLargerThumbnail: true
         }
       }
-    }, { quoted: fkontak })
+    }, { quoted: m })
 
   } catch (e) {
     await m.reply(`🕸 Error [${e}]`)
