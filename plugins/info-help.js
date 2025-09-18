@@ -29,7 +29,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ┃ 💾 RAM Usada: *${usedMem.toFixed(2)} MB*
 ┃ 📂 RAM Libre: *${freeMem.toFixed(2)} MB*
 ┃ 📦 RAM Total: *${totalMem.toFixed(2)} MB*
-╰━━━━━━━━━━━━━━━━━━━━⬣
+╰━━━━━━━━━━━━━━━━━━━⬣
 
 
 ╭───────────────✧
