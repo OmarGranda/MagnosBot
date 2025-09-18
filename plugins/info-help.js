@@ -281,10 +281,10 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *atravez de código de 8*
 │  *dijitos.*
 │ ╰┈➤ .leave
-│  *El bot avandona el grupo*
+│  *El bot avandona el grupo.*
 │  *actual*
 │ ╰┈➤ .self on
-   *Bot privado.*
+│  *Bot privado.*
 │ ╰┈➤ .self off
 │  *Bot publicó.*
 ╰───────────────✧
@@ -302,7 +302,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ *Convierte imágenes o*
 │ *videos en stikers*
 │ ╰┈➤ .pfp + (@citar)
-│ *Ver la foto de perfil de un
+│ *Ver la foto de perfil de un*
 │ *usuario.*
 │ ╰┈➤ .get + (ulr)
 │ *Reliza solicitudes get a*
