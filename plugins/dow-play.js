@@ -23,14 +23,13 @@ const handler = async (m, { conn, text, command }) => {
       const vistas = (videoInfo.views || 0).toLocaleString();
       const canal = videoInfo.author?.name || 'Desconocido';
       const infoMessage = ` *ＹＯＵＴＵＢＥ - ＰＬＡＹ*
-> 📽️ Descargando : *${title}*
+> ⏳ Descargando : *${title}*
 ╭━━━━━━━━━━━━━━━━━━⬣
 │ Canal 🎬 : *${canal}*
 │ Duración ⏰ : *${videoInfo.timestamp}*
 │ Vistas 👀 : *${vistas}*
 │ Publicado 🗓️ : *${videoInfo.ago}*
-│ Enlace 🔗 : *$
-│ {url}*
+│ Enlace 🔗 : *${url}*
 ╰━━━━━━━━━━━━━━━━━━⬣
 ${dev}`;
 
@@ -44,7 +43,7 @@ ${dev}`;
       const response = await fetch(`${api.url}/dow/ytmp3v2?url=${encodeURIComponent(url)}&apikey=${api.key}`);
       const result = await response.json();
 
-      if (!result.status || !result.data) return m.reply('🐼 Error al descargar el audio.');
+      if (!result.status || !result.data) return m.reply('❌ Error al descargar el audio.');
 
       const { dl, title } = result.data;
 
@@ -62,7 +61,7 @@ ${dev}`;
       const response = await fetch(`${api.url}/dow/ytmp4v2?url=${url}&apikey=${api.key}`);
       const result = await response.json();
 
-      if (!result.status || !result.data) return m.reply('🐼 Error al descargar el video.');
+      if (!result.status || !result.data) return m.reply('❌ Error al descargar el video.');
 
       const { dl, title } = result.data;
 
@@ -85,7 +84,7 @@ ${dev}`;
       );
      } 
   } catch (e) {
-    await m.reply('🕸 Error.');
+    await m.reply('❌ Error.');
   }
 };
 
