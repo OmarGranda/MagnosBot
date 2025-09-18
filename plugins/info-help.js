@@ -21,7 +21,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let randomImg = imgs[Math.floor(Math.random() * imgs.length)]
     
     let menu = `
-╭━〔 *MENÚ ° MAGNOS* 〕━⬣
+╭━〔 *MENÚ - MAGNOS* 〕━⬣
 ┃ 👤 Usuario: *${user}*
 ┃ 📅 Fecha: *${fecha}*
 ┃ 🕒 Hora: *${hora}*
@@ -199,10 +199,14 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ╭───────────────✧
 │ ‣🍧ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨGrupoㅤꤪꤨㅤ֢ㅤׄㅤׅ
 │ ╰┈➤ .bot on
+│  /Activar el bot en el grupo./
 │ ╰┈➤ .bot off
+│  /Desactivar el bot en el grupo./
 │ ╰┈➤ .promote + (@citar)
-│ ╰┈➤ .setprimary + (@citar)
+│  /Promueve a un usuario/
+│  /a administrado./
 │ ╰┈➤ .demote + (@citar)
+│ ╰┈➤ .setprimary + (@citar)
 │ ╰┈➤ .opem
 │ ╰┈➤ .closet
 │ ╰┈➤ .on welcome
