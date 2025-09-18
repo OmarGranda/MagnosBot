@@ -19,7 +19,14 @@ let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
 let rtx = `🕸 *Vincula el Socket usando el código QR.*\n\nSigue las instrucciones:\n🌿 *Mas opciones › Dispositivos vinculados › Vincular un nuevo dispositivo › Escanea el código QR.*\n\n_Recuerda que es recomendable no usar tu cuenta principal para registrar un socket._\n↺ El codigo es valido por 60 segundos.`
-let rtx2 = `🕸 *Vincula el Socket usando el código de 8 dígitos.*\n\nSigue las instrucciones:\n🌿 *Mas opciones › Dispositivos vinculados › Vincular un nuevo dispositivo › Vincular con el número de telefono › Introduce el código de 8 dígitos.*\n\n_Recuerda que es recomendable no usar tu cuenta principal para registrar un socket._\n↺ El codigo es valido por 60 segundos.`
+let rtx2 = `*🔰 MAGNOS BOt🔰*
+ㅤㅤㅤㅤSer sub bot
+
+*1️⃣ Dirígete a los tres puntos en la esquina superior derecha*
+*2️⃣ Opción: Dispositivos vinculados*
+*3️⃣ Vincular con código de teléfono*
+*4️⃣ Pega el código a continuación*
+> El código de 8 dígitos es válido por 60 segundos.*\n\n_Recuerda que es recomendable no usar tu cuenta principal para registrar un SubBot.'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
