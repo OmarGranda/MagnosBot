@@ -180,11 +180,11 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │  *Audios en documentos.*
 │ ╰┈➤ .mp4 + (link/name)
 │  *videos en documentos.*
-│ ╰┈➤ .playaudio + (link/name)
-│ 
+│ ╰┈➤ .playaudio + (link
+│                   /name)
 │  *Descargar audios.*
-│ ╰┈➤ .playvideo + (link/name)
-│ 
+│ ╰┈➤ .playvideo + (link
+│ /name)
 │  *Descargar videos.*
 │ ╰┈➤ .facebook + (Link)
 │ *Descargar videos de
