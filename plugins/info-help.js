@@ -172,26 +172,27 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 ╭───────────────✧
 │ ‣ Downloadㅤׅ
-│ ╰┈➤ .play
-│  *Descargar videos de YouTube.*
-| ╰┈➤ .play2
-│      *//     //    //    //*
-| ╰┈➤ .mp3
-│      *//     //    //    //*
-| ╰┈➤ .mp4
-│     *//     //    //    //*
-| ╰┈➤ .playaudio
-│     *//     //    //    //*
-| ╰┈➤ .playvideo + (link/name) 
-│     *//     //    //    //*
+│ ╰┈➤ .play + (link/name)
+│  *Descargar audios.*
+│ ╰┈➤ .play2 + (link/name)
+│  *Descargar videos.*
+│ ╰┈➤ .mp3 + (link/name)
+│  *Audios en documentos.*
+│ ╰┈➤ .mp4 + (link/name)
+│  *videos en documentos.*
+│ ╰┈➤ .playaudio + (link/name)
+│  *Descargar audios
+│ ╰┈➤ .playvideo + (link/name)
+│  *Descargar videos
 │ ╰┈➤ .facebook + (Link)
 │ *Descargar videos de
 │  Facebook.*
 │ ╰┈➤ .tiktok + (link/name) 
-│ *Descargar videos de TikTok.*
+│ *Descargar videos de*
+│ *TikTok.*
 │ ╰┈➤ .mediafire + (link/name)
-│ *Descargar archivos de
-│  MediaFire.*
+│ *Descargar archivos de*
+│ *MediaFire.*
 ╰───────────────✧
 
 ╭───────────────✧
