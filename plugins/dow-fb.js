@@ -23,7 +23,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
     const videoUrl = json.data.dl;
 
-    const caption = `ＦＡＣＥＢＯＯＫ - ＤＥＳＣＡＲＧＡＳ\n\n *Enlace 🔗 :* ${args[0]}`;
+    const caption = `ＦＡＣＥＢＯＯＫ
+ＤＥＳＣＡＲＧＡＳ\n\n *Enlace 🔗 :* ${args[0]}`;
 
     await conn.sendMessage(
       m.chat,
