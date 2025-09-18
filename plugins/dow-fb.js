@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
 
     if (!args[0].match(/facebook\.com|fb\.watch|video\.fb\.com/)) {
-      return m.reply('🫗 El enlace no parece *válido*. Asegúrate de que sea de *Facebook*');
+      return m.reply('⚠️ El enlace no parece *válido*. Asegúrate de que sea de *Facebook*');
     }
 
    // await conn.sendMessage(m.chat, { text: '⏳ *Procesando video...*' }, { quoted: m });
@@ -18,12 +18,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const json = await res.json();
 
     if (!json.status || !json.data?.dl) {
-      return m.reply('🫟 No se pudo obtener el *video*. Intenta con otro enlace.');
+      return m.reply('❌ No se pudo obtener el *video*. Intenta con otro enlace.');
     }
 
     const videoUrl = json.data.dl;
 
-    const caption = `𖣣ֶㅤ֯⌗ 🅕𝖡 🅓ownload\n\n🫗 *Enlace:* ${args[0]}`;
+    const caption = `ＦＡＣＥＢＯＯＫ - ＤＥＳＣＡＲＧＡＳ\n\n *Enlace 🔗 :* ${args[0]}`;
 
     await conn.sendMessage(
       m.chat,
