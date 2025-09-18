@@ -19,7 +19,7 @@ let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
 let rtx = ` *🔰 MAGNOS BOT 🔰*
-ㅤㅤㅤㅤSer sub bot
+ㅤㅤㅤㅤSer Sub Bot
 
 *Con otro telefono que tengas o en la PC escanea este QR para convertirte en un sub bot*
 
@@ -30,12 +30,13 @@ let rtx = ` *🔰 MAGNOS BOT 🔰*
 
 > *⚠️ No nos hacemos responsable del mal uso que se le pueda dar.`
 let rtx2 = `*🔰 MAGNOS BOT 🔰*
-ㅤㅤㅤㅤSer sub bot
+ㅤㅤㅤㅤSer Sub Bot
 *1️⃣ Dirígete a los tres puntos en la esquina superior derecha*
 *2️⃣ Opción: Dispositivos vinculados*
 *3️⃣ Vincular con código de teléfono*
 *4️⃣ Pega el código a continuación*
-> El código de 8 dígitos es válido por 60 segundos.*\n\nRecuerda qué no es recomendable usar tu cuenta principal para registrar un SubBot.`
+> El código de 8 dígitos es válido por 60 segundos.
+> 🧠 Recuerda qué no es recomendable usar tu cuenta principal para registrar un SubBot.`
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
