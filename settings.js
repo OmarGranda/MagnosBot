@@ -32,7 +32,7 @@ key: 'Diamond'
 
 global.my = {
   ch: '120363422169517881@newsletter',
-  name: '₊· ͟͟͞͞꒰ 🌿 𝐌𝐚𝐠𝐧𝐨𝐬 𝐁𝐨𝐭 - 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⏤͟͟͞͞✿',
+  name: 'MagnosBot | CHANNEL',
 
   ch2: '120363401008003732@newsletter', 
   name2: '✦͙͙͙*ೃ༄ 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 | 𝑺𝒉𝒂𝒅𝒐𝒘`𝑪𝒐𝒓𝒆 ༄*ೃ✦',
