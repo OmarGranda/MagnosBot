@@ -1,25 +1,44 @@
-import { exec } from 'child_process';
+import { execSync } from 'child_process'
 
-let handler = async (m, { conn }) => {
-  m.reply(`${emoji2} Actualizando el bot...`);
+var handler = async (m, { conn, text }) => {
 
-  exec('git pull', (err, stdout, stderr) => {
-    if (err) {
-      conn.reply(m.chat, `${msm} Error: No se pudo realizar la actualización.\nRazón: ${err.message}`, m);
-      return;
-    }
+try {
 
-    if (stderr) {
-      console.warn('Advertencia durante la actualización:', stderr);
-    }
+const stdout = execSync('git pull' + (m.fromMe && text ? ' ' + text : ''));
+let messager = stdout.toString()
 
-    if (stdout.includes('Already up to date.')) {
-      conn.reply(m.chat, `${emoji4} El bot ya está actualizado.`, m);
-    } else {
-      conn.reply(m.chat, `${emoji} Actualización realizada con éxito.\n\n${stdout}`, m);
-    }
-  });
-};
+if (messager.includes('🕸 Ya estoy actualizada.')) messager = '🕸 Ya estoy actualizada a la última versión.'
+
+if (messager.includes('🕸 Actualizando.')) messager = '🕸 Procesando, espere un momento mientras me actualizo.\n\n' + stdout.toString()
+conn.reply(m.chat, messager, m)
+
+} catch { 
+try {
+
+const status = execSync('git status --porcelain')
+
+if (status.length > 0) {
+const conflictedFiles = status.toString().split('\n').filter(line => line.trim() !== '').map(line => {
+if (line.includes('.npm/') || line.includes('.cache/') || line.includes('tmp/') || line.includes('datos.json') || line.includes('database.json') || line.includes('sessions/') || line.includes('npm-debug.log')) {
+return null
+}
+return '*→ ' + line.slice(3) + '*'}).filter(Boolean)
+if (conflictedFiles.length > 0) {
+const errorMessage = `🕸 No se puede actualizar.`
+await conn.reply(m.chat, errorMessage, m)
+}
+}
+} catch (error) {
+console.error(error)
+let errorMessage2 = '🐼 Ocurrió un error inesperado.'
+if (error.message) {
+errorMessage2 += '\n🐼 Mensaje de error: ' + error.message;
+}
+await conn.reply(m.chat, errorMessage2, m)
+}
+}
+
+}
 
 handler.command = ['update', 'actualizar']
 handler.owner = true
