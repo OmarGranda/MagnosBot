@@ -11,8 +11,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   }
 
   try {
-    await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
-    conn.reply(m.chat, `* Mejorando la calidad de la imagen....*`, m, rcanal)  
+    await conn.sendMessage(m.chat, { react: { text: '⏰', key: m.key } })
+    conn.reply(m.chat, `*Mejorando la calidad de la imagen...
+Por favor espere 🚩*`, m, rcanal)  
     const media = await quoted.download()
     const ext = mime.split('/')[1]
     const filename = `upscaled_${Date.now()}.${ext}`
@@ -44,14 +45,14 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     await conn.sendMessage(m.chat, {
       image: resultBuffer,
-      caption: `✅ *Aquí tienes tu imagen en HD*\n> MagnosBot
+      caption: `✅ *Aquí tienes tu imagen en HD*\n> MagnosBot 🤖
 > © Powered By Omar Granda`.trim()
     }, { quoted: m })
 
     await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
   } catch (err) {
     await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
-    m.reply(`❌ Ocurrio un error:\n${err.message || err}`)
+    m.reply(`⚠️ Ocurrio un error:\n${err.message || err}`)
   }
 }
 
