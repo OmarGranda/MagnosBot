@@ -7,12 +7,12 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   if (!/image\/(jpe?g|png)/i.test(mime)) {
     await conn.sendMessage(m.chat, { react: { text: '❗', key: m.key } })
-    return m.reply(`🍄 Por favor, envie una imagen o responda a la imagen utilizando el comando.`)
+    return m.reply(`❌ *Por favor, envie una imagen o responda a la imagen utilizando el comando*.`)
   }
 
   try {
     await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
-    conn.reply(m.chat, `*✧ Mejorando la calidad de la imagen....*`, m, rcanal)  
+    conn.reply(m.chat, `* Mejorando la calidad de la imagen....*`, m, rcanal)  
     const media = await quoted.download()
     const ext = mime.split('/')[1]
     const filename = `upscaled_${Date.now()}.${ext}`
@@ -44,7 +44,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     await conn.sendMessage(m.chat, {
       image: resultBuffer,
-      caption: `☆ *𝙰𝚀𝚄𝙸 𝚃𝙸𝙴𝙽𝙴𝚂 𝚃𝚄 𝙸𝙼𝙰𝙶𝙴𝙽 𝙴𝙽 𝙷𝙳* 🍂\n> © ʀɪɴ ɪᴛᴏsʜɪ | ʙʏ sʜᴀᴅᴏᴡ.xʏᴢ °`.trim()
+      caption: `✅ *Aquí tienes tu imagen en HD*\n> MagnosBot
+> © Powered By Omar Granda`.trim()
     }, { quoted: m })
 
     await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
