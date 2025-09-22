@@ -126,15 +126,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   let q = args.join(" ").trim()
   if (!q) {
     return conn.sendMessage(m.chat, {
-      text: `*\`🍉 ɪɴɢʀᴇsᴇ ᴇʟ ɴᴏᴍʙʀᴇ ᴅᴇʟ ᴀᴜᴅɪᴏ ᴀ ᴅᴇsᴄᴀʀɢᴀʀ.\`*`
+      text: `*\`✍️ *Ingrese el nombre del audio a descargar*.\`*`
     }, { quoted: m })
   }
 
   await conn.sendMessage(m.chat, {
-    text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🫛 *¡Descargando tu archiwito kawaii!*
-  
-˚₊· ͟͟͞͞➳❥ 📊 Progresito:  
-[▓▓▓▓▓░░░░░] 50% 🍬💗`
+    text: `✅ *Descargando tu archivo por espere...*`
   }, { quoted: m })
 
   try {
@@ -150,7 +147,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     // 📥 Descargar con SAVETUBE
     let info = await savetube.download(vid.url)
     if (!info.status) {
-      return conn.sendMessage(m.chat, { text: `🌿 No se pudo obtener el audio de *${vid.title}*.` }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: `⚠️ No se pudo obtener el audio de *${vid.title}*.` }, { quoted: m })
     }
 
     let { result } = info
@@ -169,7 +166,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       img.resize(300, Jimp.AUTO)
       thumb = await img.getBufferAsync(Jimp.MIME_JPEG)
     } catch (err) {
-      console.log("⚠️ Error al procesar miniatura:", err)
+      console.log("❌ Error al procesar miniatura:", err)
     }
 
     await conn.sendMessage(m.chat, {
