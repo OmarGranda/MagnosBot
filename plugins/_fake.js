@@ -1,13 +1,11 @@
 export async function before(m, { conn }) {
 
-  const canal = 'https://whatsapp.com/channel/0029VbApwZ9ISTkEBb6ttS3F'
-  const canal2 = 'https://whatsapp.com/channel/0029Vb6IdnEGU3BTahqaLL2V'
-  const canal3 = 'https://whatsapp.com/channel/0029VbBVnhSBlHpUWKo19m2m'
+  const canal = 'https://whatsapp.com/channel/0029Vb6wMPa8kyyTpjBG9C2H' 
   const api = 'https://api.stellarwa.xyz'
-  const git = 'https://github.com/DevAlexJs'
-  const md = 'https://github.com/DevAlexJs/SakuraBot-MD'
+  const git = 'https://github.com/OmarGranda'
+  const md = 'https://github.com/OmarGranda/MagnosBot'
 
-  const redes = [canal, canal2, canal3, api, git, md]
+  const redes = [canal, api, git, md]
   const randomRed = redes[Math.floor(Math.random() * redes.length)]
 
   const canales = Object.entries(global.my || {})
