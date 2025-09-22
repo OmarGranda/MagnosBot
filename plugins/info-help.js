@@ -177,6 +177,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 │ ╰┈➤ .mp3 + (url/name)
 │  *Descargar Videos de*
 │  *YouTube a Audio.*
+│ ╰┈➤ .ytmp3doc + (link/name)
 │ ╰┈➤ .play2 + (link/name)
 │ ╰┈➤ .playvideo + (url
 │ /name)
