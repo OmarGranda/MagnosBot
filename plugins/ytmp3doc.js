@@ -153,11 +153,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let { result } = info
 
     let caption = `
-= 📀 *${result.title}*
-= ⏱️ 𝐃𝐮𝐫𝐚𝐜𝐢𝐨𝐧: ${vid.duration}
-= ⚡ 𝐂𝐚𝐧𝐚𝐥: ${vid.author?.name || "Desconocido"}
-= 🍧 𝐂𝐚𝐥𝐢𝐝𝐚𝐝: ${result.quality}
-= 🔗 𝐋𝐢𝐧𝐤: ${vid.url}
+📀 *${result.title}*
+
+> ⏱️ 𝐃𝐮𝐫𝐚𝐜𝐢𝐨𝐧: ${vid.duration}
+> 🎬 𝐂𝐚𝐧𝐚𝐥: ${vid.author?.name || "Desconocido"}
+> 🔗 𝐋𝐢𝐧𝐤: ${vid.url}
 `.trim()
 
     let thumb = null
