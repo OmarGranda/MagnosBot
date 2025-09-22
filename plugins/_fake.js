@@ -18,7 +18,7 @@ export async function before(m, { conn }) {
       return acc
     }, [])
 
-  const channelRD = canales[Math.floor(Math.random() * canales.length)] || { id: '120363422169517881@newsletter', nombre: '🎋 MagnosBot | CHANNEL 🌷' }
+  const channelRD = canales[Math.floor(Math.random() * canales.length)] || { id: '120363422169517881@newsletter', nombre: 'MagnosBot | CHANNEL' }
 
   const icon = 'https://stellarwa.xyz/files/1757378468505.jpeg'
   const thumbnail = await (await fetch(icon)).arrayBuffer()
