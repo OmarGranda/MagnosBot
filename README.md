@@ -140,8 +140,7 @@ El proceso se completará automáticamente.
 
 - Asegúrate de autenticarte correctamente cuando se te solicite tu usuario y contraseña. Usa el **token de acceso personal** como contraseña.
 - Si encuentras problemas, verifica que las dependencias necesarias están instaladas y que tienes permisos de escritura en la carpeta de destino.
-- 
- 
+
 ### PROPIETARIO 👑
 [![Omar Granda](https://i.postimg.cc/y8mdVMpN/IMG-20250907-083002.jpg)](https://github.com/OmarGranda)
 
