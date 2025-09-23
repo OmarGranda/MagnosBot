@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-  await conn.reply(m.chat, `🚀 Reiniciando el server...\n> 📌 *Espere un momento...*`, m);
+  await conn.reply(m.chat, `🚀 Reiniciando el bot...\n> 📌 *Espere un momento...*`, m);
   setTimeout(() => {
     process.exit(0);
   }, 3000);
