@@ -1,6 +1,6 @@
 import { execSync } from 'child_process'
 
-var handler = async (m, { conn, text }) => {
+var handler = async (m, { conn, text }) => { 📡 Utilizando Bot
 
 try {
 
