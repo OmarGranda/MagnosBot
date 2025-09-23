@@ -7,8 +7,7 @@ const isYTUrl = (url) => /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/i
 const handler = async (m, { conn, text, command }) => {
   try {
     if (!text.trim()) {
-await m.react('✅')
-      return conn.reply(m.chat, ` Ingresa el nombre de la música o una URL de YouTube.`, m);
+      return conn.reply(m.chat, `⚠️ *Ingresa el nombre de la música o una URL de YouTube.*`, m);
     }
 
     const esURL = isYTUrl(text);
@@ -16,7 +15,7 @@ await m.react('✅')
 
     if (!esURL) {
       const search = await yts(text);
-      if (!search.all.length) return m.reply('❌ No se encontraron resultados.');
+      if (!search.all.length) return m.reply('❌ *No se encontraron resultados.*');
 
       const videoInfo = search.all[0];
       ({ title, url } = videoInfo);
@@ -45,7 +44,7 @@ ${dev}`;
       const response = await fetch(`${api.url}/dow/ytmp3v2?url=${encodeURIComponent(url)}&apikey=${api.key}`);
       const result = await response.json();
 
-      if (!result.status || !result.data) return m.reply('❌ Error al descargar el audio.');
+      if (!result.status || !result.data) return m.reply('❌ *Error al descargar el audio*.');
 
       const { dl, title } = result.data;
 
@@ -63,7 +62,7 @@ ${dev}`;
       const response = await fetch(`${api.url}/dow/ytmp4v2?url=${url}&apikey=${api.key}`);
       const result = await response.json();
 
-      if (!result.status || !result.data) return m.reply('❌ Error al descargar el video.');
+      if (!result.status || !result.data) return m.reply('❌ *Error al descargar el video*.');
 
       const { dl, title } = result.data;
 
@@ -86,7 +85,7 @@ ${dev}`;
       );
      } 
   } catch (e) {
-    await m.reply('❌ Error.');
+    await m.reply('❌ *Error*.');
   }
 };
 
