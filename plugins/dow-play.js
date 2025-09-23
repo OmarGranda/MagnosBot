@@ -7,7 +7,8 @@ const isYTUrl = (url) => /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/i
 const handler = async (m, { conn, text, command }) => {
   try {
     if (!text.trim()) {
-      return conn.reply(m.chat, `🕸 Ingresa el nombre de la música o una URL de YouTube.`, m);
+await m.react('✅')
+      return conn.reply(m.chat, ` Ingresa el nombre de la música o una URL de YouTube.`, m);
     }
 
     const esURL = isYTUrl(text);
