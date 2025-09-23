@@ -24,15 +24,15 @@ return null
 }
 return '*→ ' + line.slice(3) + '*'}).filter(Boolean)
 if (conflictedFiles.length > 0) {
-const errorMessage = `🕸 No se puede actualizar.`
+const errorMessage = `⚠️ No se puede actualizar.`
 await conn.reply(m.chat, errorMessage, m)
 }
 }
 } catch (error) {
 console.error(error)
-let errorMessage2 = '🐼 Ocurrió un error inesperado.'
+let errorMessage2 = '❌ Ocurrió un error inesperado.'
 if (error.message) {
-errorMessage2 += '\n🐼 Mensaje de error: ' + error.message;
+errorMessage2 += '\n ⚠️ Mensaje de error: ' + error.message;
 }
 await conn.reply(m.chat, errorMessage2, m)
 }
