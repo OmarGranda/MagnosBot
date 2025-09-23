@@ -4,7 +4,7 @@ var handler = async (m, { conn, text }) => { `📡 Actualizando Bot`
 
 try {
 
-const stdout = execSync('git pull' + (m.fromMe && text ? '📡 Actualizando Bot ' + text : ''));
+const stdout = execSync('git pull' + (m.fromMe && text ? '📡 Actualizando Bot ' + text : '📡 Actualizando Bot'));
 let messager = stdout.toString()
 
 if (messager.includes('🕸 Ya estoy actualizada.')) messager = '🕸 Ya estoy actualizada a la última versión.'
