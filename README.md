@@ -31,7 +31,7 @@ termux-setup-storage
 apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 ```bash
-https://github.com/OmarGranda/MagnosBot && cd MagnosBot
+git clone https://github.com/OmarGranda/MagnosBot && cd MagnosBot
 ```
 ```bash
 yarn install
